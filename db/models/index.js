@@ -6,6 +6,7 @@
 
 const User = require('./user')
 const Castle = require('./castle')
+const Review = require('./review')
 
 
 //associations
@@ -16,4 +17,4 @@ const Castle = require('./castle')
 // Memories.belongsTo(Castle)
 
 
-module.exports = {User,Castle}
+module.exports = {User,Castle, Review}
