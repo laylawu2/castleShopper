@@ -5,13 +5,19 @@ const Sequelize = require('sequelize')
 const db = require('APP/db')
 
 const User = db.define('users', {
-  name: Sequelize.STRING,  
+  firstName: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  lastName: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
   email: {
     type: Sequelize.STRING,
-    unique: true,
+    allowNull: false,
     validate: {
-			isEmail: true,
-			notEmpty: true,
+			isEmail: true
 		}
   },
 
@@ -32,6 +38,11 @@ const User = db.define('users', {
             err ? reject(err) : resolve(result))
         )
     }    
+  },
+  getterMethods: {
+    fullName() {
+      return this.firstName + ' ' + this.lastName;
+    }
   }
 })
 
