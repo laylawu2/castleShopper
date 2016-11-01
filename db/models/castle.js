@@ -3,13 +3,13 @@
 const Sequelize = require('sequelize')
 const db = require('APP/db')
 
-const Castle = db.define('castles', {
+module.exports = db.define('castles', {
     name: {
         type: Sequelize.STRING, 
         allowNull: false
     }, 
     price: {
-        type: Sequelize.Decimal, 
+        type: Sequelize.DECIMAL(10,2), 
         allowNull: false
     }, 
     location: {
@@ -35,13 +35,16 @@ const Castle = db.define('castles', {
         type: Sequelize.TEXT
     },
     category: {
-        type: Sequelize.TEXT
+        type: Sequelize.ARRAY(Sequelize.TEXT), 
+        allowNull: false
     }
 }, {
     getterMethods: {
         checkoutSnippet: function(){
             const snippet = this.description.substring(0, 100);
             return snippet;
+        }
     }
     }
-})
+)
+

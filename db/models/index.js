@@ -7,12 +7,13 @@
 const User = require('./user')
 const Castle = require('./castle')
 
+
 //associations
 
-Orders.belongsTo(User)
-Orders.belongsToMany(Castles) 
-Memories.belongsTo(User) 
-Memories.belongsTo(Castle)
+// Order.belongsTo(User)
+// Order.belongsToMany(Castles) 
+// Memories.belongsTo(User) 
+// Memories.belongsTo(Castle)
 
 
 module.exports = {User,Castle}
