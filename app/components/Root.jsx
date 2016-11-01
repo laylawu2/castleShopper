@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { Provider } from 'react-redux';
-import Homepage from './Homepage';
 
 export default class BonesJokes extends Component {
   constructor() {
@@ -29,7 +27,11 @@ export default class BonesJokes extends Component {
 
     const {joke, answered} = this.state    
     return (
-      <Homepage />
+      <div>
+        <h1 onClick={answered ? this.nextJoke : this.answer}>{joke.q}</h1>
+        {answered && <h2>{joke.a}</h2>}
+        <cite>~xoxo, bones</cite>
+      </div>
     )
   }
 }
