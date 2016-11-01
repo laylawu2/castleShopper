@@ -120,7 +120,6 @@ describe('User', () => {
   describe('authenticate(plaintext: String) ~> Boolean', () => {
     User.create(grace)
       .then(user => {
-
         it('resolves true if the password matches', () => {
           let result = user.authenticate('ok');
           expect(result.to.be.true);
@@ -134,13 +133,28 @@ describe('User', () => {
   });
 
   // getterMethods
-  describe('getterMethods', () => {
-    it('fullName returns "firstName lastName"', () => {
-      /************ needs to change ************/
-      grace.email = "newEmail@email.com"; // just to avoid conflict in db
-      User.create(grace)
-        .then(user => (expect(user.fullName).to.equal("Grace Hopper")));
-    });
+  describe('creating instance and getterMethods', (done) => {
+    grace.email = "grace@email.com";
+    grace.address = "5 Hanover Sq, NYC, NY 10004";
+    return User.create(grace)
+      .then(user => {
+        it('contains all required fields with the correct input', () => {
+          expect(user.firstName).to.equal("Grace");
+          expect(user.lastName).to.equal("Hopper");
+          expect(user.username).to.equal("gracehopper");
+          expect(user.email).to.equal("grace@email.com");
+          expect(user.password).to.equal("ok");
+        });
+
+        it('contains non-required fields with the correct input', () => {
+          expect(user.address).to.equal("5 Hanover Sq, NYC, NY 10004");
+        });
+
+        it('getterMethods - fullName returns "firstName lastName"', () => {
+          expect(user.fullName).to.equal("Grace Hopper");
+          done();
+        });
+      });
   });
   
 });
