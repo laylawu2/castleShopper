@@ -5,6 +5,9 @@ const User = require('APP/db/models/user')
 const app = require('./start')
 
 const alice = {
+  firstName: "Alice",
+  lastName: "Lee",
+  email: "alice@secrets.org",
   username: 'alice@secrets.org',
   password: '12345'
 }
@@ -14,8 +17,12 @@ describe('/api/auth', () => {
     db.didSync
       .then(() =>
         User.create(
-          {email: alice.username,
-          password: alice.password
+          {
+            firstName: "Alice",
+            lastName: "Lee",
+            username: alice.username,
+            email: alice.username,
+            password: alice.password
         })
       )
   )
