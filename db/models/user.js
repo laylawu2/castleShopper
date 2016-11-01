@@ -12,6 +12,10 @@ const User = db.define('users', {
 			isEmail: true,
 			notEmpty: true,
 		}
+  }, 
+  username: {
+    type: Sequelize.STRING,
+    unique: true
   },
 
   // We support oauth, so users may or may not have passwords.
