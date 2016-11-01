@@ -33,6 +33,9 @@ const Castle = db.define('castles', {
     }, 
     historyLink: {
         type: Sequelize.TEXT
+    },
+    category: {
+        type: Sequelize.TEXT
     }
 }, {
     getterMethods: {
