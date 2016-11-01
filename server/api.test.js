@@ -16,6 +16,9 @@ describe('/api/users', () => {
       request(app)
         .post('/api/users')
         .send({
+          firstName: "Beth",
+          lastName: "Secret",
+          username: "bethsecret",
           email: 'beth@secrets.org',
           password: '12345'
         })
@@ -26,6 +29,9 @@ describe('/api/users', () => {
       request(app)
         .post('/api/users')
         .send({
+          firstName: "Eve",
+          lastName: "interloper",
+          username: "ever",
           email: 'eve@interloper.com',
           password: '23456',
         })
