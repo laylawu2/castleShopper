@@ -18,7 +18,8 @@ module.exports = db.define('castles', {
     }, 
     image: {
         type: Sequelize.ARRAY(Sequelize.TEXT), 
-        allowNull: false
+        allowNull: false,
+        defaultValue: 'https://goo.gl/hCvhhb'
     }, 
     size: {
         type: Sequelize.INTEGER, 
