@@ -5,5 +5,15 @@
 // to get access to the User model.
 
 const User = require('./user')
+const Castle = require('./castle')
 
-module.exports = {User}
+
+//associations
+
+// Order.belongsTo(User)
+// Order.belongsToMany(Castles) 
+// Memories.belongsTo(User) 
+// Memories.belongsTo(Castle)
+
+
+module.exports = {User,Castle}
