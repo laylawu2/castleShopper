@@ -1,4 +1,4 @@
-//sleeping beauty castle
+//castles
 export const castles = [
     {
         "name": "Sleeping Beauty Castle",
@@ -13,7 +13,7 @@ export const castles = [
         "amenitites": {
             "window": 20, 
             "room": 10, 
-            "prince": "charming"
+            "prince": 1
         },
         "description": "Sleeping Beauty Castle is a fairy tale castle at the center of Disneyland and Hong Kong Disneyland. It is based on the late-19th century Neuschwanstein Castle in Bavaria, Germany.",
         "historyLink": "https://en.wikipedia.org/wiki/Sleeping_Beauty_Castle"
@@ -35,12 +35,12 @@ export const castles = [
             "unicorns": 0,
             "rooms": "varies"
         },
-        "description": "Howl's castle is a tall, black building with four thin turrets. It seems to be made of blocks of coal (a suitable habitat for a fire demon) and is "bespelled to hold together." It has four doors on the outside, although three are made inaccessible by an invisible wall.",
+        "description": "Howl's castle is a tall, black building with four thin turrets. It seems to be made of blocks of coal (a suitable habitat for a fire demon) and is \"bespelled to hold together.\" It has four doors on the outside, although three are made inaccessible by an invisible wall.",
         "historyLink": "https://en.wikipedia.org/wiki/Howl%27s_Moving_Castle#Howl.27s_moving_castle"
     }
 ]
 
-    //sleeping beauty user info
+    //users
 
 export const users = [
     {
@@ -62,7 +62,7 @@ export const users = [
 ]
 
 
-    //order info
+    //orders
 export const orders = [
     {
         "date": "1/1/2016",
@@ -76,7 +76,7 @@ export const orders = [
         "shippingAddress": "5 Hanover Sq., New York City, NY, 10004"
     }
 ]
-    //memory of sleeping beauty castle
+    //reviews + memories
 export const memories = [
     {
         "body": "Beautiful castle in the happiest place on Earth!",
