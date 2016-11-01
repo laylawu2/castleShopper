@@ -1,5 +1,5 @@
 //castles
-export const castles = [
+const castles = [
     {
         "name": "Sleeping Beauty Castle",
         "imageUrl": [
@@ -16,7 +16,8 @@ export const castles = [
             "prince": 1
         },
         "description": "Sleeping Beauty Castle is a fairy tale castle at the center of Disneyland and Hong Kong Disneyland. It is based on the late-19th century Neuschwanstein Castle in Bavaria, Germany.",
-        "historyLink": "https://en.wikipedia.org/wiki/Sleeping_Beauty_Castle"
+        "historyLink": "https://en.wikipedia.org/wiki/Sleeping_Beauty_Castle",
+        "category": ['disney']
     },
     {
         "imageURL": [
@@ -36,13 +37,14 @@ export const castles = [
             "rooms": "varies"
         },
         "description": "Howl's castle is a tall, black building with four thin turrets. It seems to be made of blocks of coal (a suitable habitat for a fire demon) and is \"bespelled to hold together.\" It has four doors on the outside, although three are made inaccessible by an invisible wall.",
-        "historyLink": "https://en.wikipedia.org/wiki/Howl%27s_Moving_Castle#Howl.27s_moving_castle"
+        "historyLink": "https://en.wikipedia.org/wiki/Howl%27s_Moving_Castle#Howl.27s_moving_castle",
+        "category": ['unicorns']
     }
 ]
 
     //users
 
-export const users = [
+const users = [
     {
         "firstName": "Aurore",
         "lastName": "Disney",
@@ -63,7 +65,7 @@ export const users = [
 
 
     //orders
-export const orders = [
+const orders = [
     {
         "date": "1/1/2016",
         "shippingAddress": "1234 disneyway, anaheim, CA 91745"
@@ -77,17 +79,20 @@ export const orders = [
     }
 ]
     //reviews + memories
-export const memories = [
+const reviews = [
     {
-        "body": "Beautiful castle in the happiest place on Earth!",
+        "content": "Beautiful castle in the happiest place on Earth!",
         "star": 5,
-        "date": "12/12/2015",
-        "headline": "AWESOME!"
+        "date": "2015-12-01",
+        "subject": "AWESOME!"
     },
     {
-        "body": "Very great castle",
+        "content": "Very great castle",
         "star": 1,
-        "date": "10/31/2016",
-        "headline": "Great castle"
+        "date": "2016-12-12",
+        "subject": "Great castle"
     } 
 ]
+
+module.exports = {castles,reviews,users}
+//need to add orders and create orders model
