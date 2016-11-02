@@ -1,4 +1,25 @@
 //castles
+//use this to make adding data faster: 
+// {
+//     "name": "", 
+//     "imageURL": [
+
+//     ], 
+//     "size":, 
+//     "location":, 
+//     "price", 
+//     "amenities": {
+//           "windows": "",
+//           "turrets": "",
+//           "princes": 0,
+//           "unicorns": 0,
+//           "rooms": ""
+// } 
+//     "description":, 
+//     "historyLink":
+    // }
+
+
 export const castles = [
     {
         "name": "Sleeping Beauty Castle",
@@ -19,6 +40,7 @@ export const castles = [
         "historyLink": "https://en.wikipedia.org/wiki/Sleeping_Beauty_Castle"
     },
     {
+        "name": "Howl's Moving Castle",
         "imageURL": [
             "https://ladygeekgirl.files.wordpress.com/2013/06/howls_moving_castle_artwork_prop_10.jpg", 
             "https://s-media-cache-ak0.pinimg.com/236x/ea/53/dc/ea53dc66ce8496d12c90f58ee26c98d7.jpg", 
@@ -27,7 +49,6 @@ export const castles = [
         "size": 25250,
         "location": "anywhere",
         "price": 5126000,
-        "name": "Howl's Moving Castle",
         "amenities": {
             "windows": "varies",
             "turrets": "varies",
