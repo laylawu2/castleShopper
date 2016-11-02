@@ -1,6 +1,12 @@
 #homepage {
     margin: 0px 100px 50px 100px;
 }
+
+body { margin-top:30px; }
+
+#login-nav input { margin-bottom: 15px; }
+
+
 #navigation {
     margin: 0px;
 }
@@ -14,4 +20,8 @@
 }
 #castle-photo {
     margin: 0px;
+}
+
+#sign-in-link {
+    font-size: 40px;
 }
