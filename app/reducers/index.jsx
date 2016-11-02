@@ -1,7 +1,19 @@
 import { combineReducers } from 'redux'
-import {receiveAllCastles} from './homepage'
+import homepageReducer from './homepage'
 
 
-export default rootReducer = combineReducers({
-  receiveAllCastles
-})
+// const initialState = {}
+
+// const rootReducer = function(state = initialState, action) {
+//   switch(action.type) {
+//     default: return state
+//   }
+// };
+
+
+// export default rootReducer = combineReducers({
+//   allCastles: receiveAllCastles
+// })
+
+
+export default homepageReducer

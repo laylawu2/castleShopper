@@ -13,6 +13,6 @@ export const receiveAllCastles = (castles) => ({
 //still need to set up the back end
 export const fetchAllCastles = () =>
     dispatch =>
-        fetch('/api/....')
+        fetch('/api/home')
         .then(res => res.json())
         .then(castles => dispatch(receiveAllCastles(castles)))
