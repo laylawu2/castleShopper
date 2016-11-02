@@ -7,10 +7,12 @@ import HomepageContainer from './containers/HomepageContainer';
 import UserContainer from './containers/UserContainer';
 import CartContainer from './containers/CartContainer';
 import CheckoutContainer from './containers/CheckoutContainer';
+import { IntlProvider } from 'react-intl';
 
 import store from './store'
 
 render (
+	<IntlProvider locale="en">
 	<div className="container-fluid">
 	  <Provider store={ store }>
 	    <Router history={ hashHistory }>
@@ -23,6 +25,7 @@ render (
 	      </Route>
 	    </Router>
 	  </Provider>
-  </div>,
+  </div>
+  </IntlProvider>,
   document.getElementById('main')
 )
