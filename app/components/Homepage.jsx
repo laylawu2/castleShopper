@@ -1,29 +1,25 @@
 import React from 'react';
-export default ({}) => (
-	<div>
-		<div>Home Page</div>
-		<div className="row">
-			<div className="col-xs-6 col-md-3">
-				<a href="#" className="thumbnail">
-				<img src="https://cdn.shopify.com/s/files/1/0249/1218/products/Vitamin-C-Serum-BoB_ea089a86-dbaf-454b-9d87-d4ce5cca4bb1_large.jpg?v=1460043054"></img>
-				</a>
-			</div>
-			<div className="col-xs-6 col-md-3">
-				<a href="#" className="thumbnail">
-				<img src="https://cdn.shopify.com/s/files/1/0249/1218/products/Vitamin-C-Serum-BoB_ea089a86-dbaf-454b-9d87-d4ce5cca4bb1_large.jpg?v=1460043054"></img>
-				</a>
-			</div>
-			<div className="col-xs-6 col-md-3">
-				<a href="#" className="thumbnail">
-				<img src="https://cdn.shopify.com/s/files/1/0249/1218/products/Vitamin-C-Serum-BoB_ea089a86-dbaf-454b-9d87-d4ce5cca4bb1_large.jpg?v=1460043054"></img>
-				</a>
-			</div>
-			<div className="col-xs-6 col-md-3">
-				<a href="#" className="thumbnail">
-				<img src="https://cdn.shopify.com/s/files/1/0249/1218/products/Vitamin-C-Serum-BoB_ea089a86-dbaf-454b-9d87-d4ce5cca4bb1_large.jpg?v=1460043054"></img>
-				</a>
-			</div>
+import Navbar from './Navbar'
+import Star from './Star'
+export default ({allCastles}) => (
+	<div className="home">
+		<Navbar />
+		<div id="header">CASTLESHOPPER</div>
+		<div className="row" id="homepage">
+			{
+				allCastles && allCastles.map(function(castle) {
+					return (
+						<div key={castle.id} className="col-xs-6 col-md-3">
+							<a href="#" className="img-thumbnail" id="castle-photo">
+							<img src="http://akns-images.eonline.com/eol_images/Entire_Site/2016225/rs_300x300-160325124422-300-wizarding-world-of-harry-potter-hollywood.jm.32516.jpg" />
+							</a>
+							<p className="description" id="castle-title">{castle.name}</p>
+							<p>{castle.description}</p>
+							<Star />
+						</div>
+					)
+				})
+			}
 		</div>
 	</div>
-	
 );

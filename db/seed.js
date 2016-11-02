@@ -10,6 +10,7 @@ const Promise = require('bluebird')
 //   .finally(() => db.close())
 
 
+
 db.sync({force: true})
 .then(function () {
   console.log("Dropped old data, now inserting data");
