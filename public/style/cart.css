@@ -1,0 +1,28 @@
+.cart-products {
+
+}
+
+.cart-product {
+	padding: 5px 0;
+}
+
+.cart-summary {
+
+}
+
+.product-title {
+
+}
+
+.product-details {
+	list-style: none;
+	padding: 0;
+}
+
+.product-attribute {
+	font-size: 1.25em;
+}
+
+.product-price {
+	font-size: 1.25em;
+}
