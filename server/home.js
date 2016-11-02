@@ -6,6 +6,7 @@ const homeRoute = require('express').Router()
 homeRoute.get('/',function(req,res,next) {
     Castle.findAll({})
         .then(allCastles => res.json(allCastles))
+        .catch(next);
 })
 
 

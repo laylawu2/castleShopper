@@ -7,14 +7,15 @@ import HomepageContainer from './containers/HomepageContainer';
 import UserContainer from './containers/UserContainer';
 import CartContainer from './containers/CartContainer';
 import CheckoutContainer from './containers/CheckoutContainer';
-
 import store from './store'
+
+import {onHomeEnter} from './enter-hooks'
 
 render (
 	<div className="container-fluid">
 	  <Provider store={ store }>
 	    <Router history={ hashHistory }>
-	      <Route path="/">
+	      <Route path="/" onEnter={onHomeEnter}>
 	        <IndexRedirect to="/home" />
 	        <Route path="home" component={ HomepageContainer } />
 	        <Route path="/user" component={ UserContainer } />

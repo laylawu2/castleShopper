@@ -18,5 +18,10 @@ const mapStateToProps = ({allCastles}) => ({
 //   return {};
 // }
 
+// const mapDispatchToProps = dispatch => ({
+//   go: album => dispatch(fetchAllCastles())
+// });
+
+
 // ;
-export default connect()(Homepage);
+export default connect(mapStateToProps)(Homepage);
