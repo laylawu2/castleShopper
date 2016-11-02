@@ -10,15 +10,19 @@ export default ({allCastles}) => (
 				</div>
 			</div>
 		</nav>
-		<h1 id="header">CASTLESHOPPER</h1>
-		<h2 className="row" id="homepage">
+		<div id="header">CASTLESHOPPER</div>
+		<div className="row" id="homepage">
 			{
 				allCastles && allCastles.map(function(castle) {
-					return (<span key={castle.id} className="col-xs-6 col-md-3">
-							<p>{castle.imageUrl[0]}</p>
-					</span>)
+					return (<div key={castle.id} className="col-xs-6 col-md-3">
+							<a href="#" className="img-thumbnail" id="castle-photo">
+				<img src="http://akns-images.eonline.com/eol_images/Entire_Site/2016225/rs_300x300-160325124422-300-wizarding-world-of-harry-potter-hollywood.jm.32516.jpg" />
+				</a>
+				<p className="description" id="castle-title">{castle.name}</p>
+				<p>{castle.description}</p>
+					</div>)
 				})
 			}
-		</h2>
+		</div>
 	</div>
 );

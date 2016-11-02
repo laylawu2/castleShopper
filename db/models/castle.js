@@ -16,7 +16,7 @@ module.exports = db.define('castles', {
         type: Sequelize.STRING, 
         allowNull: false
     }, 
-    image: {
+    imageUrl: {
         type: Sequelize.ARRAY(Sequelize.TEXT), 
         allowNull: false,
         defaultValue: ['https://goo.gl/hCvhhb']
