@@ -4,9 +4,15 @@ const db = require('APP/db')
 const User = require('./user')
 const {expect} = require('chai')
 
-describe('User', () => {
+ describe('User', () => {
+//   before('wait for the db', () => db.didSync)
+//    beforeEach(function(){
+//       return db.sync({force: true});
+//     });
+//    afterEach(function(){
+//      return db.sync({force: true});
+//    });
 
-  before('wait for the db', () => db.didSync)
 
   // test for required fields first, last, password, username, email
   // describe('firstName is required', () => {
@@ -94,9 +100,19 @@ describe('User', () => {
     email: "grace@hopper.com",
     password: "ok"
   }
+  let currentUser;
 
   // test for validations
   describe('email needs to be valid', () => {
+    before('wait for the db', () => db.didSync)
+     beforeEach(function(){
+        return db.sync({force: true});
+      });
+     afterEach(function(){
+       return db.sync({force: true})
+     //   .catch(console.error)
+     })
+
     it('valid email', () => {
       let user = User.build(grace);
       return user.validate()
@@ -118,8 +134,21 @@ describe('User', () => {
 
   // password authentication
   describe('authenticate(plaintext: String) ~> Boolean', () => {
+    // before(function(){
+    //   return db.sync({force: true});
+    // });
+    before('wait for the db', () => db.didSync)
+     beforeEach(function(){
+        return db.sync({force: true});
+      });
+     afterEach(function(){
+      return currentUser.destroy()
+        .catch(console.error)
+     })
+
     User.create(grace)
       .then(user => {
+        currentUser = user
         it('resolves true if the password matches', () => {
           let result = user.authenticate('ok');
           expect(result.to.be.true);
@@ -129,32 +158,44 @@ describe('User', () => {
           let result = user.authenticate('not ok');
           expect(result.to.be.true);
         });
-      });
+      })
+      .catch(console.error)
   });
 
-  // getterMethods
+ // getterMethods
   describe('creating instance and getterMethods', (done) => {
-    grace.email = "grace@email.com";
-    grace.address = "5 Hanover Sq, NYC, NY 10004";
-    return User.create(grace)
-      .then(user => {
+
+
+     before(function(){
+        grace.email = "grace@email.com";
+        grace.address = "5 Hanover Sq, NYC, NY 10004";
+        return User.create(grace)
+          .then(user => {
+            currentUser = user
+          })
+
+      });
+     after(function(){
+      return currentUser.destroy()
+        .catch(console.error)
+     })
+
         it('contains all required fields with the correct input', () => {
-          expect(user.firstName).to.equal("Grace");
-          expect(user.lastName).to.equal("Hopper");
-          expect(user.username).to.equal("gracehopper");
-          expect(user.email).to.equal("grace@email.com");
-          expect(user.password).to.equal("ok");
+          expect(currentUser.firstName).to.equal("Grace");
+          expect(currentUser.lastName).to.equal("Hopper");
+          expect(currentUser.username).to.equal("gracehopper");
+          expect(currentUser.email).to.equal("grace@email.com");
+          expect(currentUser.password).to.equal("ok");
         });
 
         it('contains non-required fields with the correct input', () => {
-          expect(user.address).to.equal("5 Hanover Sq, NYC, NY 10004");
+          expect(currentUser.address).to.equal("5 Hanover Sq, NYC, NY 10004");
         });
 
-        it('getterMethods - fullName returns "firstName lastName"', () => {
-          expect(user.fullName).to.equal("Grace Hopper");
+        it('getterMethods - fullName returns "firstName lastName"', (done) => {
+          expect(currentUser.fullName).to.equal("Grace Hopper");
           done();
         });
       });
-  });
-  
-});
+})
+
