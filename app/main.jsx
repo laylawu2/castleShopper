@@ -3,11 +3,12 @@ import React from 'react'
 import {render} from 'react-dom'
 import { Provider } from 'react-redux'
 import { Router, Route, IndexRoute, IndexRedirect, hashHistory } from 'react-router';
+import { IntlProvider } from 'react-intl'; // i18n
+
 import HomepageContainer from './containers/HomepageContainer';
 import UserContainer from './containers/UserContainer';
 import CartContainer from './containers/CartContainer';
 import CheckoutContainer from './containers/CheckoutContainer';
-import { IntlProvider } from 'react-intl';
 
 import store from './store'
 

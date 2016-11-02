@@ -11,4 +11,4 @@ const mapStateToProps = ({ cart }) => ({
 // 	dispatch(fetchAndGoToCart())
 // }
 
-export default connect(mapStateToProps)(Cart);
+export default connect()(Cart);
