@@ -12,6 +12,8 @@ export default ({ cart }) => (
 					<div className="col-lg-6">
 						<ul className="product-details">
 							<li className="product-attribute">Size: 20 sqft</li>
+							<li className="product-attribute">Location: Europe</li>
+							<li className="product-attribute">Snippit: This is a great castle...</li>
 						</ul>
 					</div>
 					<div className="col-lg-6">
