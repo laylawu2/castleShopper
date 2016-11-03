@@ -5,13 +5,13 @@ export const Login = ({ login }) => (
     evt.preventDefault()
     login(evt.target.username.value, evt.target.password.value)
   } }>
-    <input name="username" />
-    <input name="password" type="password" />
-    <input type="submit" value="Login" />
+    <input name="username" placeholder="username" />
+    <input name="password" placeholder="password" type="password" />
+    <button type="submit" value="Login">Sign in</button>
   </form>
 )
 
-import {login} from 'APP/app/reducers/auth'
+import {login} from 'APP/app/reducers/'
 import {connect} from 'react-redux'
 
 export default connect (

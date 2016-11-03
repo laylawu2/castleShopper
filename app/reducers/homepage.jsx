@@ -2,12 +2,11 @@
 
 import {RECEIVE_ALL_CASTLES} from '../constants'
 
-const initialState = {allCastles: []}
 
-export default function (state = initialState, action) {
+export default function (state = [], action) {
   switch(action.type) {
       case RECEIVE_ALL_CASTLES: 
-        return Object.assign({},state,{allCastles: action.castles})
+        return action.castles
     default: 
         return state
   }

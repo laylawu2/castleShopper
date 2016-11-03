@@ -1,11 +1,7 @@
 import {connect} from 'react-redux';
 import Homepage from '../components/Homepage';
 
-// function mapStateToProps (state) {
-//   return {
-//     aBunchOfPuppies: state.puppies
-//   };
-// }
+
 
 //make sure root reducer has this key allCastles
 const mapStateToProps = ({allCastles}) => ({

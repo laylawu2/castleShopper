@@ -1,4 +1,6 @@
 import React from 'react';
+import Login from './Login'
+
 export default ({}) => (
         <div className="container" id="nav-container">
             <div className="row">
@@ -14,13 +16,13 @@ export default ({}) => (
                         </div>
                         <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul className="nav navbar-nav">
-                            <li className="active"><a href="http://www.jquery2dotnet.com">Home</a></li>
+                            <li className="active"><a href="#">Home</a></li>
                             <li className="dropdown">
-                                <a href="http://www.jquery2dotnet.com" className="dropdown-toggle" data-toggle="dropdown">Categories <b className="caret"></b></a>
+                                <a href="#" className="dropdown-toggle" data-toggle="dropdown">Categories <b className="caret"></b></a>
                                 <ul className="dropdown-menu">
-                                    <li><a href="http://www.jquery2dotnet.com">Fictional</a></li>
-                                    <li><a href="http://www.jquery2dotnet.com">Price Ascending</a></li>
-                                    <li><a href="http://www.jquery2dotnet.com">Price Descending</a></li>
+                                    <li><a href="#">Fictional</a></li>
+                                    <li><a href="#">Price Ascending</a></li>
+                                    <li><a href="#">Price Descending</a></li>
                                     <li className="divider"></li>
                                 </ul>
                             </li>
@@ -32,33 +34,14 @@ export default ({}) => (
                             <button type="submit" className="btn btn-default">Search</button>
                         </form>
                         <ul className="nav navbar-nav navbar-right">
-                            <li><a href="http://www.jquery2dotnet.com">Sign Up</a></li>
+                            <li><a href="#">Sign Up</a></li>
                             <li className="dropdown">
-                                <a href="http://www.jquery2dotnet.com" className="dropdown-toggle" data-toggle="dropdown">Sign in <b className="caret"></b></a>
+                                <a href="#" className="dropdown-toggle" data-toggle="dropdown">Sign in <b className="caret"></b></a>
                                 <ul className="dropdown-menu">
                                     <li>
                                     <div className="row">
                                         <div className="col-md-12">
-                                            <form className="form" role="form" method="post" action="login" acceptCharset="UTF-8" id="login-nav">
-                                                <div className="form-group">
-                                                <label className="sr-only" htmlFor="exampleInputEmail2">Email address</label>
-                                                <input type="email" className="form-control" id="exampleInputEmail2" placeholder="Email address" required />
-                                                </div>
-                                                <div className="form-group">
-                                                <label className="sr-only" htmlFor="exampleInputPassword2">Password</label>
-                                                <input type="password" className="form-control" id="exampleInputPassword2" placeholder="Password" required />
-                                                </div>
-                                              {/*
-                                                  <div className="checkbox">
-                                                <label>
-                                                <input type="checkbox"> Remember me</input>
-                                                </label>
-                                                </div>
-                                                <div className="form-group">
-                                                <button type="submit" className="btn btn-success btn-block">Sign in</button>
-                                                </div>
-                                                  */}  
-                                            </form>
+                                            <Login />
                                         </div>
                                     </div>
                                     </li>
