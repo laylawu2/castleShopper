@@ -9,4 +9,3 @@ export const onHomeEnter = () => {
     fetch('/api/castles').then(res => res.json())
     .then(result => load(result))
 }
-

@@ -57,5 +57,11 @@ auth.post('/:strategy/login', (req, res, next) =>
   })(req, res, next)
 )
 
+// auth.post('/local/login',function(req,res,next) {
+//   passport.authenticate(req.params.strategy, {
+//     successRedirect: '/'
+//   })(req, res, next)
+// })
+
 module.exports = auth
 
