@@ -1,6 +1,12 @@
-#homepage {
+#homepage-main {
     margin: 0px 100px 50px 100px;
 }
+#homepage{
+    font-size: 40px;
+    text-align: center;
+    padding: 10px 0 10px 0;
+}
+
 
 body { margin-top:30px; }
 
@@ -10,11 +16,7 @@ body { margin-top:30px; }
 #navigation {
     margin: 0px;
 }
-#header{
-    font-size: 40px;
-    text-align: center;
-    padding: 10px 0 10px 0;
-}
+
 #castle-title {
     text-align: center;
 }
