@@ -9,8 +9,9 @@ api
   .use('/users', require('./users'))
   .use('/castles',require('./castles'))
   .use('/bids', require('./bid'))
-
+  .use('/reviews', require('./review'))
 // Send along any errors
+
 api.use((err, req, res, next) => {
   res.status(500).send(err)
 })
