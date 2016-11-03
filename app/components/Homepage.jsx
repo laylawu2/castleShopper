@@ -2,9 +2,9 @@ import React from 'react';
 import Navbar from './Navbar'
 import Star from './Star'
 export default ({allCastles}) => (
-	<div className="home">
+	<div className="home" id="homepage-main">
 		<Navbar />
-		<div id="header">CASTLESHOPPER</div>
+		<h1 id="header">CASTLESHOPPER</h1>
 		<div className="row" id="homepage">
 			{
 				allCastles && allCastles.map(function(castle) {
@@ -15,6 +15,7 @@ export default ({allCastles}) => (
 							</a>
 							<p className="description" id="castle-title">{castle.name}</p>
 							<p>{castle.description}</p>
+							<a href="#" className="category">{ castle.category ? castle.category.map(cat => cat) : null }</a>
 							<Star />
 						</div>
 					)
@@ -23,3 +24,4 @@ export default ({allCastles}) => (
 		</div>
 	</div>
 );
+
