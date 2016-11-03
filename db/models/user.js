@@ -19,7 +19,7 @@ const User = db.define('users', {
     validate: {
 			isEmail: true
 		}
-  }, 
+  },
   username: {
     type: Sequelize.STRING,
     unique: true
@@ -27,7 +27,6 @@ const User = db.define('users', {
   address: {
     type: Sequelize.STRING
   },
-
   // We support oauth, so users may or may not have passwords.
   password_digest: Sequelize.STRING,
 	password: Sequelize.VIRTUAL
@@ -44,7 +43,7 @@ const User = db.define('users', {
           (err, result) =>
             err ? reject(err) : resolve(result))
         )
-    }    
+    }
   },
   getterMethods: {
     fullName() {
