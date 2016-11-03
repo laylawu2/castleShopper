@@ -7,21 +7,40 @@
 const User = require('./user')
 const Castle = require('./castle')
 const Review = require('./review')
-const Order = require('./order')
+const Bid = require('./bid')
 
 //associations
 
-Order.belongsTo(User);
+Bid.belongsTo(User);
+
+Bid.belongsTo(Castle);
+
+//Purchase.belongsTo(Bid)
+
 // Order.belongsTo(Castle);
 // a product can many orders == many people can order the sane products
 // an order can have many castles
-User.belongsToMany(Castle, {through: 'UserCastleOrder'})
+// make an offer/ bid, admin choooses one, status: accepted
+// price flutruate
+// ditch order and have bids
+// bids may have in response to
 
+//Bid.belongsToMany(Castle, {through: 'UserCastleOrder'})
+
+// Castle belongsTo(Order)
 // Order.belongsTo(User)
 // Order.belongsToMany(Castles)
 // Memories.belongsTo(User)
 // Memories.belongsTo(Castle)
 
+// bid model
+// has date and mailing info, status
 
-module.exports = {User,Castle, Review, Order}
+// review belongs a user, belongs casetle
+// bid belongs to user
+// bid belongs to castle
+// when click on bid, the bid goes to the bid table
+// add Purchased column to the bid table as ENUM ('paid', 'not paid')
+
+module.exports = {User,Castle, Review, Bid}
 

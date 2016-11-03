@@ -1,5 +1,5 @@
 const review = require('express').Router();
-const Review = require('../db/models/reivew');
+const Review = require('../db/models/review');
 
 review.route('/')
 	.get((req, res, next) => {
