@@ -1,8 +1,11 @@
 import React from 'react';
 import Login from './Login'
+import {login} from 'APP/app/reducers/auth'
 
-export default ({login}) => (
-        <div className="container" id="nav-container">
+export default ({login}) => {
+    console.log('logggginnnnn',login)
+        return (
+            <div className="container" id="nav-container">
             <div className="row">
                 <div id="nav-column" className="col-md-12">
                     <nav className="navbar navbar-default" role="navigation">
@@ -35,7 +38,10 @@ export default ({login}) => (
                         </form>
                         <ul className="nav navbar-nav navbar-right">
                             <li><a href="#">Sign Up</a></li>
-                            <li className="dropdown">
+                            {
+                                login ? <ul className="nav navbar-nav">
+                            <li className="active"><a href="#">Home</a></li>
+                            </ul> : <li className="dropdown">
                                 <a href="#" className="dropdown-toggle" data-toggle="dropdown">Sign in <b className="caret"></b></a>
                                 <ul className="dropdown-menu">
                                     <li>
@@ -52,11 +58,13 @@ export default ({login}) => (
                                     </li>
                                 </ul>
                             </li>
+                            }
+                            
                         </ul>
                         </div>
                     </nav>
                 </div>
             </div>
-        </div>
-);
+        </div>)
+};
 
