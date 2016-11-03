@@ -15,6 +15,7 @@ export default ({allCastles}) => (
 							</a>
 							<p className="description" id="castle-title">{castle.name}</p>
 							<p>{castle.description}</p>
+							<a href="#" className="category">{ castle.category ? castle.category.map(cat => cat) : null }</a>
 							<Star />
 						</div>
 					)
@@ -23,3 +24,4 @@ export default ({allCastles}) => (
 		</div>
 	</div>
 );
+
