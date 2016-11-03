@@ -6,7 +6,7 @@ export const load = (castles) => {
 };
 
 export const onHomeEnter = () => {
-    fetch('/api/home').then(res => res.json())
+    fetch('/api/castles').then(res => res.json())
     .then(result => load(result))
 }
 
