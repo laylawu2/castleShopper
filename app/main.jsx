@@ -10,7 +10,7 @@ import UserContainer from './containers/UserContainer';
 import CartContainer from './containers/CartContainer';
 import CheckoutContainer from './containers/CheckoutContainer';
 import store from './store'
-
+import Root from './components/Root'
 import {onHomeEnter} from './enter-hooks'
 
 render (
@@ -18,7 +18,7 @@ render (
 	<div className="container-fluid">
 	  <Provider store={ store }>
 	    <Router history={ hashHistory }>
-	      <Route path="/" onEnter={onHomeEnter}>
+	      <Route path="/" onEnter={onHomeEnter} component={Root}>
 	        <IndexRedirect to="/home" />
 	        <Route path="home" component={ HomepageContainer } />
 	        <Route path="/user" component={ UserContainer } />
