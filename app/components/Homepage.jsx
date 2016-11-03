@@ -5,6 +5,7 @@ export default ({allCastles}) => (
 	<div className="home" id="homepage-main">
 		<Navbar />
 		<h1 id="header">CASTLESHOPPER</h1>
+		<p>{console.log(allCastles)}</p>
 		<div className="row" id="homepage">
 			{
 				allCastles && allCastles.map(function(castle) {

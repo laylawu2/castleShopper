@@ -1,4 +1,6 @@
 import React from 'react';
+import Login from './Login'
+
 export default ({}) => (
         <div className="container" id="nav-container">
             <div className="row">
@@ -39,23 +41,7 @@ export default ({}) => (
                                     <li>
                                     <div className="row">
                                         <div className="col-md-12">
-                                            <form className="form" role="form" method="post" action="login" acceptCharset="UTF-8" id="login-nav">
-                                                <div className="form-group">
-                                                    <label className="sr-only" htmlFor="exampleInputEmail2">Email address</label>
-                                                    <input type="email" className="form-control" id="exampleInputEmail2" placeholder="Email address" required />
-                                                </div>
-                                                <div className="form-group">
-                                                    <label className="sr-only" htmlFor="exampleInputPassword2">Password</label>
-                                                    <input type="password" className="form-control" id="exampleInputPassword2" placeholder="Password" required />
-                                                </div>
-                                                <div className="checkbox">
-                                                    <label>Remember me</label>
-                                                    <input type="checkbox" />
-                                                </div>
-                                                <div className="form-group">
-                                                    <button type="submit" className="btn btn-success btn-block">Sign in</button>
-                                                </div>
-                                            </form>
+                                            <Login />
                                         </div>
                                     </div>
                                     </li>

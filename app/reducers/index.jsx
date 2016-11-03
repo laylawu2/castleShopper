@@ -1,19 +1,17 @@
 import { combineReducers } from 'redux'
 import homepageReducer from './homepage'
+import authReducer from './auth'
 
 
-// const initialState = {}
-
-// const rootReducer = function(state = initialState, action) {
-//   switch(action.type) {
-//     default: return state
-//   }
-// };
 
 
-// export default rootReducer = combineReducers({
-//   allCastles: receiveAllCastles
-// })
 
 
-export default homepageReducer
+//to combine reducers:
+
+const rootReducer = combineReducers({
+    allCastles: homepageReducer,
+    auth: authReducer
+})
+
+export default rootReducer 
