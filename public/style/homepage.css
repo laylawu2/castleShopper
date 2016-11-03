@@ -23,3 +23,7 @@ body { margin-top:30px; }
 #castle-photo {
     overflow: hidden;
 }
+
+#nav-column {
+    width: 100%
+}
