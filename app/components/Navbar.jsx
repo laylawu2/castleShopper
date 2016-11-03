@@ -1,8 +1,8 @@
 import React from 'react';
 export default ({}) => (
-        <div className="container">
+        <div className="container" id="nav-container">
             <div className="row">
-                <div className="col-md-12">
+                <div id="nav-column" className="col-md-12">
                     <nav className="navbar navbar-default" role="navigation">
                         <div className="navbar-header">
                         <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
