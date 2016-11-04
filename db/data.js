@@ -11,8 +11,8 @@ const castles = [
         "location": "United states",
         "price": 15000000,
         "amenitites": {
-            "window": 20, 
-            "room": 10, 
+            "window": 20,
+            "room": 10,
             "prince": 1
         },
         "description": "Sleeping Beauty Castle is a fairy tale castle at the center of Disneyland and Hong Kong Disneyland. It is based on the late-19th century Neuschwanstein Castle in Bavaria, Germany.",
@@ -21,8 +21,8 @@ const castles = [
     },
     {
         "imageURL": [
-            "https://ladygeekgirl.files.wordpress.com/2013/06/howls_moving_castle_artwork_prop_10.jpg", 
-            "https://s-media-cache-ak0.pinimg.com/236x/ea/53/dc/ea53dc66ce8496d12c90f58ee26c98d7.jpg", 
+            "https://ladygeekgirl.files.wordpress.com/2013/06/howls_moving_castle_artwork_prop_10.jpg",
+            "https://s-media-cache-ak0.pinimg.com/236x/ea/53/dc/ea53dc66ce8496d12c90f58ee26c98d7.jpg",
             "http://50.7.54.34/album_images/hauru-no-ugoku-shiro-howl-s-moving-castle-cd-maxi-single/front.jpg"
         ],
         "size": 25250,
@@ -51,8 +51,8 @@ const castles = [
         "location": "United states",
         "price": 15000000,
         "amenitites": {
-            "window": 20, 
-            "room": 10, 
+            "window": 20,
+            "room": 10,
             "prince": 1
         },
         "description": "Sleeping Beauty Castle is a fairy tale castle at the center of Disneyland and Hong Kong Disneyland. It is based on the late-19th century Neuschwanstein Castle in Bavaria, Germany.",
@@ -70,8 +70,8 @@ const castles = [
         "location": "United states",
         "price": 15000000,
         "amenitites": {
-            "window": 20, 
-            "room": 10, 
+            "window": 20,
+            "room": 10,
             "prince": 1
         },
         "description": "Sleeping Beauty Castle is a fairy tale castle at the center of Disneyland and Hong Kong Disneyland. It is based on the late-19th century Neuschwanstein Castle in Bavaria, Germany.",
@@ -98,6 +98,15 @@ const users = [
         "username": "sophie",
         "address": "5 Hanover Sq, New York City, NY, 10004",
         "password": "password"
+    },
+        {
+        "firstName": "Grace",
+        "lastName": "Hopper",
+        "email": "gracehopper@gmail.com",
+        "username": "grace",
+        "address": "5 Hanover Sq, New York City, NY, 10004",
+        "password": "password",
+        "isAdmin": true
     }
 ]
 
@@ -129,7 +138,7 @@ const reviews = [
         "star": 1,
         "date": "2016-12-12",
         "subject": "Great castle"
-    } 
+    }
 ]
 
 module.exports = {castles,reviews,users}

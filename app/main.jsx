@@ -9,6 +9,7 @@ import HomepageContainer from './containers/HomepageContainer';
 import UserContainer from './containers/UserContainer';
 import CartContainer from './containers/CartContainer';
 import CheckoutContainer from './containers/CheckoutContainer';
+import UserProductContainer from './containers/UserProductContainer';
 import store from './store'
 import Root from './components/Root'
 import {onHomeEnter} from './enter-hooks'
@@ -22,6 +23,7 @@ render (
 	        <IndexRedirect to="/home" />
 	        <Route path="home" component={ HomepageContainer } />
 	        <Route path="/user" component={ UserContainer } />
+	        <Route path="/user/castles" component={ UserProductContainer } />
 	        <Route path="/cart" component={ CartContainer } />
 	        <Route path="/checkout" component={ CheckoutContainer } />
 	      </Route>
