@@ -1,10 +1,10 @@
 import React from 'react';
 import Login from './Login'
-import {login} from 'APP/app/reducers/auth'
+// import {login} from 'APP/app/reducers/auth'
 import Search from './Search'
 
-export default ({login}) => {
-    console.log('logggginnnnn',login)
+export default ({login, logout}) => {
+    console.log('logout',logout)
         return (
             <div className="container" id="nav-container">
             <div className="row">
@@ -38,7 +38,7 @@ export default ({login}) => {
                             <li><a href="#">Sign Up</a></li>
                             {
                                 login ? <ul className="nav navbar-nav">
-                            <li className="active"><a href="#">Home</a></li>
+                            <li className="active"><a onClick={logout} href="#">Sign out</a></li>
                             </ul> : <li className="dropdown">
                                 <a href="#" className="dropdown-toggle" data-toggle="dropdown">Sign in <b className="caret"></b></a>
                                 <ul className="dropdown-menu">

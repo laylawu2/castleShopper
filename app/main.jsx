@@ -15,6 +15,7 @@ import {onHomeEnter} from './enter-hooks'
 
 
 
+
 render (
 	<IntlProvider locale="en">
 	<div className="container-fluid">

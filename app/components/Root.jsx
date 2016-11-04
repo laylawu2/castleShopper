@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import Navbar from './Navbar';
+import NavbarContainer from '../containers/NavbarContainer';
 export default class Root extends Component {
   render() {
     return(
       <div>
-        <Navbar />
+        <NavbarContainer />
         {this.props.children}
       </div>
     )

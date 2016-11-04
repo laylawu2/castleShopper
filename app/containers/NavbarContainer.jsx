@@ -1,11 +1,12 @@
 import {connect} from 'react-redux';
 import Navbar from '../components/Navbar';
-
+import {logoutUserAction} from '../reducers/auth'
+import {logout} from '../reducers/auth'
 
 
 //make sure root reducer has this key allCastles
-const mapStateToProps = ({auth}) => ({
-    auth
+const mapStateToProps = ({login}) => ({
+    login
 })
 
 //onSubmit etc should go here to put into my presentational component 
@@ -14,10 +15,10 @@ const mapStateToProps = ({auth}) => ({
 //   return {};
 // }
 
-// const mapDispatchToProps = dispatch => ({
-//   go: album => dispatch(fetchAllCastles())
-// });
+const mapDispatchToProps = dispatch => ({
+  logout: () => dispatch(logout())
+});
 
 
 // ;
-export default connect(mapStateToProps)(Navbar);
+export default connect(mapStateToProps,mapDispatchToProps)(Navbar);
