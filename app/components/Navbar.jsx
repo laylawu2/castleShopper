@@ -1,7 +1,9 @@
 import React from 'react';
 import Login from './Login'
 
-export default ({}) => (
+export const NavBar = (state) => {
+    console.log("State -----", state);
+    return (
         <div className="container" id="nav-container">
             <div className="row">
                 <div id="nav-column" className="col-md-12">
@@ -58,4 +60,5 @@ export default ({}) => (
                 </div>
             </div>
         </div>
-);
+    );
+}

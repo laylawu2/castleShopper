@@ -11,7 +11,7 @@ import authReducer from './auth'
 
 const rootReducer = combineReducers({
     allCastles: homepageReducer,
-    auth: authReducer
+    login: authReducer
 })
 
 export default rootReducer 
