@@ -1,6 +1,7 @@
 import React from 'react';
 import Login from './Login'
 import {login} from 'APP/app/reducers/auth'
+import {Search} from './Search'
 
 export default ({login}) => {
     console.log('logggginnnnn',login)
@@ -30,12 +31,9 @@ export default ({login}) => {
                                 </ul>
                             </li>
                         </ul>
-                        <form className="navbar-form navbar-left" role="search">
-                            <div className="form-group">
-                                <input type="text" className="form-control" placeholder="Search" />
-                            </div>
-                            <button type="submit" className="btn btn-default">Search</button>
-                        </form>
+                        <ul>
+                            <Search />
+                        </ul>
                         <ul className="nav navbar-nav navbar-right">
                             <li><a href="#">Sign Up</a></li>
                             {
