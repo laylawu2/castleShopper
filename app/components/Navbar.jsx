@@ -1,7 +1,7 @@
 import React from 'react';
 import Login from './Login'
 import {login} from 'APP/app/reducers/auth'
-import {Search} from './Search'
+import Search from './Search'
 
 export default ({login}) => {
     console.log('logggginnnnn',login)

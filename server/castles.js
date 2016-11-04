@@ -3,15 +3,17 @@ const passport = require('passport')
 const Castle = require('APP/db/models/castle')
 const castlesRoute = require('express').Router()
 
-castlesRoute.get('/:searchword',function(req,res,next) {
-    Castle.findAll({
-        where: {
-            category: {
-                $contains: req.params.searchword
-            }
-        }
-    })
-})
+// castlesRoute.get('/:searchword',function(req,res,next) {
+//     Castle.findAll({
+//         where: {
+//             category: {
+//                 $contains: req.params.searchword
+//             }
+//         }
+//     })
+//         .then(result => res.json(result))
+// })
+
 castlesRoute.get('/',function(req,res,next) {
     Castle.findAll({})
         .then(allCastles => res.send(allCastles))
