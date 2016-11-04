@@ -9,6 +9,7 @@ import HomepageContainer from './containers/HomepageContainer';
 import UserContainer from './containers/UserContainer';
 import CartContainer from './containers/CartContainer';
 import CheckoutContainer from './containers/CheckoutContainer';
+import NewProductContainer from './containers/NewProductContainer';
 import store from './store'
 import Root from './components/Root'
 import {onHomeEnter} from './enter-hooks'
@@ -24,6 +25,7 @@ render (
 	        <Route path="/user" component={ UserContainer } />
 	        <Route path="/cart" component={ CartContainer } />
 	        <Route path="/checkout" component={ CheckoutContainer } />
+	        <Route path="/castles/add" component={ NewProductContainer } />
 	      </Route>
 	    </Router>
 	  </Provider>
