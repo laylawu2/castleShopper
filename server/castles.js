@@ -3,28 +3,29 @@ const passport = require('passport')
 const Castle = require('APP/db/models/castle')
 const castlesRoute = require('express').Router()
 
-castlesRoute.get('/:searchword',function(req,res,next) {
-    if (+req.params.searchword === NaN) {
-        Castle.findAll({
+
+castlesRoute.get('/:castleId',function(req,res,next) {
+
+
+    Castle.findById(req.params.castleId)
+            .then(foundCastleById => res.send(foundCastleById))
+    
+})
+
+castlesRoute.post('/search/:searchByCategory',function(req,res,next) {
+    Castle.findAll({
         where: {
             category: {
-                $contains: [req.params.searchword]
+                $contains: [req.params.searchByCategory]
             }
         }
     })
         .then(result => res.send(result))
-        .catch(next)
-    }
 
-    if (+req.params.searchword !== NaN) {
-        Castle.findOne({
-        id: req.params.castleId
-    })
-        .then(foundCastle => res.send(foundCastle))
-        .catch(next);
-    }
-    
+
 })
+
+
 
 castlesRoute.get('/',function(req,res,next) {
     Castle.findAll({})

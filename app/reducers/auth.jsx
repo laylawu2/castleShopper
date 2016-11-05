@@ -13,12 +13,6 @@ const authReducer = (state=null, action) => {
 
 const LOGOUTUSER = 'LOGOUTUSER'
 
-
-export const logoutUserAction = () => ({
-  type: LOGOUTUSER
-})
-
-
 const AUTHENTICATED = 'AUTHENTICATED'
 
 export const authenticated = user => {

@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
 import homepageReducer from './homepage'
 import authReducer from './auth'
-import searchReducer from './searchbar'
+import {searchReducer} from './searchbar'
 
 
 

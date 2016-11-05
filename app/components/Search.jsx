@@ -1,17 +1,23 @@
 import React from 'react'
 
+export const Search = ({search}) => {
+  console.log('......search:',search)
+  return (
 
-export default ({searchWord}) => {
-    console.log('....',searchWord)
-    return (
-        <form onSubmit={evt => {
-        evt.preventDefault()
-        this.props.searchWord(evt.target.usersearchword.value)
-    } } className="navbar-form navbar-left" role="search">
-            <div className="form-group">
-                <input name="usersearchword" type="text" className="form-control" placeholder="Search" />
-            </div>
-            <button type="submit" className="btn btn-default">Search</button>
-        </form>
-    )
+    <form onSubmit={evt => {
+    search(evt.target.searchword.value)
+  } }>
+    <input name="searchword" placeholder="Search" />
+    <input type="submit" value="Search" />
+  </form>)
 }
+
+import {search} from 'APP/app/reducers/searchbar'
+import {connect} from 'react-redux'
+
+
+
+export default connect (
+  null,
+  {search},
+) (Search)

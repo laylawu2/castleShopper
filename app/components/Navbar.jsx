@@ -3,7 +3,7 @@ import Login from './Login'
 // import {login} from 'APP/app/reducers/auth'
 import Search from './Search'
 
-export default ({user, logout}) => {
+export default ({user, logout,search}) => {
     console.log('user....',user)
         return (
             <div className="container" id="nav-container">
@@ -20,7 +20,7 @@ export default ({user, logout}) => {
                         </div>
                         <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul className="nav navbar-nav">
-                            <li className="active"><a href="#">Home</a></li>
+                            <li><a href="#">Home</a></li>
                             <li className="dropdown">
                                 <a href="#" className="dropdown-toggle" data-toggle="dropdown">Categories <b className="caret"></b></a>
                                 <ul className="dropdown-menu">
@@ -31,7 +31,7 @@ export default ({user, logout}) => {
                                 </ul>
                             </li>
                         </ul>
-                        <ul>
+                        <ul> 
                             <Search />
                         </ul>
                         <ul className="nav navbar-nav navbar-right">

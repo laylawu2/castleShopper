@@ -1,31 +1,16 @@
-import {connect} from 'react-redux';
-import {fetchCategorySync} from '../action-creators/searchbar'
+import Navbar from '../components/Navbar';
 import Search from '../components/Search';
+import {search} from '../reducers/searchbar'
 
-
-// export const fetchCategorySync = (castlesByCategory) => ({
-//     type: FETCH_CASTLE_BY_CATEGORY,
-//     castlesByCategory
-// })
-
-const searchWordThunk = function (searchWord) {
-    dispatch => 
-        fetch('/api/castles/' + searchWord)
-        .then(res => res.json())
-        .then(castles => {
-            dispatch(fetchCategorySync(castles))
-        })
-        .catch(err => console.error(err));
-};
+const mapStateToProps = ({search}) => ({
+    search
+})
 
 const mapDispatchToProps = function (dispatch) {
   return {
-    searchWord: function (userSearchedWord) {
-      const thunk = searchWordThunk(userSearchedWord);
-      dispatch(thunk);
-    }
+    search: (searchWord) => dispatch(search())
   };
 };
 
 
-export default connect(null,mapDispatchToProps)(Search);
+export default connect(null,mapDispatchToProps)(Navbar);
