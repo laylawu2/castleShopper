@@ -5,8 +5,8 @@ import {logout} from '../reducers/auth'
 
 
 //make sure root reducer has this key allCastles
-const mapStateToProps = ({login}) => ({
-    login
+const mapStateToProps = ({user}) => ({
+    user
 })
 
 //onSubmit etc should go here to put into my presentational component 

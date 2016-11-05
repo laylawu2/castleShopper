@@ -9,7 +9,7 @@ import searchReducer from './searchbar'
 
 const rootReducer = combineReducers({
     allCastles: homepageReducer,
-    login: authReducer,
+    user: authReducer,
     search: searchReducer
 })
 

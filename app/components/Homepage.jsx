@@ -9,9 +9,9 @@ export default ({allCastles}) => (
 			{
 				allCastles && allCastles.map(function(castle) {
 					return (
-						<div key={castle.id} className="col-xs-6 col-md-3">
+						<div key={castle.id} className="col-xs-6 col-md-3" id="image-div">
 							<a href="#" className="img-thumbnail" id="castle-photo">
-							<img src="http://akns-images.eonline.com/eol_images/Entire_Site/2016225/rs_300x300-160325124422-300-wizarding-world-of-harry-potter-hollywood.jm.32516.jpg" />
+							<img src="http://www.reidsguides.com/images/destinations/europe/germany/baden-wurttemberg/swabia/hohenzollern-thumb.jpg" />
 							</a>
 							<p className="description" id="castle-title">{castle.name}</p>
 							<p>{castle.description}</p>
@@ -25,3 +25,6 @@ export default ({allCastles}) => (
 	</div>
 );
 
+
+
+// src={`images/${this.props.image}`}
