@@ -1,9 +1,8 @@
 import React from 'react';
 import Login from './Login'
 // import {login} from 'APP/app/reducers/auth'
-import Search from './Search'
 
-export default ({user, logout,search}) => {
+export default ({user, logout}) => {
     console.log('user....',user)
         return (
             <div className="container" id="nav-container">
@@ -30,9 +29,6 @@ export default ({user, logout,search}) => {
                                     <li className="divider"></li>
                                 </ul>
                             </li>
-                        </ul>
-                        <ul> 
-                            <Search />
                         </ul>
                         <ul className="nav navbar-nav navbar-right">
                             <li><a href="#">Sign Up</a></li>
