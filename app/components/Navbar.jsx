@@ -23,7 +23,7 @@ export default ({user, logout}) => {
                             <li className="dropdown">
                                 <a href="#" className="dropdown-toggle" data-toggle="dropdown">Categories <b className="caret"></b></a>
                                 <ul className="dropdown-menu">
-                                    <li><a href="#">Fictional</a></li>
+                                    <li><a href="#">Highest ratings</a></li>
                                     <li><a href="#">Price Ascending</a></li>
                                     <li><a href="#">Price Descending</a></li>
                                     <li className="divider"></li>

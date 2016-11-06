@@ -23,7 +23,7 @@ export default ({allCastles, filter, handleChange}) => (
 							<a href={`/castles/${castle.id}`} className="img-thumbnail" id="castle-photo">
 							<img src="http://www.reidsguides.com/images/destinations/europe/germany/baden-wurttemberg/swabia/hohenzollern-thumb.jpg" />
 							</a>
-							<p className="description" id="castle-title">{castle.name}</p>
+							<p className="description" id="castle-title"><Link to={`/api/castles/${castle.id}`}>{castle.name}</Link></p>
 							<p>{castle.description}</p>
 							<a href="#" className="category">{ castle.category ? castle.category.map(cat => cat).join(', ') : null }</a>
 							<Star />

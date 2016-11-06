@@ -6,7 +6,32 @@
     text-align: center;
     padding: 10px 0 10px 0;
 }*/
+#login-button {
+    display: block;
+    width: 50%;
+    margin-top: 10px;
+    margin-right: auto;
+    margin-left: auto;    
+}
 
+#sign-in-comment {
+    text-align: center;
+    margin: 10px;
+}
+
+#castle-title {
+    padding: 10px;
+    margin: 0;
+}
+
+#bs-example-navbar-collapse-1 {
+    padding-top: 10px;
+    font-size: 15px;
+}
+
+#userinputarea {
+    margin-bottom: 10px;
+}
 
 body { margin-top:30px; }
 

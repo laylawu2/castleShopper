@@ -6,7 +6,6 @@ const castlesRoute = require('express').Router()
 
 castlesRoute.get('/:castleId',function(req,res,next) {
 
-
     Castle.findById(req.params.castleId)
             .then(foundCastleById => res.send(foundCastleById))
     
