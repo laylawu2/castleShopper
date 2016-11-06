@@ -1,8 +1,8 @@
 import React from 'react';
 import Login from './Login'
+import { connect } from 'react-redux';
 
-export const NavBar = (state) => {
-    console.log("State -----", state);
+export default (state) => {
     return (
         <div className="container" id="nav-container">
             <div className="row">
@@ -62,3 +62,5 @@ export const NavBar = (state) => {
         </div>
     );
 }
+
+

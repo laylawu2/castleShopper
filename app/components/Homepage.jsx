@@ -1,6 +1,10 @@
 import React from 'react';
 import Navbar from './Navbar'
 import Star from './Star'
+import { Link } from 'react-router';
+
+//imageUrl
+
 export default ({allCastles}) => (
 	<div className="home" id="homepage-main">
 		<h1 id="header">CASTLESHOPPER</h1>
@@ -24,4 +28,6 @@ export default ({allCastles}) => (
 		</div>
 	</div>
 );
+
+
 

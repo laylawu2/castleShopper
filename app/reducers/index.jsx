@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux'
 import homepageReducer from './homepage'
 import authReducer from './auth'
+import singleCastle from './singleCastle'
 
 
 
@@ -11,7 +12,8 @@ import authReducer from './auth'
 
 const rootReducer = combineReducers({
     allCastles: homepageReducer,
-    login: authReducer
+    login: authReducer, 
+    singleCastle: singleCastle
 })
 
 export default rootReducer 
