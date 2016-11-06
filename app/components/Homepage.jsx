@@ -25,7 +25,7 @@ export default ({allCastles, filter, handleChange}) => (
 							</a>
 							<p className="description" id="castle-title">{castle.name}</p>
 							<p>{castle.description}</p>
-							<a href="#" className="category">{ castle.category ? castle.category.map(cat => cat) : null }</a>
+							<a href="#" className="category">{ castle.category ? castle.category.map(cat => cat).join(', ') : null }</a>
 							<Star />
 						</div>
 					)
