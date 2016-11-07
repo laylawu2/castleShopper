@@ -29,7 +29,7 @@ render (
 	        <Route path="/user" component={ UserContainer } />
 	        <Route path="/cart" component={ CartContainer } />
 	        <Route path="/checkout" component={ CheckoutContainer } />
-					<Route path="/singlecastle" component={ SingleCastleContainer } onEnter={getSingleCastle}/>
+					<Route path="/castles/:castleId" component={ SingleCastleContainer } onEnter={getSingleCastle} />
 				</Route>
 	    </Router>
 	  </Provider>

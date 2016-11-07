@@ -6,7 +6,7 @@ import {RECEIVE_CASTLE} from '../constants'
 export default function (state = [], action) {
   switch(action.type) {
       case RECEIVE_CASTLE: 
-        return action.castle
+        return action.oneCastle
     default: 
         return state
   }

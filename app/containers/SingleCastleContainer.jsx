@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 
-import SingleCastle from '../components/SingleCastle.jsx';
+import SingleCastle from '../components/SingleCastle';
 
 // function mapStateToProps (state) {
 //   return {
@@ -16,6 +16,8 @@ import SingleCastle from '../components/SingleCastle.jsx';
 // const containerComponentCreator = connect(mapStateToProps, mapDispatchToProps);
 
 // const AllPuppiesContainer = containerComponentCreator(AllPuppies);
+const mapStateToProps = ({oneCastle}) => ({
+    oneCastle
+})
 
-
-export default connect()(SingleCastle);
+export default connect(mapStateToProps)(SingleCastle);

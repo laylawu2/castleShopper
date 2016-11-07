@@ -5,7 +5,7 @@ import {RECEIVE_CASTLE} from '../constants'
  
 
 //homepage action creator to be used in thunk
-export const receiveCastle = (castle) => ({
+export const receiveCastle = (oneCastle) => ({
     type: RECEIVE_CASTLE,
-    castle
+    oneCastle
 })

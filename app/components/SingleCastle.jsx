@@ -2,11 +2,49 @@
 
 import React from 'react';
 
-   
-export default () => {
+// null
+// category
+// :
+// Array[1]
+// checkoutSnippet
+// :
+// "Sleeping Beauty Castle is a fairy tale castle at the center of Disneyland and Hong Kong Disneyland. "
+// created_at
+// :
+// "2016-11-04T16:00:19.947Z"
+// description
+// :
+// "Sleeping Beauty Castle is a fairy tale castle at the center of Disneyland and Hong Kong Disneyland. It is based on the late-19th century Neuschwanstein Castle in Bavaria, Germany."
+// historyLink
+// :
+// "https://en.wikipedia.org/wiki/Sleeping_Beauty_Castle"
+// id
+// :
+// 1
+// imageUrl
+// :
+// Array[3]
+// location
+// :
+// "United states"
+// name
+// :
+// "Sleeping Beauty Castle"
+// price
+// :
+// "15000000.00"
+// size
+// :
+// 50000
+// updated_at
+// :
+// "2016-11-04T16:00:19.947Z"
 
+   
+export default ({oneCastle}) => {
+    console.log("CASTLE", oneCastle);
 return (
-    <div className="container">
+    <div className="container" id="castle-container">
         <div className="product">
 
             <div className="row">
@@ -14,16 +52,16 @@ return (
                 <div className="col-md-9">
 
                     <div className="thumbnail">
-                        <img className="img-responsive" src="https://goo.gl/images/pJlLvp" alt=""></img>
+                        <img className="img-responsive" src='http://www.photographyblogger.net/wp-content/uploads/2009/05/castle10.jpg' alt=""></img>
                         <div className="caption-full">
-                            <h4 className="pull-right">$24.99</h4>
-                            <h4><a href="#">Product Name</a>
+                            <h4 className="pull-right">${oneCastle.price}</h4>
+                            <h4><a href="#">{oneCastle.name}</a>
                             </h4>
-                            <p><a target="_blank" href=""></a>castle link</p>
+                            <p><a target="_blank" href=""></a>{oneCastle.location}</p>
                             <p>
-                                <strong><a href="">castle description</a>
+                                <strong><a href="">A History of {oneCastle.name}</a>
                                 </strong></p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                            <p>{oneCastle.description}</p>
                         </div>
                         <div className="ratings">
                             <p className="pull-right">3 reviews</p>

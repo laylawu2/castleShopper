@@ -18,7 +18,7 @@ export const onHomeEnter = () => {
 }
 
 export const getSingleCastle = ({params}) => {
-  fetch('/api/castles/' + params.id)
+  fetch('/api/castles/' + params.castleId)
   .then(res => res.json())
   .then(result => loadCastle(result))
 }
