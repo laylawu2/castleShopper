@@ -24,8 +24,6 @@ castlesRoute.post('/search/:searchByCategory',function(req,res,next) {
 
 })
 
-
-
 castlesRoute.get('/',function(req,res,next) {
     Castle.findAll({})
         .then(allCastles => res.send(allCastles))

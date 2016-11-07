@@ -6,11 +6,18 @@ const db = require('APP/db')
 module.exports = db.define('castles', {
     name: {
         type: Sequelize.STRING,
-        allowNull: false
+//        allowNull: false
     },
     price: {
-        type: Sequelize.DECIMAL(10,2),
+        type: Sequelize.DECIMAL(20,2),
 //        allowNull: false,
+     //    set: function(val) {
+     //       //100, '100.00' -> 100, '100.30' ->100.3
+     //        if (val % 1 === 0) {
+     //            val = val + '.00'
+     //        }
+     //     this.setDataValue('price', val);
+     // }
     },
     location: {
         type: Sequelize.STRING,
@@ -38,7 +45,16 @@ module.exports = db.define('castles', {
     }
     },
     amenities: {
-        type: Sequelize.JSON
+        type: Sequelize.ARRAY(Sequelize.STRING),
+        set: function(tags) {
+            tags = tags || []
+            if (typeof tags === 'string') {
+                tags = tags.split(',').map(function (str) {
+                    return str.trim();
+                });
+            }
+            this.setDataValue('amenities', tags);
+        }
     },
     description: {
         type: Sequelize.TEXT,

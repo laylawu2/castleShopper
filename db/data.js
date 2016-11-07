@@ -6,11 +6,7 @@ const castles = [
         "size": 50000,
         "location": "United States",
         "price": 1500000,
-        "amenitites": {
-            "window": 20, 
-            "room": 10, 
-            "prince": 1
-        },
+        "amenitites": ['window', 'room', 'prince'],
         "description": "Sleeping Beauty Castle is a fairy tale castle at the center of Disneyland and Hong Kong Disneyland. It is based on the late-19th century Neuschwanstein Castle in Bavaria, Germany.",
         "historyLink": "https://en.wikipedia.org/wiki/Sleeping_Beauty_Castle",
         "category": ["Disney", "Magic", "Princess"]
@@ -30,25 +26,19 @@ const castles = [
         "imageUrl": "http://vignette2.wikia.nocookie.net/gameofthrones/images/7/7b/Castle_Black.jpg/revision/latest/scale-to-width-down/270?cb=20110920111941",
         "size": 10000,
         "location": "Northern end of the Kingsroad",
-        "price": 1000000,
+        "amenitites": ['window', 'room', 'prince'],
         "description": "Castle Black is the primary headquarters and redoubt of the Night's Watch. It is located roughly halfway along the length of the Wall on its southern side, at the northern end of the Kingsroad. It is a dark and chilling home to its garrison. Castle Black is one of only three manned castles left on the Wall along with Eastwatch-by-the-Sea and The Shadow Tower. There are nineteen castles along the Wall, but as their numbers fell over the centuries the Night's Watch had to abandon sixteen of them. Castle Black is located between the unmanned castles of Queensgate and Oakensheild.",
         "historyLink": "http://gameofthrones.wikia.com/wiki/Castle_Black",
         "category": ["Freezing", "John Snow"]
     },
     {
         "name": "Howl's Moving Castle",
-        "imageURL": 
+        "imageURL":
             "https://ladygeekgirl.files.wordpress.com/2013/06/howls_moving_castle_artwork_prop_10.jpg",
         "size": 25250,
         "location": "anywhere",
         "price": 5126000,
-        "amenities": {
-            "windows": "varies",
-            "turrets": "varies",
-            "princes": 0,
-            "unicorns": 0,
-            "rooms": "varies"
-        },
+        "amenitites": ['window', 'room', 'prince'],
         "description": "Howl's castle is a tall, black building with four thin turrets. It seems to be made of blocks of coal (a suitable habitat for a fire demon) and is \"bespelled to hold together.\" It has four doors on the outside, although three are made inaccessible by an invisible wall.",
         "historyLink": "https://en.wikipedia.org/wiki/Howl%27s_Moving_Castle#Howl.27s_moving_castle",
         "category": ["Fire Demons", "Moves"]
@@ -104,7 +94,7 @@ const reviews = [
         "star": 1,
         "date": "2016-10-31",
         "subject": "Great castle"
-    } 
+    }
 ]
 
 module.exports = {castles,reviews,users}

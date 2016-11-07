@@ -114,11 +114,11 @@ export default class NewProduct extends React.Component {
     console.log('this is a castle', e.target)
     const castleInfo = {
       name: e.target.name.value,
-      // price: e.target.price.value,
+      price: parseFloat(e.target.price.value),
       location: e.target.location.value,
       imageUrl: e.target.imageUrl.value,
       size: e.target.size.value,
-      // amenities: e.target.amenities.value,
+      amenities: e.target.amenities.value,
       description: e.target.description.value,
       historyLink: e.target.historyLink.value,
       category: e.target.category.value
