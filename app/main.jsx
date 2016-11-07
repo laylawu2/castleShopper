@@ -30,13 +30,9 @@ render (
 	        <Route path="/user" component={ UserContainer } />
 	        <Route path="/cart" component={ CartContainer } />
 	        <Route path="/checkout" component={ CheckoutContainer } />
-<<<<<<< HEAD
 	        <Route path="/castles/add" component={ NewProductContainer } />
-	      </Route>
-=======
 					<Route path="/castles/:castleId" component={ SingleCastleContainer } onEnter={getSingleCastle} />
 				</Route>
->>>>>>> master
 	    </Router>
 	  </Provider>
   </div>

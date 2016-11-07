@@ -17,11 +17,19 @@ module.exports = db.define('castles', {
 //        allowNull: false
     },
     imageUrl: {
-        type: Sequelize.STRING,
-        allowNull: false,
-        defaultValue: "https://goo.gl/hCvhhb"
+        type: Sequelize.ARRAY(Sequelize.TEXT),
+ //       allowNull: false,
+        defaultValue: ['https://goo.gl/hCvhhb'],
+        set: function(imageLinks) {
+            imageLinks = imageLinks || []
+            if (typeof imageLinks === 'string') {
+                imageLinks = imageLinks.split(',').map(function (str) {
+                    return str.trim();
+                });
+            }
+            this.setDataValue('imageUrl', imageLinks);
+        }
     },
-
     size: {
         type: Sequelize.INTEGER,
 //        allowNull: false,
@@ -42,14 +50,22 @@ module.exports = db.define('castles', {
     category: {
         type: Sequelize.ARRAY(Sequelize.TEXT),
   //      allowNull: false
+        set: function(tags) {
+            tags = tags || []
+            if (typeof tags === 'string') {
+                tags = tags.split(',').map(function (str) {
+                    return str.trim();
+                });
+            }
+            this.setDataValue('category', tags);
+        }
     }
 }, {
     getterMethods: {
-        checkoutSnippet: function(){
-            const snippet = this.description.substring(0, 100);
-            return snippet;
-        }
+        // checkoutSnippet: function(){
+        //     const snippet = this.description.substring(0, 100);
+        //     return snippet;
+        // }
     }
-    }
-)
+})
 

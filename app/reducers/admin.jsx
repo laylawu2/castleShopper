@@ -21,9 +21,9 @@ export default function reducer(state=[], action){
 //-------------action creators ------------------
 // export init = (castles) => ({ type:INITIALIZE, castles })
 
-export const create = castleFromDB => ({ type: ADD, castle})
+export const create = castleFromDB => ({ type: ADD, castleFromDB})
 
-export const update = (castleFromDB) => ({ type: UPDATE, castle})
+export const update = (castleFromDB) => ({ type: UPDATE, castleFromDB})
 
 export const remove = (castleId) => ({ type: REMOVE, castleId})
 
