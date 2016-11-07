@@ -11,9 +11,9 @@ const Bid = require('./bid')
 
 //associations
 
-Bid.belongsTo(User);
+Bid.belongsTo(User, {as: 'user'});
 
-Bid.belongsTo(Castle);
+Bid.belongsTo(Castle, {as: 'castle'});
 
 Review.belongsTo(Castle);
 

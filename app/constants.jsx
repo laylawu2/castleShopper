@@ -4,7 +4,13 @@ export const RECEIVE_ALL_CASTLES = 'RECEIVE_ALL_CASTLES';
 
 export const RECEIVE_CASTLE = 'RECEIVE_CASTLE';
 
+<<<<<<< HEAD
 export const FETCH_CASTLE_BY_CATEGORY = 'FETCH_CASTLE_BY_CATEGORY';
 
 export const BUY_CASTLE = 'BUY_CASTLE';
+=======
+export const NEW_BID_FOR_THIS_USER = 'NEW_BID_FOR_THIS_USER';
+
+export const FETCH_CASTLE_BY_CATEGORY = 'FETCH_CASTLE_BY_CATEGORY';
+>>>>>>> master
 
