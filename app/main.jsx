@@ -10,6 +10,7 @@ import UserContainer from './containers/UserContainer';
 import CartContainer from './containers/CartContainer';
 import CheckoutContainer from './containers/CheckoutContainer';
 import SingleCastleContainer from './containers/SingleCastleContainer';
+
 import store from './store'
 import Root from './components/Root'
 import {onHomeEnter} from './enter-hooks'
@@ -29,8 +30,8 @@ render (
 	        <Route path="/user" component={ UserContainer } />
 	        <Route path="/cart" component={ CartContainer } />
 	        <Route path="/checkout" component={ CheckoutContainer } />
-					<Route path="/castles/:castleId" component={ SingleCastleContainer } onEnter={getSingleCastle} />
-				</Route>
+			<Route path="/castles/:castleId" component={ SingleCastleContainer } onEnter={getSingleCastle} />
+		</Route>
 	    </Router>
 	  </Provider>
   </div>
