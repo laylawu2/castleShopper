@@ -15,12 +15,11 @@ review.route('/:castleId')
 		Review
 			.findAll({
 				where: {
-					castleId: req.params.castleId
+					castle_id: req.params.castleId
 				}
 			})
-			.then(reviews => reivews.json())
 			.then(reviews => res.status(200).send(reviews))
-			.catch(next);
+			.catch(console.error);
 	})
 	.post((req, res, next) => {
 		req.body.castleId = req.params.castleId;

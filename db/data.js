@@ -25,6 +25,7 @@ const castles = [
         "name": "Castle Black",
         "imageUrl": "http://vignette2.wikia.nocookie.net/gameofthrones/images/7/7b/Castle_Black.jpg/revision/latest/scale-to-width-down/270?cb=20110920111941",
         "size": 10000,
+        "price": 10000000,
         "location": "Northern end of the Kingsroad",
         "amenitites": ['window', 'room', 'prince'],
         "description": "Castle Black is the primary headquarters and redoubt of the Night's Watch. It is located roughly halfway along the length of the Wall on its southern side, at the northern end of the Kingsroad. It is a dark and chilling home to its garrison. Castle Black is one of only three manned castles left on the Wall along with Eastwatch-by-the-Sea and The Shadow Tower. There are nineteen castles along the Wall, but as their numbers fell over the centuries the Night's Watch had to abandon sixteen of them. Castle Black is located between the unmanned castles of Queensgate and Oakensheild.",
@@ -88,13 +89,15 @@ const reviews = [
         "content": "Beautiful castle in the happiest place on Earth!",
         "star": 5,
         "date": "2015-12-12",
-        "subject": "AWESOME!"
+        "subject": "AWESOME!",
+        'castle_id': 1
     },
     {
         "content": "Very great castle",
         "star": 1,
         "date": "2016-10-31",
-        "subject": "Great castle"
+        "subject": "Great castle",
+        'castle_id': 2
     }
 ]
 

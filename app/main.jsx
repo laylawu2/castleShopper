@@ -11,13 +11,13 @@ import CartContainer from './containers/CartContainer';
 import CheckoutContainer from './containers/CheckoutContainer';
 import NewProductContainer from './containers/NewProductContainer';
 import SingleCastleContainer from './containers/SingleCastleContainer';
+import SingleCastleReviewContainer from './components/Review'
 import store from './store'
 import Root from './components/Root'
 import {onHomeEnter} from './enter-hooks'
 import {getSingleCastle} from './enter-hooks'
 import {onCategoryEnter} from './enter-hooks'
-
-
+import {getSingleCastleReviews} from './enter-hooks'
 
 render (
 	<IntlProvider locale="en">
@@ -33,6 +33,7 @@ render (
 	        <Route path="/castles/add" component={ NewProductContainer } />
 					<Route path="/castles/search/:searchByCategory" />
 					<Route path="/castles/:castleId" component={ SingleCastleContainer } onEnter={getSingleCastle} />
+					<Route path="/reviews/:castleId" component={ SingleCastleReviewContainer } onEnter={getSingleCastleReviews} />
 				</Route>
 	    </Router>
 	  </Provider>

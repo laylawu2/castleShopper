@@ -4,7 +4,7 @@ import homepageReducer from './homepage'
 import authReducer from './auth'
 import singleCastle from './singleCastle'
 import {categoryReducer} from './category'
-
+import reviewReducer from './review'
 
 
 
@@ -14,7 +14,8 @@ const rootReducer = combineReducers({
     allCastles: homepageReducer,
     oneCastle: singleCastle,
     user: authReducer,
-    category: categoryReducer
+    category: categoryReducer,
+    reviews: reviewReducer
 })
 
-export default rootReducer 
+export default rootReducer
