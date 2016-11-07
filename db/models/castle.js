@@ -6,26 +6,19 @@ const db = require('APP/db')
 module.exports = db.define('castles', {
     name: {
         type: Sequelize.STRING,
-//        allowNull: false
+        allowNull: false
     },
     price: {
         type: Sequelize.DECIMAL(20,2),
-//        allowNull: false,
-     //    set: function(val) {
-     //       //100, '100.00' -> 100, '100.30' ->100.3
-     //        if (val % 1 === 0) {
-     //            val = val + '.00'
-     //        }
-     //     this.setDataValue('price', val);
-     // }
+        allowNull: false,
     },
     location: {
         type: Sequelize.STRING,
-//        allowNull: false
+        allowNull: false
     },
     imageUrl: {
         type: Sequelize.ARRAY(Sequelize.TEXT),
- //       allowNull: false,
+        allowNull: false,
         defaultValue: ['https://goo.gl/hCvhhb'],
         set: function(imageLinks) {
             imageLinks = imageLinks || []
@@ -39,7 +32,7 @@ module.exports = db.define('castles', {
     },
     size: {
         type: Sequelize.INTEGER,
-//        allowNull: false,
+        allowNull: false,
        set      : function(val) {
       this.setDataValue('size', parseInt(val));
     }
@@ -58,14 +51,14 @@ module.exports = db.define('castles', {
     },
     description: {
         type: Sequelize.TEXT,
-  //      allowNull: false
+        allowNull: false
     },
     historyLink: {
         type: Sequelize.TEXT
     },
     category: {
         type: Sequelize.ARRAY(Sequelize.TEXT),
-  //      allowNull: false
+        allowNull: false,
         set: function(tags) {
             tags = tags || []
             if (typeof tags === 'string') {
@@ -78,10 +71,10 @@ module.exports = db.define('castles', {
     }
 }, {
     getterMethods: {
-        // checkoutSnippet: function(){
-        //     const snippet = this.description.substring(0, 100);
-        //     return snippet;
-        // }
+        checkoutSnippet: function(){
+            const snippet = this.description.substring(0, 100);
+            return snippet;
+        }
     }
 })
 
