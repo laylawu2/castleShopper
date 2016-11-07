@@ -10,17 +10,7 @@ import PaymentForm from './forms/payment';
 
 export default ({ address, email }) => (
 	<div className="container">
-	<form action="" method="POST">
-	  <script
-	    src="https://checkout.stripe.com/checkout.js" className="stripe-button"
-	    data-key="pk_test_L8JDZOz4L1mdNBEfgfQETC7V"
-	    data-amount="999"
-	    data-name="Demo Site"
-	    data-description="Widget"
-	    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-	    data-locale="auto">
-	  </script>
-	</form>
+	<PaymentForm />
 		{/*<div className="product-info row">
 			<img className="col-lg-4" src="http://www.castles.org/images/sd6_small.jpg" />
 			<div className="col-lg-8">
