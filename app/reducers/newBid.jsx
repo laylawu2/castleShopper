@@ -4,7 +4,7 @@ export default function (state = [], action) {
   console.log("STATE", state);
   switch(action.type) {
       case NEW_BID_FOR_THIS_USER:
-      return [...state, action.newBid]
+      return action.newBid
     default: 
         return state
   }

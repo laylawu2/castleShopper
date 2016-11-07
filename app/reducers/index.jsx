@@ -16,7 +16,7 @@ const rootReducer = combineReducers({
     oneCastle: singleCastle,
     user: authReducer,
     search: searchReducer, 
-    userBids: bidReducer
+    highestBid: bidReducer
 })
 
 export default rootReducer 

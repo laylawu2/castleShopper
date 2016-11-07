@@ -22,35 +22,48 @@ import axios from 'axios';
 
 // axios(`/api/bids/user/${user.id}/castle/${castle.id}`, bidPrice)
 
-  let count = 0;
-
    
 export default class SingleCastle extends React.Component {
-    
-   
 
-    // if(count <2) {
-    //     addBid(2000);
-    //     count++;
-    // }
-    // console.log("BIDS AFTER ADDING", userBids);
-    componentWillMount() {
-        this.props.addBid(1000);
-        this.props.addBid(2000);
+    constructor(){
+        super();
+        this.state = {value: ''};
+        this.onBid = this.onBid.bind(this);
+        this.onBidSubmit = this.onBidSubmit.bind(this);
+    }
+    
+    componentDidMount() {
+        // this.props.addBid(1000);
+        // this.props.addBid(2000);
+        
     }
 
     onBid(event){
-        console.log("CLICKEVENT", event.value)
+        this.setState({value: event.target.value});
     }
 
+    onBidSubmit(event){
+        event.preventDefault();
+        if(event.target.value < this.props.highestBid){
+            alert('Your bid must be higher than the current highest bid, which is:' 
+            + this.props.highestBid);
+        }else {
+            this.props.addBid(this.state.value);
+            this.setState({value: ''});
+            
+        }
+    }
+
+  
+
 render(){
-    console.log("CASTLE", this.props.oneCastle.id);
-    console.log("ADDBID", this.props.addBid);
-    console.log("NEWBID", this.props.userBids);
-    console.log("THISPROPS", this.props)
-    const {oneCastle, userBids, addBid} = this.props;
-    const sortedBids = userBids.sort(function(a, b){return b-a});
-    console.log("SORTED", sortedBids);
+//     console.log("CASTLE", this.props.oneCastle.id);
+//     console.log("ADDBID", this.props.addBid);
+//     console.log("NEWBID", this.props.highestBid);
+//     console.log("THISPROPS", this.props)
+//     console.log("USER", this.props.user);
+    const {oneCastle, highestBid, addBid} = this.props;
+
 
     return (
         <div className="container" id="castle-container">
@@ -75,24 +88,29 @@ render(){
                             <div className="bid-section">
                                 <div className="form-group">
                                     {
-                                        sortedBids.length === 0? 
-
-                                        <input type="text"
-                                            placeholder="No Bids"
-                                            value={sortedBids[0]}
-                                        />
-
-                                        :
-
-                                        <input type="text"
-                                            placeholder="Hello!"
-                                            value={sortedBids[0]}
-                                        />
+                                         
+                                        highestBid.length === 0 ? 
+                                        <h5>No Bids Yet</h5> :
+                                        <h5>Highest Bid: ${highestBid}</h5> 
                                     }
-                                  
-                                    <button onClick={this.onBid.bind(this)}>
-                                        Place a Bid
+                                    
+                                    <form 
+                                        onSubmit={this.onBidSubmit}
+                                    >
+                                        <input type="text"
+                                            placeholder={highestBid.length === 0? 
+                                                "No Bids": "Place Your Bid Here"}
+                                            value={this.state.value}
+                                            onChange={this.onBid}                     
+                                        />
+                                        
+                                        <button 
+                                            type="submit"
+                                            value={this.state.value}
+                                            >
+                                            Place a Bid
                                         </button>
+                                    </form>
                          
                                 </div>
                             </div>

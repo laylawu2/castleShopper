@@ -20,9 +20,10 @@ import newBidForThisUser from '../action-creators/bid';
 
 
 
-const mapStateToProps = ({oneCastle, userBids}) => ({
+const mapStateToProps = ({oneCastle, highestBid, user}) => ({
     oneCastle, 
-    userBids
+    highestBid, 
+    user
 
 })
 
