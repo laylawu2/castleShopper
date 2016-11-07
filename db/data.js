@@ -53,6 +53,7 @@ const users = [
         "lastName": "Disney",
         "email": "aurore@disney.com",
         "username": "sleepyhead",
+        'isAdmin': true,
         "address": "1234 disneyway, anaheim, CA 91745",
         "password": "1234"
     },

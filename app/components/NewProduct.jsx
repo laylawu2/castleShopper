@@ -105,6 +105,14 @@ export default class NewProduct extends React.Component {
             </div>
           </div>
 
+{/* delete a product
+  <div className='form-group'>
+    <div className='row'>
+        <button type='submit' className='btn btn-danger col-lg-offset-7' onClick={this.deleteCastle}>Delete</button>
+    </div>
+  </div>
+  */
+}
       </fieldset>
       </form>
     )

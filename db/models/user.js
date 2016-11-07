@@ -27,6 +27,10 @@ const User = db.define('users', {
   address: {
     type: Sequelize.STRING
   },
+  isAdmin: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: false
+  }
   // We support oauth, so users may or may not have passwords.
   password_digest: Sequelize.STRING,
 	password: Sequelize.VIRTUAL
