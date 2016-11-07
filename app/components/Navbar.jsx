@@ -1,8 +1,14 @@
 import React from 'react';
 import Login from './Login'
 
-export default ({}) => (
-        <div className="container" id="nav-container">
+import { connect } from 'react-redux';
+// import {login} from 'APP/app/reducers/auth'
+
+export default ({user, logout}) => {
+    console.log('user....',user)
+        return (
+            <div className="container" id="nav-container">
+
             <div className="row">
                 <div id="nav-column" className="col-md-12">
                     <nav className="navbar navbar-default" role="navigation">
@@ -16,26 +22,23 @@ export default ({}) => (
                         </div>
                         <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul className="nav navbar-nav">
-                            <li className="active"><a href="#">Home</a></li>
+                            <li><a href="#">Home</a></li>
                             <li className="dropdown">
                                 <a href="#" className="dropdown-toggle" data-toggle="dropdown">Categories <b className="caret"></b></a>
                                 <ul className="dropdown-menu">
-                                    <li><a href="#">Fictional</a></li>
+                                    <li><a href="#">Highest ratings</a></li>
                                     <li><a href="#">Price Ascending</a></li>
                                     <li><a href="#">Price Descending</a></li>
                                     <li className="divider"></li>
                                 </ul>
                             </li>
                         </ul>
-                        <form className="navbar-form navbar-left" role="search">
-                            <div className="form-group">
-                                <input type="text" className="form-control" placeholder="Search" />
-                            </div>
-                            <button type="submit" className="btn btn-default">Search</button>
-                        </form>
                         <ul className="nav navbar-nav navbar-right">
                             <li><a href="#">Sign Up</a></li>
-                            <li className="dropdown">
+                            {
+                                user ? <ul className="nav navbar-nav">
+                            <li className="active"><a onClick={logout} href="#">Sign out</a></li>
+                            </ul> : <li className="dropdown">
                                 <a href="#" className="dropdown-toggle" data-toggle="dropdown">Sign in <b className="caret"></b></a>
                                 <ul className="dropdown-menu">
                                     <li>
@@ -52,10 +55,15 @@ export default ({}) => (
                                     </li>
                                 </ul>
                             </li>
+                            }
+                            
                         </ul>
                         </div>
                     </nav>
                 </div>
             </div>
         </div>
-);
+        )
+};
+
+
