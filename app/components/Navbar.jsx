@@ -1,11 +1,14 @@
 import React from 'react';
 import Login from './Login'
+
+import { connect } from 'react-redux';
 // import {login} from 'APP/app/reducers/auth'
 
 export default ({user, logout}) => {
     console.log('user....',user)
         return (
             <div className="container" id="nav-container">
+
             <div className="row">
                 <div id="nav-column" className="col-md-12">
                     <nav className="navbar navbar-default" role="navigation">
@@ -62,4 +65,5 @@ export default ({user, logout}) => {
         </div>
         )
 };
+
 
