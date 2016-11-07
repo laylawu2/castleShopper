@@ -26,13 +26,13 @@ export default ({allCastles, filter, handleChange, handleChangeCategory}) => (
 							</Link>
 							<p className="description" id="castle-title"><Link to={`/castles/${castle.id}`}>{castle.name}</Link></p>
 							<p>{castle.description}</p>
-
+							<p>Current price: ${castle.price}</p>
 							{
 								castle.category ? castle.category.map(function(cat,idx) {
 									return (<a key={idx} onClick={() => handleChangeCategory(cat)}>{cat + ' '}</a>)
 								}) : null
 							}
-
+							
 						
 							<Star />
 						</div>
