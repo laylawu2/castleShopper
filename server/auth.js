@@ -51,11 +51,21 @@ passport.use(new (require('passport-local').Strategy) (
 
 auth.get('/whoami', (req, res) => res.send(req.user))
 
+auth.post('/logout', (req, res) => res.send(req.logout()))
+
 auth.post('/:strategy/login', (req, res, next) =>
   passport.authenticate(req.params.strategy, {
     successRedirect: '/'
   })(req, res, next)
 )
+
+
+
+// auth.post('/local/login',function(req,res,next) {
+//   passport.authenticate(req.params.strategy, {
+//     successRedirect: '/'
+//   })(req, res, next)
+// })
 
 module.exports = auth
 

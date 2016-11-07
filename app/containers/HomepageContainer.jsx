@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import Homepage from '../components/Homepage';
-
+import HomepageFilter from '../components/HomepageFilter';
 
 
 //make sure root reducer has this key allCastles
@@ -20,4 +20,6 @@ const mapStateToProps = ({allCastles}) => ({
 
 
 // ;
-export default connect(mapStateToProps)(Homepage);
+export default connect(
+  mapStateToProps
+)(HomepageFilter(Homepage));

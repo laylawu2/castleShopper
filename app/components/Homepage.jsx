@@ -1,27 +1,40 @@
 import React from 'react';
 import Navbar from './Navbar'
 import Star from './Star'
-export default ({allCastles}) => (
+import { Link } from 'react-router';
+
+import HomepageContainer from '../containers/HomepageContainer'
+export default ({allCastles, filter, handleChange}) => (
 	<div className="home" id="homepage-main">
+		<div className="form-group">
+			<input
+				placeholder="Filter castles by name"
+				className="form-control"
+				value={filter}
+				onChange={handleChange}
+				/>
+			</div>
 		<h1 id="header">CASTLESHOPPER</h1>
-		<p>{console.log(allCastles)}</p>
-		<div className="row" id="homepage">
-			{
+		<div className="list-group">
+      {
 				allCastles && allCastles.map(function(castle) {
 					return (
-						<div key={castle.id} className="col-xs-6 col-md-3">
-							<a href="#" className="img-thumbnail" id="castle-photo">
-							<img src="http://akns-images.eonline.com/eol_images/Entire_Site/2016225/rs_300x300-160325124422-300-wizarding-world-of-harry-potter-hollywood.jm.32516.jpg" />
+						<div key={castle.id} className="col-xs-6 col-md-3" id="image-div">
+							<a href={`/castles/${castle.id}`} className="img-thumbnail" id="castle-photo">
+							<img src="http://www.reidsguides.com/images/destinations/europe/germany/baden-wurttemberg/swabia/hohenzollern-thumb.jpg" />
 							</a>
-							<p className="description" id="castle-title">{castle.name}</p>
+							<p className="description" id="castle-title"><Link to={`/api/castles/${castle.id}`}>{castle.name}</Link></p>
 							<p>{castle.description}</p>
-							<a href="#" className="category">{ castle.category ? castle.category.map(cat => cat) : null }</a>
+							<a href="#" className="category">{ castle.category ? castle.category.map(cat => cat).join(', ') : null }</a>
 							<Star />
 						</div>
 					)
 				})
 			}
-		</div>
+    </div>
 	</div>
 );
 
+
+
+// src={`images/${this.props.image}`}
