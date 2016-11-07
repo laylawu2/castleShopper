@@ -59,6 +59,7 @@ export default ({user, logout}) => {
                     </nav>
                 </div>
             </div>
-        </div>)
+        </div>
+        )
 };
 
