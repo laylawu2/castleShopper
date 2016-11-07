@@ -16,6 +16,7 @@ const Bid = models.Bid;
 //       })
 // });
 
+//api/bids/byuser/:userid
 // router.get('/:userid', function(req, res, next){
 
 //     Bid.findAll({
