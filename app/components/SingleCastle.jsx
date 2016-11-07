@@ -27,6 +27,7 @@ import axios from 'axios';
    
 export default class SingleCastle extends React.Component {
     
+   
 
     // if(count <2) {
     //     addBid(2000);
@@ -38,8 +39,12 @@ export default class SingleCastle extends React.Component {
         this.props.addBid(2000);
     }
 
+    onBid(event){
+        console.log("CLICKEVENT", event.value)
+    }
+
 render(){
-    console.log("CASTLE", this.props.oneCastle);
+    console.log("CASTLE", this.props.oneCastle.id);
     console.log("ADDBID", this.props.addBid);
     console.log("NEWBID", this.props.userBids);
     console.log("THISPROPS", this.props)
@@ -84,6 +89,11 @@ render(){
                                             value={sortedBids[0]}
                                         />
                                     }
+                                  
+                                    <button onClick={this.onBid.bind(this)}>
+                                        Place a Bid
+                                        </button>
+                         
                                 </div>
                             </div>
                             <div className="ratings">
