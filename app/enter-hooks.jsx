@@ -25,6 +25,7 @@ export const getSingleCastle = ({params}) => {
 
 
 
+
 // export const onSearchEnter = (nextRouterState) => {
 //     const categoryName = nextRouterState.params.categoryName
 //     const thunk = searchWord(categoryName)

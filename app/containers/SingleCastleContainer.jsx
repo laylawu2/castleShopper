@@ -16,8 +16,15 @@ import SingleCastle from '../components/SingleCastle';
 // const containerComponentCreator = connect(mapStateToProps, mapDispatchToProps);
 
 // const AllPuppiesContainer = containerComponentCreator(AllPuppies);
+
+
+
 const mapStateToProps = ({oneCastle}) => ({
     oneCastle
 })
+
+// const mapDispatchToProps = dispatch => ({
+//   logout: () => dispatch(logout())
+// });
 
 export default connect(mapStateToProps)(SingleCastle);

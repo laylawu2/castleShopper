@@ -1,44 +1,27 @@
 'use strict'
 
 import React from 'react';
+import axios from 'axios';
 
-// null
-// category
-// :
-// Array[1]
-// checkoutSnippet
-// :
-// "Sleeping Beauty Castle is a fairy tale castle at the center of Disneyland and Hong Kong Disneyland. "
-// created_at
-// :
-// "2016-11-04T16:00:19.947Z"
-// description
-// :
-// "Sleeping Beauty Castle is a fairy tale castle at the center of Disneyland and Hong Kong Disneyland. It is based on the late-19th century Neuschwanstein Castle in Bavaria, Germany."
-// historyLink
-// :
-// "https://en.wikipedia.org/wiki/Sleeping_Beauty_Castle"
-// id
-// :
-// 1
-// imageUrl
-// :
-// Array[3]
-// location
-// :
-// "United states"
-// name
-// :
-// "Sleeping Beauty Castle"
-// price
-// :
-// "15000000.00"
-// size
-// :
-// 50000
-// updated_at
-// :
-// "2016-11-04T16:00:19.947Z"
+//if user is not logged in, show: log in to bid! 
+//if user is logged in: 
+    //if there are no bids on this castle yet, show no bids! 
+    //if there are bids on this castle, show the highest one 
+    //if the user has already bid on this castle, tell them 
+        //you've already bid! and show previous highest bid 
+
+// export const addCastle = (castleInfo) => dispatch => {
+//   //console.log('dispatchers', castleInfo)
+//   axios.post('/api/castles', castleInfo)
+//     .then(res => {
+//       console.log('inside dispatcher post', res.data)
+//       dispatch(create(res.data))
+//     })
+//     .catch(console.error)
+// }
+
+axios(`/api/bids/user/${user.id}/castle/${castle.id}`, bidPrice)
+
 
    
 export default ({oneCastle}) => {
@@ -62,6 +45,13 @@ return (
                                 <strong><a href="">A History of {oneCastle.name}</a>
                                 </strong></p>
                             <p>{oneCastle.description}</p>
+                        </div>
+                        <div className="bid-section">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="usr">
+                                
+                                </input>
+                            </div>
                         </div>
                         <div className="ratings">
                             <p className="pull-right">3 reviews</p>
