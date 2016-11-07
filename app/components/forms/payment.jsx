@@ -1,6 +1,5 @@
 import React from 'react';
 import { MONTHS, YEARS } from './constants';
-import AddressForm from './address';
 
 export default ({ castle, user }) => (
 	<div className="form-group payment-info">
