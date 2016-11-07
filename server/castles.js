@@ -11,7 +11,7 @@ castlesRoute.get('/:castleId',function(req,res,next) {
     
 })
 
-castlesRoute.post('/search/:searchByCategory',function(req,res,next) {
+castlesRoute.get('/search/:searchByCategory',function(req,res,next) {
     Castle.findAll({
         where: {
             category: {
