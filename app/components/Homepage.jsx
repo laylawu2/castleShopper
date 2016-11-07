@@ -5,11 +5,11 @@ import { Link } from 'react-router';
 
 import HomepageContainer from '../containers/HomepageContainer'
 
-export default ({allCastles, filter, handleChange}) => (
+export default ({allCastles, filter, handleChange, handleChangeCategory}) => (
 	<div className="home" id="homepage-main">
 		<div className="form-group">
 			<input
-				placeholder="Filter castles by name"
+				placeholder="Filter castles by name or category"
 				className="form-control"
 				value={filter}
 				onChange={handleChange}
@@ -24,9 +24,16 @@ export default ({allCastles, filter, handleChange}) => (
 							<Link className="thumbnail" to={`/castles/${castle.id}`}>
 							<img src="http://www.reidsguides.com/images/destinations/europe/germany/baden-wurttemberg/swabia/hohenzollern-thumb.jpg" />
 							</Link>
-							<p className="description" id="castle-title"><Link to={`/api/castles/${castle.id}`}>{castle.name}</Link></p>
+							<p className="description" id="castle-title"><Link to={`/castles/${castle.id}`}>{castle.name}</Link></p>
 							<p>{castle.description}</p>
-							<a href="#" className="category">{ castle.category ? castle.category.map(cat => cat).join(', ') : null }</a>
+
+							{
+								castle.category ? castle.category.map(function(cat,idx) {
+									return (<a key={idx} onClick={() => handleChangeCategory(cat)}>{cat + ' '}</a>)
+								}) : null
+							}
+
+						
 							<Star />
 						</div>
 					)
