@@ -1,4 +1,7 @@
 import { connect } from 'react-redux';
-import NewProduct from '../components/NewProduct'
+import NewProduct from 'APP/app/components/NewProduct'
+import { addCastle } from '../reducers/admin'
 
-export default connect()(NewProduct)
+const mapDispatchToProps = { addCastle }
+//                       = { addCastle: addCastle}
+export default connect(null, mapDispatchToProps)(NewProduct)

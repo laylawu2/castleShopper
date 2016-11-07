@@ -17,7 +17,15 @@ castlesRoute.get('/:castleId',function(req,res,next) {
         .catch(next);
 })
 
-
+castlesRoute.post('/', (req, res, next) => {
+  console.log('castlesRoute post', req.body)
+  Castle.create(req.body)
+    .then(newCastle => {
+      console.log('after create', newCastle)
+      res.json(newCastle)
+    })
+    .catch(next)
+})
 
 module.exports = castlesRoute
 

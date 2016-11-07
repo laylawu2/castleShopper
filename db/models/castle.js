@@ -5,39 +5,42 @@ const db = require('APP/db')
 
 module.exports = db.define('castles', {
     name: {
-        type: Sequelize.STRING, 
+        type: Sequelize.STRING,
         allowNull: false
-    }, 
+    },
     price: {
-        type: Sequelize.DECIMAL(10,2), 
-        allowNull: false
-    }, 
+        type: Sequelize.DECIMAL(10,2),
+//        allowNull: false,
+    },
     location: {
-        type: Sequelize.STRING, 
-        allowNull: false
-    }, 
+        type: Sequelize.STRING,
+//        allowNull: false
+    },
     imageUrl: {
-        type: Sequelize.ARRAY(Sequelize.TEXT), 
-        allowNull: false,
+        type: Sequelize.ARRAY(Sequelize.TEXT),
+ //       allowNull: false,
         defaultValue: ['https://goo.gl/hCvhhb']
-    }, 
+    },
     size: {
-        type: Sequelize.INTEGER, 
-        allowNull: false
-    }, 
+        type: Sequelize.INTEGER,
+//        allowNull: false,
+       set      : function(val) {
+      this.setDataValue('size', parseInt(val));
+    }
+    },
     amenities: {
         type: Sequelize.JSON
-    }, 
+    },
     description: {
-        type: Sequelize.TEXT, 
-        allowNull: false
-    }, 
+        type: Sequelize.TEXT,
+  //      allowNull: false
+    },
     historyLink: {
         type: Sequelize.TEXT
     },
     category: {
-        type: Sequelize.ARRAY(Sequelize.TEXT), 
-        allowNull: false
+        type: Sequelize.ARRAY(Sequelize.TEXT),
+  //      allowNull: false
     }
 }, {
     getterMethods: {
