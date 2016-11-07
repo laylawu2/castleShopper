@@ -15,7 +15,7 @@ import store from './store'
 import Root from './components/Root'
 import {onHomeEnter} from './enter-hooks'
 import {getSingleCastle} from './enter-hooks'
-
+import {onCategoryEnter} from './enter-hooks'
 
 
 
@@ -31,6 +31,7 @@ render (
 	        <Route path="/cart" component={ CartContainer } />
 	        <Route path="/checkout" component={ CheckoutContainer } />
 	        <Route path="/castles/add" component={ NewProductContainer } />
+					<Route path="/castles/search/:searchByCategory" />
 					<Route path="/castles/:castleId" component={ SingleCastleContainer } onEnter={getSingleCastle} />
 				</Route>
 	    </Router>

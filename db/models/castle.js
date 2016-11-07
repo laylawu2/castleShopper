@@ -71,9 +71,8 @@ module.exports = db.define('castles', {
     }
 }, {
     getterMethods: {
-        checkoutSnippet: function(){
-            const snippet = this.description.substring(0, 100);
-            return snippet;
+        checkoutSnippet: function() {
+            this.description = this.description.slice(0,200).concat('...')
         }
     }
 })
