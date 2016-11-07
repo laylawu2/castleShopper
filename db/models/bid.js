@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt')
 const Sequelize = require('sequelize')
 const db = require('APP/db')
 
-const Bid = db.define('bid', {
+module.exports = db.define('bids', {
   bidPrice: {
     type: Sequelize.DECIMAL(20, 2),
     allowNull: false
@@ -13,9 +13,9 @@ const Bid = db.define('bid', {
     defaultValue: 'pending'
   },
   purchased: {
-    type: Sequelize.ENUM('paid', 'not-paid'),
-    defaultValue: 'not-paid'
+    type: Sequelize.ENUM('paid', 'unpaid'),
+    defaultValue: 'unpaid'
   }
 })
 
-module.exports = Bid
+

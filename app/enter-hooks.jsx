@@ -34,6 +34,8 @@ export const getSingleCastle = ({params}) => {
 //   .then(result => loadCastlesByCategorySync(result))
 // }
 
+
+
 // export const onSearchEnter = (nextRouterState) => {
 //     const categoryName = nextRouterState.params.categoryName
 //     const thunk = searchWord(categoryName)
