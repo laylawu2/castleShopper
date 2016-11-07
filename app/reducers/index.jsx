@@ -5,6 +5,8 @@ import authReducer from './auth'
 import singleCastle from './singleCastle'
 import {searchReducer} from './searchbar'
 import bidReducer from './newBid'
+import {categoryReducer} from './category'
+
 
 
 
@@ -17,6 +19,8 @@ const rootReducer = combineReducers({
     user: authReducer,
     search: searchReducer, 
     highestBid: bidReducer
+    category: categoryReducer
+
 })
 
 export default rootReducer 

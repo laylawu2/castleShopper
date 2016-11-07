@@ -8,6 +8,8 @@ const Bid = require('APP/db/models/bid');
 // get bids from a certain user
 // get all paid bids
 // get all unpaid bids
+//api/bids/byuser/:userid
+
 
 router.get('/', function(req, res, next){
     Bid.findAll()
@@ -73,11 +75,5 @@ router.post('/user/:userId/castle/:castleId', function(req, res, next){
       })
       .catch(next)
 })
-
-
-
-
-
-
 
 module.exports = router;
