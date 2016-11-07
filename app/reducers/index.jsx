@@ -2,8 +2,7 @@ import { combineReducers } from 'redux'
 import homepageReducer from './homepage'
 import authReducer from './auth'
 import singleCastle from './singleCastle'
-
-
+import {searchReducer} from './searchbar'
 
 
 
@@ -12,8 +11,9 @@ import singleCastle from './singleCastle'
 
 const rootReducer = combineReducers({
     allCastles: homepageReducer,
-    login: authReducer, 
-    singleCastle: singleCastle
+    singleCastle: singleCastle,
+    user: authReducer,
+    search: searchReducer
 })
 
 export default rootReducer 

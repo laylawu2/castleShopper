@@ -15,6 +15,9 @@ import Root from './components/Root'
 import {onHomeEnter} from './enter-hooks'
 import {getSingleCastle} from './enter-hooks'
 
+
+
+
 render (
 	<IntlProvider locale="en">
 	<div className="container-fluid">
