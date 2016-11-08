@@ -21,9 +21,11 @@ export default ({allCastles, filter, handleChange, handleChangeCategory}) => (
 				allCastles && allCastles.map(function(castle) {
 					return (
 						<div key={castle.id} className="col-xs-6 col-md-3" id="image-div">
-							<Link className="thumbnail" to={`/castles/${castle.id}`}>
-							<img src="http://www.reidsguides.com/images/destinations/europe/germany/baden-wurttemberg/swabia/hohenzollern-thumb.jpg" />
+							<div id="image-thumbnail">
+							<Link  className="thumbnail" to={`/castles/${castle.id}`}>
+							<img src={castle.imageUrl} />
 							</Link>
+							</div>
 							<p className="description" id="castle-title"><Link to={`/castles/${castle.id}`}>{castle.name}</Link></p>
 							<p>{castle.description}</p>
 							<p>Current price: ${castle.price}</p>

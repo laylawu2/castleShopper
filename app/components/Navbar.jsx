@@ -35,9 +35,9 @@ export default ({user, logout}) => {
                             </li>
                         </ul>
                         <ul className="nav navbar-nav navbar-right">
-                        <li>
+
                             <SignupModal />
-                        </li>
+
                             {
                                 user ? <ul className="nav navbar-nav">
                             <li className="active"><a onClick={logout} href="#">Sign out</a></li>

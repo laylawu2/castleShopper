@@ -59,6 +59,7 @@ export const signupModal = ({signup}) => {
                                 </div>
 
                             </div>
+                        
     )
 
 }
