@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 
 import HomepageContainer from '../containers/HomepageContainer'
 
-export default ({allCastles, filter, handleChange, handleChangeCategory}) => (
+export default ({category, allCastles, filter, handleChange, handleChangeCategory}) => (
 	<div className="home" id="homepage-main">
 		<div className="form-group">
 			<input
