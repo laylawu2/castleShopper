@@ -8,8 +8,6 @@ import { connect } from 'react-redux';
 export default ({user, logout}) => {
     console.log('user....',user)
         return (
-            <div className="container" id="nav-container">
-
             <div className="row">
                 <div id="nav-column" className="col-md-12">
                     <nav className="navbar navbar-default" role="navigation">
@@ -35,7 +33,6 @@ export default ({user, logout}) => {
                             </li>
                         </ul>
                         <ul className="nav navbar-nav navbar-right">
-
                             <SignupModal />
 
                             {
@@ -65,7 +62,6 @@ export default ({user, logout}) => {
                     </nav>
                 </div>
             </div>
-        </div>
         )
 };
 
