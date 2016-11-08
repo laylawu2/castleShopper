@@ -10,10 +10,12 @@ api
   .use('/castles',require('./castles'))
   .use('/bids', require('./bid'))
   .use('/reviews', require('./review'))
+  .use('/signup', require('./signup'))
 // Send along any errors
 
 api.use((err, req, res, next) => {
   res.status(500).send(err)
+  console.error(err)
 })
 
 // No routes matched? 404.

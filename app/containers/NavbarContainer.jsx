@@ -4,6 +4,7 @@ import {logoutUserAction} from '../reducers/auth'
 import {logout} from '../reducers/auth'
 
 
+
 //make sure root reducer has this key allCastles
 const mapStateToProps = ({user}) => ({
     user
@@ -15,8 +16,21 @@ const mapStateToProps = ({user}) => ({
 //   return {};
 // }
 
+// export const logout = () =>
+//   dispatch => {
+//     console.log("IN LOGOUT")
+//     return(
+//       axios.post('/api/auth/logout')
+//       .then(() => dispatch(whoami()))
+//       .catch(() => dispatch(whoami()))
+//     )
+//   }
+
+
 const mapDispatchToProps = dispatch => ({
+
   logout: () => dispatch(logout()) 
+
 });
 
 
