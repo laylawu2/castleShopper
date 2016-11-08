@@ -4,9 +4,10 @@ import Login from './Login'
 // import signupModal from './signupModal'
 
 import { connect } from 'react-redux';
-// import {login} from 'APP/app/reducers/auth'
+import {signup} from 'APP/app/reducers/auth'
 
-export default ({}) => {
+
+export const signupModal = ({signup}) => {
 
     return(
             <div>
@@ -20,13 +21,17 @@ export default ({}) => {
                                         <h4 className="modal-title">Sign up below</h4>
                                     </div>
                                     <div className="modal-body">
-                                        <form id="signup-form">
-                                            <input id="firstname" className="form-control" name="firstname" placeholder="first name" />
-                                            <input id="lastname" className="form-control" name="lastname" placeholder="last name" />
+                                        <form id="signup-form" onSubmit={evt => {
+                                        evt.preventDefault()
+                                        signup(evt.target.firstName.value,evt.target.lastName.value,evt.target.email.value,evt.target.newusername.value,evt.target.newpassword.value).then($(myModal).modal('hide'))
+                                    }}>
+                                            <input id="firstname" className="form-control" name="firstName" placeholder="first name" />
+                                            <input id="lastname" className="form-control" name="lastName" placeholder="last name" />
+                                            <input id="email" className="form-control" name="email" placeholder="email" />
                                             <input id="newusername" className="form-control" name="newusername" placeholder="username" />
                                             <input className="form-control" name="newpassword" placeholder="password" type="password" />
-                                            <input id="signup-button" className="btn btn-default" type="submit" value="signup" />
-                                </form>
+                                            <input id="signup-button" className="btn btn-default" type="submit" value="Sign up" />
+                                        </form>
                                     </div>
                                     <div id="myModal" className="modal fade" role="dialog">
                                         <div className="modal-dialog">
@@ -57,3 +62,9 @@ export default ({}) => {
     )
 
 }
+
+
+export default connect(
+    null,
+    {signup}
+)(signupModal)
