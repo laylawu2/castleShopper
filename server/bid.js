@@ -64,10 +64,10 @@ router.get('/castle/:castleId', function(req, res, next){
 });
 
 router.post('/user/:userId/castle/:castleId', function(req, res, next){
-   
+    console.log("REQ.BODY", req.body)
     req.body.castle_id = req.params.castleId;
     req.body.user_id = req.params.userId;
-    req.body.bidPrice = 25000000;
+    // req.body.bidPrice = 25000000;
      console.log("IN POST", req.body.castle_id, req.body.user_id, req.body)
     Bid.create(req.body)
       .then(newBid => {
