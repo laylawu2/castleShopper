@@ -7,6 +7,9 @@ import HomepageContainer from '../containers/HomepageContainer'
 
 export default ({allCastles, filter, handleChange, handleChangeCategory}) => (
 	<div className="home" id="homepage-main">
+		
+		<img src="https://s17.postimg.org/lu28ic2u7/Screen_Shot_2016_11_08_at_2_36_54_PM.png" />
+		<div className="list-group">
 		<div className="form-group">
 			<input
 				placeholder="Filter castles by name or category"
@@ -15,8 +18,6 @@ export default ({allCastles, filter, handleChange, handleChangeCategory}) => (
 				onChange={handleChange}
 				/>
 			</div>
-		<h1 id="header">CASTLESHOPPER</h1>
-		<div className="list-group">
       {
 				allCastles && allCastles.map(function(castle) {
 					return (
