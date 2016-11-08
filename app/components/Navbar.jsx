@@ -1,12 +1,12 @@
 import React from 'react';
-import Login from './Login'
-import SignupModal from './SignupModal'
+import Login from './Login';
+import signupModal from './signupModal';
+import {Link} from 'react-router';
 
 import { connect } from 'react-redux';
 // import {login} from 'APP/app/reducers/auth'
 
 export default ({user, logout}) => {
-    console.log('user....',user)
         return (
             <div className="row">
                 <div id="nav-column" className="col-md-12">
@@ -38,7 +38,12 @@ export default ({user, logout}) => {
                             {
                                 user ? <ul className="nav navbar-nav">
                             <li className="active"><a onClick={logout} href="#">Sign out</a></li>
-                            </ul> : <li className="dropdown">
+                            <Link className="thumbnail" to={`/user/${user.id}`}>
+                                <li className="active">Your Account</li>
+							</Link>
+                            </ul> 
+                            : 
+                            <li className="dropdown">
                                 <a href="#" className="dropdown-toggle" data-toggle="dropdown">Sign in <b className="caret"></b></a>
                                 <ul className="dropdown-menu">
                                     <li>
