@@ -2,6 +2,9 @@ const express = require('express');
 const mime = require('mime');
 const router = express.Router();
 const Bid = require('APP/db/models/bid');
+const User = require('APP/db/models/user');
+const Castle = require('APP/db/models/castle');
+const db = require('APP/db');
 
 
 // get all bids
@@ -40,16 +43,48 @@ router.get('/unpaid', function(req, res, next){
       })
 });
 
-router.get('/user/:userId', function(req, res, next){
+// findAndCountAll({
+//      where: {
+//         title: {
+//           $like: 'foo%'
+//         }
+//      },
+//      offset: 10,
+//      limit: 2
+//   })
 
-    Bid.findAll({
-        where: {
-            user_id: req.params.userId
+// Bid.findAll({
+//         include: [{attributes: ['id']}],
+//         where: {
+//             user_id: req.params.userId
+//     }, 
+//         group: ['castle_id']
+        
+//     })
+
+router.get('/user/:userId', function(req, res, next){
+    User.findById(req.params.userId, {include: {
+        model: Castle
+    }}).then(user => db.Promise.props({
+        user: JSON.parse(JSON.stringify(user)),   // i'm so so so so sorry ~ ak
+        castleBids: db.Promise.map(user.castles, castle => castle.getBids())
+    })).then( ({user, castleBids}) => {
+        for(let i = 0; i<castleBids.length; i++){
+            user.castles[i].bids = castleBids[i];
         }
+        res.status(200).send(user)
     })
-      .then(bids => {
-          res.status(200).json(bids)
-      })
+    // Bid.findAll({
+    //     where: {
+    //         user_id: req.params.userId
+    //     }, 
+    //     group: ['castle_id']
+    // })
+    //   .then(bids => {
+    //       res.status(200).json(bids)
+    //   })
+
+
 });
 
 router.get('/castle/:castleId', function(req, res, next){
