@@ -8,3 +8,5 @@ export const NEW_BID_FOR_THIS_USER = 'NEW_BID_FOR_THIS_USER';
 
 export const FETCH_CASTLE_BY_CATEGORY = 'FETCH_CASTLE_BY_CATEGORY';
 
+export const USER_BIDS = 'USER_BIDS';
+
