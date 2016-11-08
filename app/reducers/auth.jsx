@@ -20,6 +20,19 @@ export const authenticated = user => {
 type: AUTHENTICATED, user
   })}
 
+export const signup = (firstName,lastName,email,username,password) => {
+  return(
+    dispatch => {
+      console.log('inside signup...',firstName,lastName,email,username,password)
+    return axios.post('/api/signup', {
+      firstName,lastName,email,username,password
+    })
+    .then(() => dispatch(login(email,password)))
+    .catch(err => console.log(err))
+
+    })
+}
+
 export const login = (username, password) =>
   dispatch => 
     axios.post('/api/auth/local/login',

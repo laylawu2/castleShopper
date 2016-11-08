@@ -1,7 +1,9 @@
 import {connect} from 'react-redux';
 
 import SingleCastle from '../components/SingleCastle';
-import newBidForThisUser from '../action-creators/bid';
+
+import {newBidForThisUser} from '../action-creators/bid';
+
 
 // function mapStateToProps (state) {
 //   return {

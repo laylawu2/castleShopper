@@ -27,7 +27,7 @@ export default class SingleCastle extends React.Component {
 
     constructor(){
         super();
-        this.state = {value: ''};
+        this.state = {value: '', bidsForThisCastle: null };
         this.onBid = this.onBid.bind(this);
         this.onBidSubmit = this.onBidSubmit.bind(this);
     }
@@ -35,7 +35,15 @@ export default class SingleCastle extends React.Component {
     componentDidMount() {
         // this.props.addBid(1000);
         // this.props.addBid(2000);
-        
+        // console.log("THIS CASTLE", this.props.oneCastle.id)
+        this.props.addBid([]);
+        // axios.get(`/api/bids/castle/${this.props.oneCastle.id}`)
+        //     .then(bids => {
+        //         console.log("BIDS FOR THIS", bids)
+        //         this.setState({bidsForThisCastle: bids})
+        //     })
+
+
     }
 
     onBid(event){
@@ -43,12 +51,20 @@ export default class SingleCastle extends React.Component {
     }
 
     onBidSubmit(event){
+        const {oneCastle, highestBid, addBid, user} = this.props;
         event.preventDefault();
-        if(event.target.value < this.props.highestBid){
+        console.log("------->", this.state.value)
+        const bid = +this.state.value;
+        if(bid < highestBid){
+
             alert('Your bid must be higher than the current highest bid, which is:' 
-            + this.props.highestBid);
-        }else {
+            + highestBid);
+        } else {
+            const bidPrice = {bidPrice: +this.state.value};
             this.props.addBid(this.state.value);
+            axios.post(`/api/bids/user/${user.id}/castle/${oneCastle.id}`, bidPrice)
+                .catch(console.error);
+
             this.setState({value: ''});
             
         }
@@ -62,7 +78,9 @@ render(){
 //     console.log("NEWBID", this.props.highestBid);
 //     console.log("THISPROPS", this.props)
 //     console.log("USER", this.props.user);
-    const {oneCastle, highestBid, addBid} = this.props;
+
+    const {oneCastle, highestBid, addBid, user} = this.props;
+
 
 
     return (
@@ -103,13 +121,34 @@ render(){
                                             value={this.state.value}
                                             onChange={this.onBid}                     
                                         />
-                                        
-                                        <button 
+
+                                     {
+                                         user ? 
+                                          <button 
                                             type="submit"
+                                            className="btn btn-success"
+
                                             value={this.state.value}
                                             >
                                             Place a Bid
                                         </button>
+
+
+                                        :
+                                        <span>
+                                            Log in to place a bid
+                                        </span>
+                                        // <button 
+                                        //     type="button" 
+                                        //     className="btn btn-success"
+                                        //     data-toggle="tooltip" data-placement="top" 
+                                        //     title="Log in to place a bid"
+                                        // >
+                                        // Sign In
+                                        // </button>
+
+                                     }  
+
                                     </form>
                          
                                 </div>

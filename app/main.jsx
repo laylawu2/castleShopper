@@ -16,18 +16,19 @@ import Root from './components/Root'
 import {onHomeEnter} from './enter-hooks'
 import {getSingleCastle} from './enter-hooks'
 import {onCategoryEnter} from './enter-hooks'
+import {getReviewsForUser} from './enter-hooks'
+import {getBidsForUser} from './enter-hooks'
 
 
 
 render (
 	<IntlProvider locale="en">
-	<div className="container-fluid">
 	  <Provider store={ store }>
 	    <Router history={ hashHistory }>
 	      <Route path="/" onEnter={onHomeEnter} component={Root}>
 	        <IndexRedirect to="/home" />
 	        <Route path="home" component={ HomepageContainer } />
-	        <Route path="/user" component={ UserContainer } />
+	        <Route path="/user/:userId" component={ UserContainer } onEnter={getBidsForUser}/>
 	        <Route path="/cart" component={ CartContainer } />
 	        <Route path="/checkout" component={ CheckoutContainer } />
 					<Route path="/castles/search/:searchByCategory" />
@@ -35,7 +36,6 @@ render (
 				</Route>
 	    </Router>
 	  </Provider>
-  </div>
   </IntlProvider>,
   document.getElementById('main')
 )
