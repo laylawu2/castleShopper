@@ -86,9 +86,10 @@ render(){
 //     console.log("NEWBID", this.props.highestBid);
 //     console.log("THISPROPS", this.props)
 //     console.log("USER", this.props.user);
-
-    const {oneCastle, highestBid, addBid, user, reviews} = this.props;
-    console.log("REVIEWS", reviews)
+    
+    const {oneCastle, highestBid, addBid, user, reviews, checkout} = this.props;
+    
+    
 
 
 

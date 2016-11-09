@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import {bidResolved} from '../action-creators/bid'
-import checkoutCastle from '../action-creators/checkout'
+import {checkoutCastle} from '../action-creators/checkout'
 
 import User from '../components/User';
 
@@ -17,4 +17,5 @@ const mapDispatchToProps = dispatch => ({
 });
 
 
-export default connect(mapStateToProps)(User);
+
+export default connect(mapStateToProps, mapDispatchToProps)(User);
