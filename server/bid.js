@@ -43,7 +43,24 @@ router.get('/unpaid', function(req, res, next){
       })
 });
 
-// <<<<<<< HEAD
+
+// router.get('/declined/:bidId', function(req, res, next){
+//     console.log("IN DECLINED", req.params.bidId);
+//     Bid.update({
+//         status: 'rejected'
+//     },{ 
+//         where: {
+//             bidPrice: req.params.bidId
+//         }
+//     }
+//     )
+//         .then(confirmArray => {
+//             res.status(201).send("bid status changed to rejected")
+//         })
+// })
+
+
+
 // router.get('/user/:userId', function(req, res, next){
 
 //     Bid.findAll({
@@ -54,16 +71,8 @@ router.get('/unpaid', function(req, res, next){
 //       .then(bids => {
 //           res.status(200).json(bids)
 //       })
-// =======
-// findAndCountAll({
-//      where: {
-//         title: {
-//           $like: 'foo%'
-//         }
-//      },
-//      offset: 10,
-//      limit: 2
-//   })
+
+
 
 // Bid.findAll({
 //         include: [{attributes: ['id']}],

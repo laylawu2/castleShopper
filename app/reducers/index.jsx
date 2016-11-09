@@ -7,7 +7,10 @@ import bidReducer from './newBid'
 import bidsReducer from './userBids.jsx'
 import castleBidsReducer from './castleBids.jsx'
 import {ascendingReducer, descendingReducer} from './category'
+import {categoryReducer} from './category'
+import {bidResolvedReducer} from './bidResolved.jsx'
 import checkoutReducer from './checkout';
+
 
 
 

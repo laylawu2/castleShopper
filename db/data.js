@@ -188,33 +188,6 @@ const users = [
     }
 ]
 
-
-    //orders
-// const orders = [
-//     {
-//         "date": "1/1/2016",
-//         "shippingAddress": "1234 disneyway, anaheim, CA 91745"
-
-//     },
-//     {
-//         "date": "10/31/2016",
-//         "discountCode": "HALOWEEN",
-//         "discountRate": "10",
-//         "shippingAddress": "5 Hanover Sq., New York City, NY, 10004"
-//     },
-//     {
-//         "date": "2016-11-08:11:00",
-//         "discountCode": "",
-//         "discountRate": "",
-//         "shippingAddress": "Av das A’Augsa Livres Monte Trigo 7220 PORTEL PORTUGAL"
-//     },
-//     {
-//         "date": "2016-11-08:11:00",
-//         "discountCode": "",
-//         "discountRate": "",
-//         "shippingAddress": "Weberstr. 2 53113 BONN 1 GERMANY"
-//     }
-// ]
     //reviews + memories
 const reviews = [
     {
