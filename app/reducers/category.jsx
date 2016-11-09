@@ -36,10 +36,9 @@ export const ascending = () =>
       dispatch(fetchAscending(response))
     })
 
-export const descending = () => {
+export const descending = () => 
   dispatch => 
     axios.get('/api/category/descending')
     .then(response => {
       dispatch(fetchDescending(response))
     })
-}
