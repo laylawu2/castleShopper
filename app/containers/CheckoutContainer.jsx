@@ -4,9 +4,10 @@ import Checkout from '../components/Checkout';
 import { castles, users } from '../../db/data';
 import { buyCastle } from '../action-creators/checkout';
 
-const mapStateToProps = ({ castle, user }) => ({
+const mapStateToProps = ({ castle, user, oneCastle }) => ({
 	castle: castles[0],
-	user: users[0]
+	user: users[0], 
+	oneCastle
 });
 
 const mapDispatchToProps = dispatch => ({

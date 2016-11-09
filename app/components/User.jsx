@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router';
+import CheckoutContainer from '../containers/CheckoutContainer'
 
 
 export default class User extends React.Component {

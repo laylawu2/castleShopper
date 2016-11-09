@@ -56,6 +56,7 @@ export default class Checkout extends React.Component {
 	//   }
 render() {
 	let { castle, user } = this.props;
+	console.log("CHECKOUT---", this.props.oneCastle)
 return (
 	<div className="container">
 
