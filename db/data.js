@@ -84,36 +84,6 @@ const castles = [
         "category": ["Military"]
     },
     {
-        "name": "Carcassonne",
-        "imageUrl": "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwi_4uervJrQAhVr1oMKHQDvCmIQjRwIBw&url=http%3A%2F%2Fwww.castles.francethisway.com%2Fchateau-carcassonne.php&bvm=bv.138169073,d.amc&psig=AFQjCNE9kDsj8aoZCY75ZA83PFroPw1Bog&ust=1478739569233883",
-        "size": 55000,
-        "location": "France",
-        "price": 160000000,
-        "amenitites": {
-            "window": 20, 
-            "room": 10, 
-            "prince": 1
-        },
-        "description": "With more than 4 million visitors each year, Carcassonne is among the most prestigious tourist destinations in France, on a par with Mont-Saint-Michel and Paris’ Notre-Dame. A UNESCO World Heritage Site since 1997, Carcassonne is a dramatic representation of medieval architecture perched on a rocky spur that towers above the River Aude, southeast of the new town.", 
-        "historyLink": "https://en.wikipedia.org/wiki/Cit%C3%A9_de_Carcassonne",
-        "category": ["Medieval", "Rocky"]
-    },
-    {
-        "name": "Alsace",
-        "imageUrl": "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=0ahUKEwjP-YipvZrQAhUK3YMKHS8ZDbEQjRwIBw&url=http%3A%2F%2Fwww.orchidee-du-ried.fr%2Fidees-de-visites%2Fmusees-et-ancienne-pierres%2F&bvm=bv.138169073,d.amc&psig=AFQjCNGeE5TrfpP-NuhQE4YpoqEpnRd7sg&ust=1478739833838690",
-        "size": 75757,
-        "location": "France",
-        "price": 2000000,
-        "amenitites": {
-            "window": 20, 
-            "room": 10, 
-            "prince": 1
-        },
-        "description": "At 757 metres high, the Haut-Kœnigsbourg castle dominates the Plain of Alsace and stands out with its imposing pink sandstone structure. Ideally situated in the heart of the Alsace Wine Route, the fortified castle provides its visitors with a panoramic view over the plain, the Black Forest in Germany and on a fine day, the Swiss Alps.", 
-        "historyLink": "https://en.wikipedia.org/wiki/Ch%C3%A2teau_du_Haut-K%C5%93nigsbourg",
-        "category": ["Medieval", "Romantic", "Tall"]
-    },
-    {
         "name": "Lord of The Rings Castle",
         "imageUrl":
             "https://i.kinja-img.com/gawker-media/image/upload/s--3RLBRWl0--/c_scale,fl_progressive,q_80,w_800/1228896838095134565.jpg",
