@@ -153,7 +153,7 @@ return (
 				  </div>
 
 				  <div className="row form-row">
-				  	<div className="col-lg-2">
+				  	<div className="col-lg-2 exp-label">
 				      <span>Expiration Date</span>
 				    </div>
 				    <div className="col-lg-2">
