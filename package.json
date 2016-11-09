@@ -47,15 +47,21 @@
     "pg": "^6.1.0",
     "pg-native": "^1.10.0",
     "react": "^15.3.2",
+    "react-async-script-loader": "^0.2.1",
     "react-dom": "^15.3.2",
     "react-intl": "^2.1.5",
     "react-redux": "^4.4.5",
     "react-router": "^3.0.0",
+<<<<<<< HEAD
     "react-star-rating": "^1.4.2",
+=======
+    "react-script-loader": "0.0.1",
+>>>>>>> master
     "redux": "^3.6.0",
     "redux-logger": "^2.7.0",
     "redux-thunk": "^2.1.0",
-    "sequelize": "^3.24.6"
+    "sequelize": "^3.24.6",
+    "stripe": "^4.12.0"
   },
   "devDependencies": {
     "babel": "^6.5.2",
