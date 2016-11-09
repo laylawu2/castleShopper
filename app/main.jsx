@@ -23,7 +23,6 @@ import {dispatchOnEnter} from './enter-hooks'
 
 render (
 	<IntlProvider locale="en">
-	<div className="container-fluid">
 	  <Provider store={ store }>
 	    <Router history={ hashHistory }>
 	      <Route path="/" onEnter={onHomeEnter} component={Root}>
@@ -37,7 +36,6 @@ render (
 				</Route>
 	    </Router>
 	  </Provider>
-  </div>
   </IntlProvider>,
   document.getElementById('main')
 )
