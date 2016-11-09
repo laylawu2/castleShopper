@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 
 export default ({user, logout, ascending, descending}) => {
     console.log('ascending....',ascending)
+    console.log('ascending....',descending)
         return (
             <div className="row">
                 <div id="nav-column" className="col-md-12">
