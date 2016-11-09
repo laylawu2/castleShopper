@@ -8,7 +8,7 @@ castlesRoute.get('/:castleId',function(req,res,next) {
 
     Castle.findById(req.params.castleId)
             .then(foundCastleById => res.send(foundCastleById))
-    
+
 })
 
 castlesRoute.get('/search/:searchByCategory',function(req,res,next) {
@@ -24,12 +24,21 @@ castlesRoute.get('/search/:searchByCategory',function(req,res,next) {
 
 })
 
-
-
 castlesRoute.get('/',function(req,res,next) {
     Castle.findAll({})
         .then(allCastles => res.send(allCastles))
         .catch(next);
+})
+
+
+castlesRoute.post('/', (req, res, next) => {
+//  console.log('castlesRoute post', req.body)
+  Castle.create(req.body)
+    .then(newCastle => {
+//      console.log('CREATEDDDDD', newCastle)
+      res.json(newCastle)
+    })
+    .catch(console.error)
 })
 
 castlesRoute.post('/:castleId', function(req, res, next){
@@ -45,6 +54,7 @@ castlesRoute.post('/:castleId', function(req, res, next){
       })
       .catch(next)
 })
+
 
 
 module.exports = castlesRoute

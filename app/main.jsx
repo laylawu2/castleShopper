@@ -9,6 +9,7 @@ import HomepageContainer from './containers/HomepageContainer';
 import UserContainer from './containers/UserContainer';
 import CartContainer from './containers/CartContainer';
 import CheckoutContainer from './containers/CheckoutContainer';
+import NewProductContainer from './containers/NewProductContainer';
 import SingleCastleContainer from './containers/SingleCastleContainer';
 
 import store from './store'
@@ -32,6 +33,7 @@ render (
 	        <Route path="/user/:userId" component={ UserContainer } onEnter={dispatchOnEnter}/>
 	        <Route path="/cart" component={ CartContainer } />
 	        <Route path="/checkout" component={ CheckoutContainer } />
+	        <Route path="/castles/add" component={ NewProductContainer } />
 					<Route path="/castles/search/:searchByCategory" />
 					<Route path="/castles/:castleId" component={ SingleCastleContainer } onEnter={getSingleCastle} />
 				</Route>
