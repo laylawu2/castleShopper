@@ -10,7 +10,7 @@ export default ({ castle }) => (
 				<li>Description: { castle.checkoutSnippet }</li>
 				<li>Size: { castle.size } sqft</li>
 				<li>Location: { castle.location }</li>
-				<li>Price: <FormattedNumber value={ castle.price } style="currency" currency="USD" /></li>
+				<li>Price: <FormattedNumber value={ castle.price } style="currency" currency="EUR" /></li>
 			</ul>
 		</div>
 	</div>
