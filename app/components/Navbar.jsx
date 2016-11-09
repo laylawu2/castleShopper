@@ -3,9 +3,9 @@ import Login from './Login';
 import SignupModal from './SignupModal';
 import {Link} from 'react-router';
 import { connect } from 'react-redux';
-import {ascending,descending} from '../reducers/category'
 
-export default ({user, logout}) => {
+
+export default ({user, logout, ascending, descending}) => {
         return (
             <div className="row">
                 <div id="nav-column" className="col-md-12">
@@ -30,10 +30,10 @@ export default ({user, logout}) => {
                             <li className="dropdown">
                                 <a href="#" className="dropdown-toggle" data-toggle="dropdown">Categories <b className="caret"></b></a>
                                 <ul className="dropdown-menu">
-                                    <li><a href="#">Highest ratings</a></li>
+                                    {/*<li><a href="#">Highest ratings</a></li>*/}
                                     <li><a href="#" onClick={ascending}>Price Ascending</a></li>
                                     <li><a href="#" onClick={descending}>Price Descending</a></li>
-                                    <li className="divider"></li>
+                                    {/*<li className="divider"></li>*/}
                                 </ul>
                             </li>
                         </ul>
