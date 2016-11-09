@@ -43,6 +43,18 @@ router.get('/unpaid', function(req, res, next){
       })
 });
 
+// <<<<<<< HEAD
+// router.get('/user/:userId', function(req, res, next){
+
+//     Bid.findAll({
+//         where: {
+//             user_id: req.params.userId
+//         }
+//     })
+//       .then(bids => {
+//           res.status(200).json(bids)
+//       })
+// =======
 // findAndCountAll({
 //      where: {
 //         title: {
@@ -99,10 +111,12 @@ router.get('/castle/:castleId', function(req, res, next){
 });
 
 router.post('/user/:userId/castle/:castleId', function(req, res, next){
+
     console.log("REQ.BODY", req.body)
     req.body.castle_id = req.params.castleId;
     req.body.user_id = req.params.userId;
     // req.body.bidPrice = 25000000;
+
      console.log("IN POST", req.body.castle_id, req.body.user_id, req.body)
     Bid.create(req.body)
       .then(newBid => {

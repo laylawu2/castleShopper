@@ -1,6 +1,6 @@
 import React from 'react';
 import Login from './Login';
-import signupModal from './signupModal';
+import SignupModal from './SignupModal';
 import {Link} from 'react-router';
 
 import { connect } from 'react-redux';

@@ -43,6 +43,7 @@ export default class SingleCastle extends React.Component {
         //         this.setState({bidsForThisCastle: bids})
         //     })
 
+
     }
 
     onBid(event){
@@ -58,7 +59,7 @@ export default class SingleCastle extends React.Component {
 
             alert('Your bid must be higher than the current highest bid, which is:' 
             + highestBid);
-        }else {
+        } else {
             const bidPrice = {bidPrice: +this.state.value};
             this.props.addBid(this.state.value);
             axios.post(`/api/bids/user/${user.id}/castle/${oneCastle.id}`, bidPrice)
@@ -77,7 +78,9 @@ render(){
 //     console.log("NEWBID", this.props.highestBid);
 //     console.log("THISPROPS", this.props)
 //     console.log("USER", this.props.user);
+
     const {oneCastle, highestBid, addBid, user} = this.props;
+
 
 
     return (
@@ -118,15 +121,18 @@ render(){
                                             value={this.state.value}
                                             onChange={this.onBid}                     
                                         />
+
                                      {
                                          user ? 
                                           <button 
                                             type="submit"
                                             className="btn btn-success"
+
                                             value={this.state.value}
                                             >
                                             Place a Bid
                                         </button>
+
 
                                         :
                                         <span>
@@ -142,6 +148,7 @@ render(){
                                         // </button>
 
                                      }  
+
                                     </form>
                          
                                 </div>
