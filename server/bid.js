@@ -43,6 +43,7 @@ router.get('/unpaid', function(req, res, next){
       })
 });
 
+
 // router.get('/declined/:bidId', function(req, res, next){
 //     console.log("IN DECLINED", req.params.bidId);
 //     Bid.update({
@@ -59,15 +60,19 @@ router.get('/unpaid', function(req, res, next){
 // })
 
 
-// findAndCountAll({
-//      where: {
-//         title: {
-//           $like: 'foo%'
+
+// router.get('/user/:userId', function(req, res, next){
+
+//     Bid.findAll({
+//         where: {
+//             user_id: req.params.userId
 //         }
-//      },
-//      offset: 10,
-//      limit: 2
-//   })
+//     })
+//       .then(bids => {
+//           res.status(200).json(bids)
+//       })
+
+
 
 // Bid.findAll({
 //         include: [{attributes: ['id']}],
@@ -115,10 +120,12 @@ router.get('/castle/:castleId', function(req, res, next){
 });
 
 router.post('/user/:userId/castle/:castleId', function(req, res, next){
+
     console.log("REQ.BODY", req.body)
     req.body.castle_id = req.params.castleId;
     req.body.user_id = req.params.userId;
     // req.body.bidPrice = 25000000;
+
      console.log("IN POST", req.body.castle_id, req.body.user_id, req.body)
     Bid.create(req.body)
       .then(newBid => {
