@@ -37,9 +37,6 @@ export default ({user, logout, ascending, descending}) => {
                                 </ul>
                             </li>
                         </ul>
-
-                            
-
                             {
                                 user ? 
                                 <ul className="nav navbar-nav navbar-right">

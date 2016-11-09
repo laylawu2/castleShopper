@@ -17,7 +17,7 @@ export default ({ cart }) => (
 						</ul>
 					</div>
 					<div className="col-lg-6">
-						<p className="product-price">Price: <FormattedNumber value={500000000} style="currency" currency="USD" /></p>
+						<p className="product-price">Price: <FormattedNumber value={500000000} style="currency" currency="EUR" /></p>
 						<button className="btn btn-danger">REMOVE</button>
 					</div>
 				</div>
@@ -33,7 +33,7 @@ export default ({ cart }) => (
 						</ul>
 					</div>
 					<div className="col-lg-6">
-						<p className="product-price">Price: <FormattedNumber value={500000000} style="currency" currency="USD" /></p>
+						<p className="product-price">Price: <FormattedNumber value={500000000} style="currency" currency="EUR" /></p>
 						<button className="btn btn-danger">REMOVE</button>
 					</div>
 				</div>
@@ -48,7 +48,7 @@ export default ({ cart }) => (
 						</ul>
 					</div>
 					<div className="col-lg-6">
-						<p className="product-price">Price: <FormattedNumber value={500000000} style="currency" currency="USD" /></p>
+						<p className="product-price">Price: <FormattedNumber value={500000000} style="currency" currency="EUR" /></p>
 						<button className="btn btn-danger">REMOVE</button>
 					</div>
 				</div>
@@ -81,7 +81,7 @@ export default ({ cart }) => (
 		</div>
 		<div className="col-lg-2 cart-summary">
 			<div className="row">
-				<h3>Total: <FormattedNumber value={500000000} style="currency" currency="USD" /></h3>
+				<h3>Total: <FormattedNumber value={500000000} style="currency" currency="EUR" /></h3>
 				<button className="btn btn-primary">Checkout</button>
 			</div>
 		</div>

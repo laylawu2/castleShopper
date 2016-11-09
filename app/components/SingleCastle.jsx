@@ -2,6 +2,7 @@
 
 import React from 'react';
 import axios from 'axios';
+import { FormattedNumber } from 'react-intl';
 
 //if user is not logged in, show: log in to bid! 
 //if user is logged in: 
@@ -94,7 +95,7 @@ render(){
                         <div className="thumbnail">
                             <img className="img-responsive" src='http://www.photographyblogger.net/wp-content/uploads/2009/05/castle10.jpg' alt=""></img>
                             <div className="caption-full">
-                                <h4 className="pull-right">${oneCastle.price}</h4>
+                                <h4 className="pull-right"><FormattedNumber value={oneCastle.price} style="currency" currency="EUR" /></h4>
                                 <h4><a href="#">{oneCastle.name}</a>
                                 </h4>
                                 <p><a target="_blank" href=""></a>{oneCastle.location}</p>
@@ -109,7 +110,7 @@ render(){
                                          
                                         highestBid.length === 0 ? 
                                         <h5>No Bids Yet</h5> :
-                                        <h5>Highest Bid: ${highestBid}</h5> 
+                                        <h5>Highest Bid: <FormattedNumber value={highestBid} style="currency" currency="EUR" /></h5> 
                                     }
                                     
                                     <form 

@@ -1,7 +1,8 @@
 import React from 'react';
-import Navbar from './Navbar'
-import Star from './Star'
+import Navbar from './Navbar';
+import Star from './Star';
 import { Link } from 'react-router';
+import { FormattedNumber } from 'react-intl';
 
 import HomepageContainer from '../containers/HomepageContainer'
 
@@ -29,7 +30,7 @@ export default ({category, allCastles, filter, handleChange, handleChangeCategor
 							</div>
 							<p className="description" id="castle-title"><Link to={`/castles/${castle.id}`}>{castle.name}</Link></p>
 							<p>{castle.description}</p>
-							<p>Current price: ${castle.price}</p>
+							<p>Current price: <FormattedNumber value={castle.price} style="currency" currency="EUR" /></p>
 							<ul id="category-list">
 							{
 								castle.category ? castle.category.map(function(cat,idx) {
