@@ -2,13 +2,13 @@
 
 import React from 'react';
 import axios from 'axios';
-
-//if user is not logged in, show: log in to bid! 
-//if user is logged in: 
-    //if there are no bids on this castle yet, show no bids! 
-    //if there are bids on this castle, show the highest one 
-    //if the user has already bid on this castle, tell them 
-        //you've already bid! and show previous highest bid 
+import { Review } from './Review'
+//if user is not logged in, show: log in to bid!
+//if user is logged in:
+    //if there are no bids on this castle yet, show no bids!
+    //if there are bids on this castle, show the highest one
+    //if the user has already bid on this castle, tell them
+        //you've already bid! and show previous highest bid
 
 // export const addCastle = (castleInfo) => dispatch => {
 //   //console.log('dispatchers', castleInfo)
@@ -22,7 +22,7 @@ import axios from 'axios';
 
 // axios(`/api/bids/user/${user.id}/castle/${castle.id}`, bidPrice)
 
-   
+
 export default class SingleCastle extends React.Component {
 
     constructor(){
@@ -31,7 +31,7 @@ export default class SingleCastle extends React.Component {
         this.onBid = this.onBid.bind(this);
         this.onBidSubmit = this.onBidSubmit.bind(this);
     }
-    
+
     componentDidMount() {
         // this.props.addBid(1000);
         // this.props.addBid(2000);
@@ -57,7 +57,7 @@ export default class SingleCastle extends React.Component {
         const bid = +this.state.value;
         if(bid < highestBid){
 
-            alert('Your bid must be higher than the current highest bid, which is:' 
+            alert('Your bid must be higher than the current highest bid, which is:'
             + highestBid);
         } else {
             const bidPrice = {bidPrice: +this.state.value};
@@ -66,11 +66,11 @@ export default class SingleCastle extends React.Component {
                 .catch(console.error);
 
             this.setState({value: ''});
-            
+
         }
     }
 
-  
+
 
 render(){
 //     console.log("CASTLE", this.props.oneCastle.id);
@@ -79,7 +79,7 @@ render(){
 //     console.log("THISPROPS", this.props)
 //     console.log("USER", this.props.user);
 
-    const {oneCastle, highestBid, addBid, user} = this.props;
+    const {oneCastle, highestBid, addBid, user, reviews} = this.props;
 
 
 
@@ -106,25 +106,25 @@ render(){
                             <div className="bid-section">
                                 <div className="form-group">
                                     {
-                                         
-                                        highestBid.length === 0 ? 
+
+                                        highestBid.length === 0 ?
                                         <h5>No Bids Yet</h5> :
-                                        <h5>Highest Bid: ${highestBid}</h5> 
+                                        <h5>Highest Bid: ${highestBid}</h5>
                                     }
-                                    
-                                    <form 
+
+                                    <form
                                         onSubmit={this.onBidSubmit}
                                     >
                                         <input type="text"
-                                            placeholder={highestBid.length === 0? 
+                                            placeholder={highestBid.length === 0?
                                                 "No Bids": "Place Your Bid Here"}
                                             value={this.state.value}
-                                            onChange={this.onBid}                     
+                                            onChange={this.onBid}
                                         />
 
                                      {
                                          user ?
-                                          <button 
+                                          <button
                                             type="submit"
                                             className="btn btn-success"
 
@@ -138,19 +138,19 @@ render(){
                                         <span>
                                             Log in to place a bid
                                         </span>
-                                        // <button 
-                                        //     type="button" 
+                                        // <button
+                                        //     type="button"
                                         //     className="btn btn-success"
-                                        //     data-toggle="tooltip" data-placement="top" 
+                                        //     data-toggle="tooltip" data-placement="top"
                                         //     title="Log in to place a bid"
                                         // >
                                         // Sign In
                                         // </button>
 
-                                     }  
+                                     }
 
                                     </form>
-                         
+
                                 </div>
                             </div>
                             <div className="ratings">
@@ -162,62 +162,22 @@ render(){
                                     <span className="glyphicon glyphicon-star"></span>
                                     <span className="glyphicon glyphicon-star-empty"></span>
                                     4.0 stars
+
                                 </p>
+                                {
+                                  reviews && reviews.map((review, idx) => (
+                                    <div className='row' key={idx}>
+                                      <div className='col-lg-2 col-lg-offset-2'>{review.star}</div>
+                                      <div className='col-lg-4'>{review.subject}</div>
+                                      <div className='col-lg-12 col-lg-offset-2'>{review.content}</div>
+                                    </div>
+                                  ))
+                                }
                             </div>
                         </div>
 
-                        <div className="well">
+                        <Review />
 
-                            <div className="text-right">
-                                <a className="btn btn-success">Leave a Review</a>
-                            </div>
-
-                            <hr></hr>
-
-                            <div className="row">
-                                <div className="col-md-12">
-                                    <span className="glyphicon glyphicon-star"></span>
-                                    <span className="glyphicon glyphicon-star"></span>
-                                    <span className="glyphicon glyphicon-star"></span>
-                                    <span className="glyphicon glyphicon-star"></span>
-                                    <span className="glyphicon glyphicon-star-empty"></span>
-                                    Anonymous
-                                    <span className="pull-right">10 days ago</span>
-                                    <p>This product was great in terms of quality. I would definitely buy another!</p>
-                                </div>
-                            </div>
-
-                            <hr></hr>
-
-                            <div className="row">
-                                <div className="col-md-12">
-                                    <span className="glyphicon glyphicon-star"></span>
-                                    <span className="glyphicon glyphicon-star"></span>
-                                    <span className="glyphicon glyphicon-star"></span>
-                                    <span className="glyphicon glyphicon-star"></span>
-                                    <span className="glyphicon glyphicon-star-empty"></span>
-                                    Anonymous
-                                    <span className="pull-right">12 days ago</span>
-                                    <p>I've alredy ordered another one!</p>
-                                </div>
-                            </div>
-
-                            <hr></hr>
-
-                            <div className="row">
-                                <div className="col-md-12">
-                                    <span className="glyphicon glyphicon-star"></span>
-                                    <span className="glyphicon glyphicon-star"></span>
-                                    <span className="glyphicon glyphicon-star"></span>
-                                    <span className="glyphicon glyphicon-star"></span>
-                                    <span className="glyphicon glyphicon-star-empty"></span>
-                                    Anonymous
-                                    <span className="pull-right">15 days ago</span>
-                                    <p>I've seen some better than this, but not at this price. I definitely recommend this item.</p>
-                                </div>
-                            </div>
-
-                        </div>
 
                     </div>
 

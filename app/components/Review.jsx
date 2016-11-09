@@ -38,7 +38,7 @@ export class Review extends React.Component {
 
 // get reviews from db
 // user can add / delete / edit a review
-class Review extends React.Component {
+
   render(){
     console.log('reviews', reviews)
     const {reviews} = this.props
@@ -58,8 +58,8 @@ class Review extends React.Component {
               <div className='col-lg-1'>
                 <input className="form-control" name='star'></input>
               </div>
+          </div>
 
-            </div>
             <div className='row'>
                   <div className='col-lg-1 col-lg-offset-2'>
                   <label>Content: </label>
@@ -67,9 +67,9 @@ class Review extends React.Component {
                   <div className='col-lg-6'>
                   <textarea className="form-control" name='content' rows="3"></textarea>
                 </div>
-              <div className="col-lg-2">
-                  <button className="btn btn-success" >Leave a Review</button>
-              </div>
+                <div className="col-lg-2">
+                    <button className="btn btn-success" >Leave a Review</button>
+                </div>
           </div>
         </form>
 
@@ -84,27 +84,11 @@ class Review extends React.Component {
             ))
           }
       </div>
-
-       <div className="row">
-        <div className="col-md-12">
-        {
-          reviews && reviews.map((review, idx) => (
-
-          <span key={idx}>{review.star}</span>
-          <span key={idx}>{review.star}</span>
-          // <span>{review.subject}</span>
-          <span>{review.content}</span>
-          ))
-        }
-          </div>
-      </div>
     )
   }
 }
 
 
 const mapState = ({reviews, user, oneCastle}) => ({reviews, user, oneCastle})
-
-const mapState = ({reviews}) => ({reviews})
 
 export default connect(mapState, null)(Review)

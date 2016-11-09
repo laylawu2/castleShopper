@@ -33,11 +33,7 @@ const castles = [
     },
     {
         "name": "Howl's Moving Castle",
-<<<<<<< HEAD
-        "imageURL":
-=======
-        "imageUrl": 
->>>>>>> master
+        "imageUrl":
             "https://ladygeekgirl.files.wordpress.com/2013/06/howls_moving_castle_artwork_prop_10.jpg",
         "size": 25250,
         "location": "anywhere",
@@ -54,8 +50,8 @@ const castles = [
         "location": "Germany",
         "price": 1500000,
         "amenitites": {
-            "window": 25, 
-            "room": 15, 
+            "window": 25,
+            "room": 15,
             "prince": 0
         },
         "description": "Hohenschwangau Castle is a 19th-century palace in southern Germany. It was the childhood residence of King Ludwig II of Bavaria and was built by his father, King Maximilian II of Bavaria. It is located in the German village of Hohenschwangau near the town of Füssen, part of the county of Ostallgäu in southwestern Bavaria, Germany, very close to the border with Austria.",
@@ -69,8 +65,8 @@ const castles = [
         "location": "Portugual",
         "price": 1100000,
         "amenitites": {
-            "window": 15, 
-            "room": 15, 
+            "window": 15,
+            "room": 15,
             "prince": 0
         },
         "description": "Guimarães Castle is the principal medieval castle in the municipality Guimarães, in the northern region of Portugal. It was built under the orders of Mumadona Dias in the 10th century to defend the monastery from attacks by Moors and Norsemen.",
@@ -157,7 +153,7 @@ const users = [
         "username": "hairy",
         "address": "2230 disneyway, anaheim, CA 91745",
         "password": "123"
-    }, 
+    },
     {
         "firstName": "Sebastian",
         "lastName": "UnderDaSea",
@@ -211,10 +207,8 @@ const reviews = [
         "content": "Very great castle",
         "star": 1,
         "date": "2016-10-31",
-<<<<<<< HEAD
         "subject": "Great castle",
-        'castle_id': 2
-=======
+        'castle_id': 2,
         "subject": "Great castle"
     },
     {
@@ -222,7 +216,7 @@ const reviews = [
         "star": 5,
         "date": "2016-10-30",
         "subject": "Great castle"
-    }, 
+    },
     {
         "content": "The castle's structure needs a bit more work.",
         "star": 3,
@@ -234,7 +228,7 @@ const reviews = [
         "star": 2,
         "date": "2015-06-18",
         "subject": "Too medieval"
-    }, 
+    },
     {
         "content": "Umm I was told that there would be knights present? So disappointing....",
         "star": 3,
@@ -254,7 +248,6 @@ const reviews = [
         "date": "2015-12-21",
         "subject": "Love and Hate!",
         'castle_id': 1
->>>>>>> master
     }
 ]
 

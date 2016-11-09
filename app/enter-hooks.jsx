@@ -20,7 +20,9 @@ export const loadCastle = (castle) => {
 }
 
 export const loadCastleReviews = (reviews) => {
+  console.log('reviews in loadCastleReviews', reviews)
   store.dispatch(receiveCastleReviews(reviews));
+}
 
 export const loadUserBids = (bids) => {
   store.dispatch(userBids(bids));
@@ -41,6 +43,7 @@ export const getSingleCastleReviews = ({params}) => {
   fetch(`/api/reviews/${params.castleId}`)
   .then(res => res.json())
   .then(result => loadCastleReviews(result))
+}
 
 export const getReviewsForUser = ({params}) => {
   fetch('/api/reviews/' + params.userId)

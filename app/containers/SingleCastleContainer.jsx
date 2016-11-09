@@ -22,11 +22,11 @@ import {newBidForThisUser} from '../action-creators/bid';
 
 
 
-const mapStateToProps = ({oneCastle, highestBid, user}) => ({
-    oneCastle, 
-    highestBid, 
-    user
-
+const mapStateToProps = ({oneCastle, highestBid, user, reviews}) => ({
+    oneCastle,
+    highestBid,
+    user,
+    reviews
 })
 
 const mapDispatchToProps = dispatch => ({

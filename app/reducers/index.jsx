@@ -19,10 +19,7 @@ const rootReducer = combineReducers({
     oneCastle: singleCastle,
     user: authReducer,
     category: categoryReducer,
-    reviews: reviewReducer
-})
-
-export default rootReducer
+    reviews: reviewReducer,
     ascending: ascendingReducer,
     descending: descendingReducer,
     highestBid: bidReducer,
