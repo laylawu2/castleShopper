@@ -24,7 +24,7 @@ export default ({category, allCastles, filter, handleChange, handleChangeCategor
 						<div key={castle.id} className="col-xs-6 col-md-3" id="image-div">
 							<div id="image-thumbnail">
 							<Link  className="thumbnail" to={`/castles/${castle.id}`}>
-							<img src={castle.imageUrl} />
+								<div className="img" style={{ backgroundImage:`url(${castle.imageUrl})` }} />
 							</Link>
 							</div>
 							<p className="description" id="castle-title"><Link to={`/castles/${castle.id}`}>{castle.name}</Link></p>

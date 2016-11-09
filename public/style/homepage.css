@@ -80,3 +80,18 @@ body { margin-top:30px; }
     line-height: 20px;
     display: block;
 }
+
+.img {
+    position: relative;
+    float: left;
+    width:  150px;
+    height: 150px;
+    background-position: 50% 50%;
+    background-repeat:   no-repeat;
+    background-size:     cover;
+}
+
+.thumbnail {
+    width: 160px;
+    height: 160px;
+}
