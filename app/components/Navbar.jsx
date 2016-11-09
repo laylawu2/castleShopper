@@ -23,7 +23,7 @@ export default ({user, logout, ascending, descending}) => {
                         <ul className="nav navbar-nav">
                         {
                             user ? 
-                            <li>Welcome Back, {user.firstName}!</li>
+                            <li><span id="welcome-msg">Welcome Back, {user.firstName}!</span></li>
                             : 
                              <li><a href="#">Home</a></li>
                         }
