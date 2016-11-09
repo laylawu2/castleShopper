@@ -21,7 +21,13 @@ export default ({user, logout}) => {
                         </div>
                         <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul className="nav navbar-nav">
-                            <li><a href="#">Home</a></li>
+                        {
+                            user ? 
+                            <li>Welcome Back, {user.firstName}!</li>
+                            : 
+                             <li><a href="#">Home</a></li>
+                        }
+                            
                             <li className="dropdown">
                                 <a href="#" className="dropdown-toggle" data-toggle="dropdown">Categories <b className="caret"></b></a>
                                 <ul className="dropdown-menu">
@@ -32,17 +38,22 @@ export default ({user, logout}) => {
                                 </ul>
                             </li>
                         </ul>
-                        <ul className="nav navbar-nav navbar-right">
-                            <SignupModal />
+
+                            
 
                             {
-                                user ? <ul className="nav navbar-nav">
-                            <li className="active"><a onClick={logout} href="#">Sign out</a></li>
-                            <Link className="thumbnail" to={`/user/${user.id}`}>
-                                <li className="active">Your Account</li>
-							</Link>
-                            </ul> 
+                                user ? 
+                                <ul className="nav navbar-nav">
+                                    <li><a onClick={logout} href="#">Sign out</a></li>
+                                    <li>
+                                        <Link to={`/user/${user.id}`}>
+                                            <li>Your Account</li>
+                                        </Link>
+                                    </li>
+                                </ul> 
                             : 
+                            <ul className="nav navbar-nav navbar-right">
+                            <SignupModal />
                             <li className="dropdown">
                                 <a href="#" className="dropdown-toggle" data-toggle="dropdown">Sign in <b className="caret"></b></a>
                                 <ul className="dropdown-menu">
@@ -60,9 +71,10 @@ export default ({user, logout}) => {
                                     </li>
                                 </ul>
                             </li>
+                            </ul>
                             }
                             
-                        </ul>
+
                         </div>
                     </nav>
                 </div>
