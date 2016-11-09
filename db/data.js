@@ -1,4 +1,6 @@
 
+
+
 const castles = [
     {
         "name": "Sleeping Beauty Castle",
@@ -91,21 +93,22 @@ const orders = [
         "shippingAddress": "5 Hanover Sq., New York City, NY, 10004"
     }
 ]
+
     //reviews + memories
-// const reviews = [
-//     {
-//         "content": "Beautiful castle in the happiest place on Earth!",
-//         "star": 5,
-//         "date": "2015-12-12",
-//         "subject": "AWESOME!"
-//     },
-//     {
-//         "content": "Very great castle",
-//         "star": 1,
-//         "date": "2016-10-31",
-//         "subject": "Great castle"
-//     } 
-// ]
+const reviews = [
+    {
+        "content": "Beautiful castle in the happiest place on Earth!",
+        "star": 5,
+        "date": "2015-12-12",
+        "subject": "AWESOME!"
+    },
+    {
+        "content": "Very great castle",
+        "star": 1,
+        "date": "2016-10-31",
+        "subject": "Great castle"
+    } 
+]
 
 
 module.exports = {castles,reviews,users}

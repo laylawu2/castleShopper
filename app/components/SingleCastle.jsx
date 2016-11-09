@@ -96,7 +96,7 @@ render(){
                                 </h4>
                                 <p><a target="_blank" href=""></a>{oneCastle.location}</p>
                                 <p>
-                                    <strong><a href="">A History of {oneCastle.name}</a>
+                                    <strong><a href={oneCastle.historyLink} target="_blank">A History of {oneCastle.name}</a>
                                     </strong></p>
                                 <p>{oneCastle.description}</p>
                             </div>
@@ -119,7 +119,7 @@ render(){
                                             onChange={this.onBid}                     
                                         />
                                      {
-                                         user ? 
+                                         user ?
                                           <button 
                                             type="submit"
                                             className="btn btn-success"

@@ -10,3 +10,5 @@ export const FETCH_CASTLE_BY_CATEGORY = 'FETCH_CASTLE_BY_CATEGORY';
 
 export const USER_BIDS = 'USER_BIDS';
 
+export const BID_RESOLVED = 'BID_RESOLVED';
+

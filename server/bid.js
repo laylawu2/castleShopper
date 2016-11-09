@@ -43,6 +43,22 @@ router.get('/unpaid', function(req, res, next){
       })
 });
 
+// router.get('/declined/:bidId', function(req, res, next){
+//     console.log("IN DECLINED", req.params.bidId);
+//     Bid.update({
+//         status: 'rejected'
+//     },{ 
+//         where: {
+//             bidPrice: req.params.bidId
+//         }
+//     }
+//     )
+//         .then(confirmArray => {
+//             res.status(201).send("bid status changed to rejected")
+//         })
+// })
+
+
 // findAndCountAll({
 //      where: {
 //         title: {

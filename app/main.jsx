@@ -17,6 +17,7 @@ import {getSingleCastle} from './enter-hooks'
 import {onCategoryEnter} from './enter-hooks'
 import {getReviewsForUser} from './enter-hooks'
 import {getBidsForUser} from './enter-hooks'
+import {dispatchOnEnter} from './enter-hooks'
 
 
 
@@ -28,7 +29,7 @@ render (
 	      <Route path="/" onEnter={onHomeEnter} component={Root}>
 	        <IndexRedirect to="/home" />
 	        <Route path="home" component={ HomepageContainer } />
-	        <Route path="/user/:userId" component={ UserContainer } onEnter={getBidsForUser}/>
+	        <Route path="/user/:userId" component={ UserContainer } onEnter={dispatchOnEnter}/>
 	        <Route path="/cart" component={ CartContainer } />
 	        <Route path="/checkout" component={ CheckoutContainer } />
 					<Route path="/castles/search/:searchByCategory" />
