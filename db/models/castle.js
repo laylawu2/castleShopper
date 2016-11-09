@@ -38,6 +38,9 @@ module.exports = db.define('castles', {
     category: {
         type: Sequelize.ARRAY(Sequelize.TEXT), 
         allowNull: false
+    }, 
+    highestBid: {
+        type: Sequelize.INTEGER
     }
 }, {
     getterMethods: {

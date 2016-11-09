@@ -2,6 +2,7 @@
 
 import React from 'react';
 import axios from 'axios';
+import ReviewContainer from '../containers/ReviewContainer'
 
 //if user is not logged in, show: log in to bid! 
 //if user is logged in: 
@@ -70,6 +71,13 @@ export default class SingleCastle extends React.Component {
         }
     }
 
+    // stickBid(highestBid){
+    //     const {oneCastle} = this.props;
+    //     axios.post(`/api/castles/${oneCastle.id}`, highestBid )
+    //             .catch(console.error);
+    //     <h5>Highest Bid: ${highestBid}</h5> 
+    // }
+
   
 
 render(){
@@ -78,8 +86,10 @@ render(){
 //     console.log("NEWBID", this.props.highestBid);
 //     console.log("THISPROPS", this.props)
 //     console.log("USER", this.props.user);
-
-    const {oneCastle, highestBid, addBid, user} = this.props;
+    
+    const {oneCastle, highestBid, addBid, user, reviews, checkout} = this.props;
+    
+    
 
 
 
@@ -92,9 +102,9 @@ render(){
                     <div className="col-md-9">
 
                         <div className="thumbnail">
-                            <img className="img-responsive" src='http://www.photographyblogger.net/wp-content/uploads/2009/05/castle10.jpg' alt=""></img>
+                            <img className="img-responsive" src={oneCastle.imageUrl} alt=""></img>
                             <div className="caption-full">
-                                <h4 className="pull-right">${oneCastle.price}</h4>
+                                <h5 className="pull-right">Suggested Price: ${oneCastle.price}</h5>
                                 <h4><a href="#">{oneCastle.name}</a>
                                 </h4>
                                 <p><a target="_blank" href=""></a>{oneCastle.location}</p>
@@ -153,71 +163,8 @@ render(){
                          
                                 </div>
                             </div>
-                            <div className="ratings">
-                                <p className="pull-right">3 reviews</p>
-                                <p>
-                                    <span className="glyphicon glyphicon-star"></span>
-                                    <span className="glyphicon glyphicon-star"></span>
-                                    <span className="glyphicon glyphicon-star"></span>
-                                    <span className="glyphicon glyphicon-star"></span>
-                                    <span className="glyphicon glyphicon-star-empty"></span>
-                                    4.0 stars
-                                </p>
-                            </div>
-                        </div>
-
-                        <div className="well">
-
-                            <div className="text-right">
-                                <a className="btn btn-success">Leave a Review</a>
-                            </div>
-
-                            <hr></hr>
-
-                            <div className="row">
-                                <div className="col-md-12">
-                                    <span className="glyphicon glyphicon-star"></span>
-                                    <span className="glyphicon glyphicon-star"></span>
-                                    <span className="glyphicon glyphicon-star"></span>
-                                    <span className="glyphicon glyphicon-star"></span>
-                                    <span className="glyphicon glyphicon-star-empty"></span>
-                                    Anonymous
-                                    <span className="pull-right">10 days ago</span>
-                                    <p>This product was great in terms of quality. I would definitely buy another!</p>
-                                </div>
-                            </div>
-
-                            <hr></hr>
-
-                            <div className="row">
-                                <div className="col-md-12">
-                                    <span className="glyphicon glyphicon-star"></span>
-                                    <span className="glyphicon glyphicon-star"></span>
-                                    <span className="glyphicon glyphicon-star"></span>
-                                    <span className="glyphicon glyphicon-star"></span>
-                                    <span className="glyphicon glyphicon-star-empty"></span>
-                                    Anonymous
-                                    <span className="pull-right">12 days ago</span>
-                                    <p>I've alredy ordered another one!</p>
-                                </div>
-                            </div>
-
-                            <hr></hr>
-
-                            <div className="row">
-                                <div className="col-md-12">
-                                    <span className="glyphicon glyphicon-star"></span>
-                                    <span className="glyphicon glyphicon-star"></span>
-                                    <span className="glyphicon glyphicon-star"></span>
-                                    <span className="glyphicon glyphicon-star"></span>
-                                    <span className="glyphicon glyphicon-star-empty"></span>
-                                    Anonymous
-                                    <span className="pull-right">15 days ago</span>
-                                    <p>I've seen some better than this, but not at this price. I definitely recommend this item.</p>
-                                </div>
-                            </div>
-
-                        </div>
+                            
+                        </div>                       
 
                     </div>
 
@@ -225,19 +172,21 @@ render(){
 
             </div>
 
-            <div className="copyright">
+            <ReviewContainer />
 
-                <hr></hr>
+                <div className="copyright">
 
-                <footer>
-                    <div className="row">
-                        <div className="col-lg-12">
-                            <p>Copyright &copy; Your Website 2014</p>
+                    <hr></hr>
+
+                    <footer>
+                        <div className="row">
+                            <div className="col-lg-12">
+                                <p>Copyright &copy; Your Website 2014</p>
+                            </div>
                         </div>
-                    </div>
-                </footer>
+                    </footer>
 
-            </div>
+                </div>
         </div>
         )
     }

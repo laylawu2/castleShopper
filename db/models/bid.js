@@ -16,6 +16,26 @@ module.exports = db.define('bids', {
     type: Sequelize.ENUM('paid', 'unpaid'),
     defaultValue: 'unpaid'
   }
+}, {
+  instanceMethods: {
+    getHighestBid: function(castleId){
+      Bid.findAll({
+        where: {
+          castle_id: castleId
+        }
+      })
+        .then(bids => {
+          console.log("BIDSININSTANCE", bids)
+        })
+    }
+  }
 })
 
+// addChild: function(field) {
+//       field.parentId = this.id;
+//       return Task.create(field)
+//       .then(newRow => {
+//         return newRow;
+//       })
+//     }
 
