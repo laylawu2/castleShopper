@@ -17,6 +17,8 @@ Bid.belongsTo(Castle, {as: 'castle'});
 
 Review.belongsTo(Castle);
 
+Review.belongsTo(User);
+
 User.belongsToMany(Castle, {through: Bid});
 
 Castle.hasMany(Bid);

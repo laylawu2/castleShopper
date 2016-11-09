@@ -24,11 +24,11 @@ import {checkoutCastle} from '../action-creators/checkout'
 
 
 const mapStateToProps = ({oneCastle, highestBid, user, reviews}) => ({
+
     oneCastle, 
     highestBid, 
     user, 
     reviews
-
 })
 
 const mapDispatchToProps = dispatch => ({

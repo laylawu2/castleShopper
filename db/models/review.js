@@ -14,7 +14,7 @@ module.exports = db.define('reviews',{
     },
     date: {
         type: Sequelize.DATEONLY,
-        allowNull: false
+        // allowNull: false
     },
     star: {
         type: Sequelize.INTEGER,

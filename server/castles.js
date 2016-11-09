@@ -2,7 +2,7 @@ const debug = require('debug')('auth')
 const passport = require('passport')
 const Castle = require('APP/db/models/castle')
 const castlesRoute = require('express').Router()
-
+const Review = require('../db/models/review')
 
 castlesRoute.get('/:castleId',function(req,res,next) {
 
@@ -11,6 +11,32 @@ castlesRoute.get('/:castleId',function(req,res,next) {
 
 })
 
+// castlesRoute.get('/:castleId', (req, res, next) => {
+//         Review
+//             .findAll({
+//                 where: {
+//                     castle_id: req.params.castleId
+//                 }
+//             })
+//             .then(reviews => res.status(200).send(reviews))
+//             .catch(console.error);
+//     })
+
+// castlesRoute.get('/:castleId',function(req,res,next) {
+
+//     Castle.findById(req.params.castleId)
+//             .then(foundCastleById => {
+//                 return Review
+//                     .findAll({
+//                         where: {
+//                             castle_id: req.params.castleId
+//                         }
+//                     })
+//             })
+
+//             .then(res.send(reviews))
+
+// })
 castlesRoute.get('/search/:searchByCategory',function(req,res,next) {
     Castle.findAll({
         where: {
