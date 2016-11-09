@@ -7,7 +7,9 @@ import bidReducer from './newBid'
 import bidsReducer from './userBids.jsx'
 import castleBidsReducer from './castleBids.jsx'
 import {categoryReducer} from './category'
+import {bidResolvedReducer} from './bidResolved.jsx'
 import checkoutReducer from './checkout';
+
 
 
 
@@ -23,7 +25,6 @@ const rootReducer = combineReducers({
     category: categoryReducer,
     checkout: checkoutReducer,
     highestBid: bidReducer,
-    category: categoryReducer,
     userBids: bidsReducer, 
     castleBids: castleBidsReducer
 })

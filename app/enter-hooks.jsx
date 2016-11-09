@@ -38,14 +38,19 @@ export const getReviewsForUser = ({params}) => {
     .then(res => res.json())
     
 }
+export const dispatchOnEnter = ({params}) => {
+  store.dispatch(getBidsForUser(params.userId))
+}
 
-export const getBidsForUser = ({params}) => {
-
-  fetch('/api/bids/user/' + params.userId)
+export const getBidsForUser = (userId) => 
+dispatch => {
+  console.log("INGETBIDSFORUSER")
+  fetch('/api/bids/user/' + userId)
     .then(res => res.json())
     .then(result =>  {
-      loadUserBids(result);
       console.log("RESULT", result);
+      dispatch(userBids(result));
+      
     })
   // fetch('/api/bids/user/' + params.userId)
   //   .then(res => res.json())

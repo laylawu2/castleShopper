@@ -2,6 +2,7 @@
 import {NEW_BID_FOR_THIS_USER} from '../constants'
 
 import {USER_BIDS} from '../constants'
+// import {BID_RESOLVED} from '../constants'
 
 
 export const newBidForThisUser = (newBid) => ({
@@ -14,3 +15,11 @@ export const userBids = (userBids) => ({
     userBids
 
 })
+
+// export const bidResolved = (resolved) => ({
+//     type: BID_RESOLVED, 
+//     resolved
+// })
+
+
+

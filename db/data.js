@@ -1,4 +1,6 @@
 
+
+
 const castles = [
     {
         "name": "Sleeping Beauty Castle",
@@ -91,6 +93,7 @@ const orders = [
         "shippingAddress": "5 Hanover Sq., New York City, NY, 10004"
     }
 ]
+
     //reviews + memories
 const reviews = [
     {
