@@ -1,3 +1,8 @@
-.shipping-addr-title {
-	display: inline;
+select {
+	margin: 10px 0;
+}
+
+.exp-label {
+	margin: 15px 0;
+	font-size: 15px;
 }

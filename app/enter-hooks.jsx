@@ -64,6 +64,8 @@ dispatch => {
       dispatch(userBids(result));
 
     })
+
+    
   // fetch('/api/bids/user/' + params.userId)
   //   .then(res => res.json())
   //   .then(result =>  {

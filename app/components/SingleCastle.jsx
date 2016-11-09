@@ -2,6 +2,7 @@
 
 import React from 'react';
 import axios from 'axios';
+<<<<<<< HEAD
 import { Review } from './Review'
 //if user is not logged in, show: log in to bid!
 //if user is logged in:
@@ -9,6 +10,18 @@ import { Review } from './Review'
     //if there are bids on this castle, show the highest one
     //if the user has already bid on this castle, tell them
         //you've already bid! and show previous highest bid
+=======
+import { FormattedNumber } from 'react-intl';
+import ReviewContainer from '../containers/ReviewContainer'
+
+
+//if user is not logged in, show: log in to bid! 
+//if user is logged in: 
+    //if there are no bids on this castle yet, show no bids! 
+    //if there are bids on this castle, show the highest one 
+    //if the user has already bid on this castle, tell them 
+        //you've already bid! and show previous highest bid 
+>>>>>>> master
 
 // export const addCastle = (castleInfo) => dispatch => {
 //   //console.log('dispatchers', castleInfo)
@@ -70,6 +83,14 @@ export default class SingleCastle extends React.Component {
         }
     }
 
+    // stickBid(highestBid){
+    //     const {oneCastle} = this.props;
+    //     axios.post(`/api/castles/${oneCastle.id}`, highestBid )
+    //             .catch(console.error);
+    //     <h5>Highest Bid: ${highestBid}</h5> 
+    // }
+
+  
 
 
 render(){
@@ -79,7 +100,8 @@ render(){
 //     console.log("THISPROPS", this.props)
 //     console.log("USER", this.props.user);
 
-    const {oneCastle, highestBid, addBid, user, reviews} = this.props;
+    const {oneCastle, highestBid, addBid, user, reviews, checkout} = this.props;
+    
 
 
 
@@ -92,9 +114,10 @@ render(){
                     <div className="col-md-9">
 
                         <div className="thumbnail">
-                            <img className="img-responsive" src='http://www.photographyblogger.net/wp-content/uploads/2009/05/castle10.jpg' alt=""></img>
+                            <img className="img-responsive" src={oneCastle.imageUrl} alt=""></img>
                             <div className="caption-full">
-                                <h4 className="pull-right">${oneCastle.price}</h4>
+                                <h5 className="pull-right">Suggested Price: <FormattedNumber value={oneCastle.price} style="currency" currency="EUR" /></h5>
+
                                 <h4><a href="#">{oneCastle.name}</a>
                                 </h4>
                                 <p><a target="_blank" href=""></a>{oneCastle.location}</p>
@@ -109,7 +132,11 @@ render(){
 
                                         highestBid.length === 0 ?
                                         <h5>No Bids Yet</h5> :
+<<<<<<< HEAD
                                         <h5>Highest Bid: ${highestBid}</h5>
+=======
+                                        <h5>Highest Bid: <FormattedNumber value={highestBid} style="currency" currency="EUR" /></h5> 
+>>>>>>> master
                                     }
 
                                     <form
@@ -153,6 +180,7 @@ render(){
 
                                 </div>
                             </div>
+<<<<<<< HEAD
                             <div className="ratings">
                                 <p className="pull-right">3 reviews</p>
                                 <p>
@@ -178,6 +206,10 @@ render(){
 
                         <Review />
 
+=======
+                            
+                        </div>                       
+>>>>>>> master
 
                     </div>
 
@@ -185,19 +217,21 @@ render(){
 
             </div>
 
-            <div className="copyright">
+            <ReviewContainer />
 
-                <hr></hr>
+                <div className="copyright">
 
-                <footer>
-                    <div className="row">
-                        <div className="col-lg-12">
-                            <p>Copyright &copy; Your Website 2014</p>
+                    <hr></hr>
+
+                    <footer>
+                        <div className="row">
+                            <div className="col-lg-12">
+                                <p>Copyright &copy; Your Website 2014</p>
+                            </div>
                         </div>
-                    </div>
-                </footer>
+                    </footer>
 
-            </div>
+                </div>
         </div>
         )
     }

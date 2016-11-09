@@ -39,10 +39,12 @@ export class Review extends React.Component {
 // get reviews from db
 // user can add / delete / edit a review
 
+
   render(){
     console.log('reviews', reviews)
     const {reviews} = this.props
     return(
+
       <div>
          <form className='well' onSubmit={this.onFormSubmit}>
           <div className='form-group row'>
@@ -92,3 +94,4 @@ export class Review extends React.Component {
 const mapState = ({reviews, user, oneCastle}) => ({reviews, user, oneCastle})
 
 export default connect(mapState, null)(Review)
+

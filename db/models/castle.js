@@ -57,6 +57,7 @@ module.exports = db.define('castles', {
         type: Sequelize.TEXT
     },
     category: {
+
         type: Sequelize.ARRAY(Sequelize.TEXT),
         allowNull: false,
         set: function(tags) {
@@ -68,6 +69,10 @@ module.exports = db.define('castles', {
             }
             this.setDataValue('category', tags);
         }
+    }, 
+    highestBid: {
+        type: Sequelize.INTEGER
+
     }
 }, {
     getterMethods: {

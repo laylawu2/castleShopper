@@ -56,6 +56,7 @@ castlesRoute.get('/',function(req,res,next) {
         .catch(next);
 })
 
+
 castlesRoute.post('/', (req, res, next) => {
 //  console.log('castlesRoute post', req.body)
   Castle.create(req.body)
@@ -65,6 +66,22 @@ castlesRoute.post('/', (req, res, next) => {
     })
     .catch(console.error)
 })
+
+castlesRoute.post('/:castleId', function(req, res, next){
+
+     console.log("IN POST", req.params.castleId)
+    Castle.update(req.body, {
+        where: {
+            id: req.params.castleId
+        }
+    })
+      .then(newCastleArray => {
+          res.status(201).send(newCastleArray)
+      })
+      .catch(next)
+})
+
+
 
 module.exports = castlesRoute
 

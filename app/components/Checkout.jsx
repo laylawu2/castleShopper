@@ -1,16 +1,13 @@
 import React from 'react';
 import { FormattedNumber } from 'react-intl';
-// import scriptLoader from 'react-async-script-loader';
+import scriptLoader from 'react-async-script-loader';
 
-import AddressForm from './forms/address';
-import PaymentForm from './forms/payment';
 import CastleInfo from './forms/castleInfo';
 import { STATES, COUNTRIES } from './forms/constants';
 
 /*
 	need user address, email info
 */
-
 export default class Checkout extends React.Component {
 	constructor(props) {
 		super(props);
@@ -18,15 +15,21 @@ export default class Checkout extends React.Component {
 			submitDisabled: false,
 			token: 0,
 			paymentComplete: false,
-			paymentError: false
+			paymentError: false,
+			scriptLoaded: false
 		}
         this.onSubmit = this.onSubmit.bind(this);
 	}
+	
 	onSubmit(event) {
-		console.log("onsubmit, this" , this);
+		console.log("onsubmit, this" , event.target);
 	    let self = this;
 	    event.preventDefault();
 	    this.setState({ submitDisabled: true, paymentError: null });
+
+	    Stripe.card.validateCardNumber('4242424242424242')
+	    Stripe.card.validateExpiry(2, 2016)
+	    Stripe.card.validateCVC('123') 
 	    // send form here
 	    Stripe.createToken(event.target, function(status, response) {
 	    	console.log("event target", event.target);
@@ -39,29 +42,42 @@ export default class Checkout extends React.Component {
 	      }
 	    });
 	}
-	// componentWillReceiveProps ({ isScriptLoaded, isScriptLoadSucceed }) {
-	//     if (isScriptLoaded && !this.props.isScriptLoaded) { // load finished 
-	//       if (isScriptLoadSucceed) {
-	//         this.initEditor()
-	//       }
-	//       else this.props.onError()
-	//     }
-	//   }
+	initForm() {
+
+	}
+	/* componentWillReceiveProps ({ isScriptLoaded, isScriptLoadSucceed }) {
+	    if (isScriptLoaded && !this.props.isScriptLoaded) { // load finished 
+	      if (isScriptLoadSucceed) {
+	        // do something
+	      this.setState({
+	      	scriptLoaded: true
+	      })
+	      }
+	      else this.props.onError()
+	    }
+	  }
 	 
-	//   componentDidMount () {
-	//     const { isScriptLoaded, isScriptLoadSucceed } = this.props
-	//     if (isScriptLoaded && isScriptLoadSucceed) {
-	//       this.initEditor()
-	//     }
-	//   }
+	  componentDidMount () {
+	    const { isScriptLoaded, isScriptLoadSucceed } = this.props
+	    if (isScriptLoaded && isScriptLoadSucceed) {
+	    	console.log("scriptLoaded");
+	      this.setState({
+	      	scriptLoaded: true
+	      })
+	    }
+	  }*/
 render() {
 	let { castle, user } = this.props;
+	
+	
 return (
 	<div className="container">
-
+	{
+		castle ? console.log(castle) : console.log(null)
+	}
 		<CastleInfo castle={ castle } />
 
-		<form action={`/api/bid/${castle.id}`} id="payment-form" className="form-inline" onSubmit={ e => this.onSubmit(e) }>
+		<form action={`/api/bid/${castle.id}`} id="payment-form" onSubmit={ e => this.onSubmit(e) }>
 			<h3>Billing Address</h3>
 			<div>
 				<div className="row">
@@ -131,62 +147,37 @@ return (
 				  <span className="payment-errors"></span>
 
 				  <div className="row form-row">
-				    <label>
-				      <span>Card Number</span>
-				      <input type="text" size="20" data-stripe="number" className="form-control" />
-				    </label>
+				  	<div className="col-lg-12">
+				      <input type="text" size="20" data-stripe="number" className="form-control" placeholder="Card Number" />
+				  	</div>
 				  </div>
 
 				  <div className="row form-row">
-				    <label>
-				      <span>Expiration (MM/YY)</span>
-				      <input type="text" size="2" data-stripe="exp_month" className="form-control" />
-				    
-				    <span> / </span>
-				    <input type="text" size="2" data-stripe="exp_year" className="form-control" />
-				    </label>
-				  </div>
+				  	<div className="col-lg-2 exp-label">
+				      <span>Expiration Date</span>
+				    </div>
+				    <div className="col-lg-2">
+					    <input type="text" size="2" data-stripe="exp_month" className="form-control" placeholder="MM" />
+				    </div>
+				    <div className="col-lg-4">
+					    <input type="text" size="2" data-stripe="exp_year" className="form-control" placeholder="YYYY" />
+				  	</div>
 
-				  <div className="row form-row">
-				    <label>
-				      <span>CVC</span>
-				      <input type="text" size="4" data-stripe="cvc" className="form-control" />
-				    </label>
+					<div className="col-lg-4">
+					    <input type="text" size="4" data-stripe="cvc" className="form-control" placeholder="CVC" />
+					</div>
 				  </div>
-				  <input type="submit" className="submit btn btn-primary" value="Submit Payment" />
-				
+				  <div className="row">
+				  	<div className="col-lg-12">
+				  <input type="submit" width="inherit" className="submit btn btn-primary" value="Buy For Real" />
+					</div>
+					</div>
 			</div>
 		</form>
-		{/*<div className="product-info row">
-			<img className="col-lg-4" src="http://www.castles.org/images/sd6_small.jpg" />
-			<div className="col-lg-8">
-				<h3>Sleeping beauty castle</h3>
-				<ul className="list-unstyled">
-					<li>Description: This is an amazing castle, great value, will guarentee you a good night sleep...</li>
-					<li>Size: 5000 sqft</li>
-					<li>Location: Germany</li>
-					<li>Price: <FormattedNumber value={ 500000000 } style="currency" currency="USD" /></li>
-				</ul>
-			</div>
-		</div>
-		<form className="row payment-form">
-			<PaymentForm />
-			<div className="form-group billing-info">
-				<h3>Billing Information</h3>
-				<AddressForm />
-			</div>
-			<div className="form-group shipping-info">
-				<h3>Shipping Address</h3>
-				<div className="form-check has-danger">
-					<label htmlFor="same-as-billing" className="form-check-label">
-						<input name="same-as-billing" type="checkbox" className="form-check-input" defaultChecked />
-						Same as billing address
-					</label>
-				</div>
-			</div>
-			<button type="submit" className="btn btn-success">Buy for real</button>
-		</form>*/}
+
 	</div>
 );
 }
 }
+
+// export default scriptLoader('https://js.stripe.com/v2/')(Checkout);
