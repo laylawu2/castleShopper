@@ -57,7 +57,6 @@ module.exports = db.define('castles', {
         type: Sequelize.TEXT
     },
     category: {
-
         type: Sequelize.ARRAY(Sequelize.TEXT),
         allowNull: false,
         set: function(tags) {
