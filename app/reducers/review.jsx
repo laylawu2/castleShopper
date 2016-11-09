@@ -30,15 +30,6 @@ export const remove = reviewId => ({ type: REMOVE,reviewId})
 
 //-------------action dispatchers--------------------
 
-// export const addReview = Info => dispatch => {
-//   //console.log('dispatchers',Info)
-//   axios.post('/apis',Info)
-//     .then(res => {
-//       console.log('inside dispatcher post', res.data)
-//       dispatch(create(res.data))
-//     })
-//     .catch(console.error)
-// }
 
 // export const update = Info => dispatch => {
 //   axio.put(`/apis/${id}`,Info)

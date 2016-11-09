@@ -90,6 +90,20 @@ const reviews = [
         "star": 5,
         "date": "2015-12-12",
         "subject": "AWESOME!",
+        'castle_id': 1,
+    },
+    {
+        "content": "My dream castle in the happiest place on Earth!",
+        "star": 5,
+        "date": "2015-12-12",
+        "subject": "LOVE LOVE LOVE!",
+        'castle_id': 1
+    },
+    {
+        "content": "I would do anything to move into this castle!",
+        "star": 5,
+        "date": "2015-12-12",
+        "subject": "When Can I Move In!",
         'castle_id': 1
     },
     {

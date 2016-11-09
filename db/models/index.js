@@ -17,6 +17,8 @@ Bid.belongsTo(Castle);
 
 Review.belongsTo(Castle);
 
+Review.belongsTo(User);
+
 //Purchase.belongsTo(Bid)
 
 // Order.belongsTo(Castle);

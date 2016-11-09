@@ -22,7 +22,7 @@ review.route('/:castleId')
 			.catch(console.error);
 	})
 	.post((req, res, next) => {
-		req.body.castleId = req.params.castleId;
+		req.body.castle_id = req.params.castleId;
 		Review
 			.create(req.body)
 			.then(review => res.status(201).send(review))
