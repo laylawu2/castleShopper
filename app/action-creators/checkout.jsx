@@ -6,9 +6,9 @@ import {BUY_CASTLE} from '../constants'
  
 
 //homepage action creator to be used in thunk
-const receiveCastle = (castle) => ({
+export const checkoutCastle = (castle) => ({
     type: BUY_CASTLE,
-    purchased: 'paid'
+    castle
 });
 
 

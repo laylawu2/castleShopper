@@ -27,7 +27,8 @@ const rootReducer = combineReducers({
     descending: descendingReducer,
     highestBid: bidReducer,
     userBids: bidsReducer, 
-    castleBids: castleBidsReducer
+    castleBids: castleBidsReducer, 
+    castle: checkoutReducer
 })
 
 export default rootReducer
