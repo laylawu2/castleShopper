@@ -22,6 +22,7 @@ export default class Checkout extends React.Component {
 		}
         this.onSubmit = this.onSubmit.bind(this);
 	}
+	
 	onSubmit(event) {
 		console.log("onsubmit, this" , this);
 	    let self = this;
@@ -56,6 +57,7 @@ export default class Checkout extends React.Component {
 	//   }
 render() {
 	let { castle, user } = this.props;
+	
 	
 return (
 	<div className="container">
