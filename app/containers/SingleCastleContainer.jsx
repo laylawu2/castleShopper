@@ -2,6 +2,9 @@ import {connect} from 'react-redux';
 
 import SingleCastle from '../components/SingleCastle';
 
+import {newBidForThisUser} from '../action-creators/bid';
+
+
 // function mapStateToProps (state) {
 //   return {
 //     aBunchOfPuppies: state.puppies
@@ -16,8 +19,18 @@ import SingleCastle from '../components/SingleCastle';
 // const containerComponentCreator = connect(mapStateToProps, mapDispatchToProps);
 
 // const AllPuppiesContainer = containerComponentCreator(AllPuppies);
-const mapStateToProps = ({oneCastle}) => ({
-    oneCastle
+
+
+
+const mapStateToProps = ({oneCastle, highestBid, user}) => ({
+    oneCastle, 
+    highestBid, 
+    user
+
 })
 
-export default connect(mapStateToProps)(SingleCastle);
+const mapDispatchToProps = dispatch => ({
+  addBid: (newBid) => dispatch(newBidForThisUser(newBid))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(SingleCastle);

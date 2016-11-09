@@ -26,3 +26,12 @@
 .product-price {
 	font-size: 1.25em;
 }
+
+.form-group .row {
+	margin-bottom: 15px;
+}
+
+.payment-form {
+	padding-left: 15px;
+	padding-right: 15px;
+}

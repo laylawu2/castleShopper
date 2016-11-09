@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 
 import HomepageContainer from '../containers/HomepageContainer'
 
-export default ({allCastles, filter, handleChange, handleChangeCategory}) => (
+export default ({category, allCastles, filter, handleChange, handleChangeCategory}) => (
 	<div className="home" id="homepage-main">
 		
 		<img src="https://s17.postimg.org/lu28ic2u7/Screen_Shot_2016_11_08_at_2_36_54_PM.png" />

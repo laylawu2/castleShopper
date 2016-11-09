@@ -2,20 +2,11 @@ import {connect} from 'react-redux';
 
 import User from '../components/User';
 
-// function mapStateToProps (state) {
-//   return {
-//     aBunchOfPuppies: state.puppies
-//   };
-// }
-// function mapDispatchToProps () {
-//   return {};
-// }
+const mapStateToProps = ({user, oneCastle, highestBid, userBids}) => ({
+    user, 
+    oneCastle, 
+    highestBid, 
+    userBids
+})
 
-// // connect(mapStateToProps, mapDispatchToProps)(AllPuppies);
-
-// const containerComponentCreator = connect(mapStateToProps, mapDispatchToProps);
-
-// const AllPuppiesContainer = containerComponentCreator(AllPuppies);
-
-
-export default connect()(User);
+export default connect(mapStateToProps)(User);
