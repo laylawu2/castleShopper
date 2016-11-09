@@ -43,7 +43,7 @@ export default ({user, logout}) => {
 
                             {
                                 user ? 
-                                <ul className="nav navbar-nav">
+                                <ul className="nav navbar-nav navbar-right">
                                     <li><a onClick={logout} href="#">Sign out</a></li>
                                     <li>
                                         <Link to={`/user/${user.id}`}>
