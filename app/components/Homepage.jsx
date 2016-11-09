@@ -1,32 +1,47 @@
 import React from 'react';
-import Navbar from './Navbar'
-import Star from './Star'
+import Navbar from './Navbar';
+import Star from './Star';
 import { Link } from 'react-router';
+import { FormattedNumber } from 'react-intl';
 
 import HomepageContainer from '../containers/HomepageContainer'
 
-export default ({allCastles, filter, handleChange}) => (
+export default ({category, allCastles, filter, handleChange, handleChangeCategory}) => (
 	<div className="home" id="homepage-main">
+		
+		<img src="https://s17.postimg.org/lu28ic2u7/Screen_Shot_2016_11_08_at_2_36_54_PM.png" />
+		<div className="list-group">
 		<div className="form-group">
 			<input
-				placeholder="Filter castles by name"
+				placeholder="Filter castles by name or category"
 				className="form-control"
 				value={filter}
 				onChange={handleChange}
 				/>
 			</div>
-		<h1 id="header">CASTLESHOPPER</h1>
-		<div className="list-group">
       {
 				allCastles && allCastles.map(function(castle) {
 					return (
 						<div key={castle.id} className="col-xs-6 col-md-3" id="image-div">
-							<Link className="thumbnail" to={`/castles/${castle.id}`}>
-							<img src="http://www.reidsguides.com/images/destinations/europe/germany/baden-wurttemberg/swabia/hohenzollern-thumb.jpg" />
+							<div id="image-thumbnail">
+							<Link  className="thumbnail" to={`/castles/${castle.id}`}>
+								<div className="img" style={{ backgroundImage:`url(${castle.imageUrl})` }} />
 							</Link>
-							<p className="description" id="castle-title"><Link to={`/api/castles/${castle.id}`}>{castle.name}</Link></p>
+							</div>
+							<p className="description" id="castle-title"><Link to={`/castles/${castle.id}`}>{castle.name}</Link></p>
 							<p>{castle.description}</p>
-							<a href="#" className="category">{ castle.category ? castle.category.map(cat => cat).join(', ') : null }</a>
+							<p>Current price: <FormattedNumber value={castle.price} style="currency" currency="EUR" /></p>
+							<ul id="category-list">
+							{
+								castle.category ? castle.category.map(function(cat,idx) {
+									return (<li key={idx}>{
+										(cat + '\n')
+									}</li>)
+								}) : null
+							}
+							</ul>
+							
+						
 							<Star />
 						</div>
 					)

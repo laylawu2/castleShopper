@@ -1,16 +1,19 @@
 import {connect} from 'react-redux';
 
 import Checkout from '../components/Checkout';
+import { castles, users } from '../../db/data';
+import { buyCastle } from '../action-creators/checkout';
+import {checkoutCastle} from '../action-creators/checkout'
 
-// function mapStateToProps (state) {
-//   return {
-//     aBunchOfPuppies: state.puppies
-//   };
-// }
-// function mapDispatchToProps () {
-//   return {};
-// }
+const mapStateToProps = ({ castle, user}) => ({
+	castle: castle,
+	user: user, 
+});
 
+const mapDispatchToProps = dispatch => ({
+	handleSubmit: castleId => dispatch(buyCastle(castleId)), 
+	checkout: (castle) => dispatch(checkoutCastle(castle))
+});
 // // connect(mapStateToProps, mapDispatchToProps)(AllPuppies);
 
 // const containerComponentCreator = connect(mapStateToProps, mapDispatchToProps);
@@ -18,4 +21,4 @@ import Checkout from '../components/Checkout';
 // const AllPuppiesContainer = containerComponentCreator(AllPuppies);
 
 
-export default connect()(Checkout);
+export default connect(mapStateToProps, mapDispatchToProps)(Checkout);

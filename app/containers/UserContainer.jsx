@@ -1,21 +1,21 @@
 import {connect} from 'react-redux';
+import {bidResolved} from '../action-creators/bid'
+import {checkoutCastle} from '../action-creators/checkout'
 
 import User from '../components/User';
 
-// function mapStateToProps (state) {
-//   return {
-//     aBunchOfPuppies: state.puppies
-//   };
-// }
-// function mapDispatchToProps () {
-//   return {};
-// }
-
-// // connect(mapStateToProps, mapDispatchToProps)(AllPuppies);
-
-// const containerComponentCreator = connect(mapStateToProps, mapDispatchToProps);
-
-// const AllPuppiesContainer = containerComponentCreator(AllPuppies);
+const mapStateToProps = ({user, oneCastle, highestBid, userBids}) => ({
+    user, 
+    oneCastle, 
+    highestBid, 
+    userBids
+})
 
 
-export default connect()(User);
+const mapDispatchToProps = dispatch => ({
+  checkout: (castle) => dispatch(checkoutCastle(castle))
+});
+
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(User);
