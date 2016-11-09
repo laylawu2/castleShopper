@@ -12,4 +12,6 @@ export const NEW_BID_FOR_THIS_USER = 'NEW_BID_FOR_THIS_USER';
 
 export const USER_BIDS = 'USER_BIDS';
 
+export const BID_RESOLVED = 'BID_RESOLVED';
+
 

@@ -3,7 +3,7 @@ import { FormattedNumber } from 'react-intl';
 
 export default ({ castle }) => (
 	<div className="product-info row">
-		<img className="col-lg-4" src="http://www.castles.org/images/sd6_small.jpg" />
+		<img className="col-lg-4" src={castle.imageUrl} />
 		<div className="col-lg-8">
 			<h3>{ castle.name }</h3>
 			<ul className="list-unstyled">

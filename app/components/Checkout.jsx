@@ -20,6 +20,7 @@ export default class Checkout extends React.Component {
 		}
         this.onSubmit = this.onSubmit.bind(this);
 	}
+	
 	onSubmit(event) {
 		console.log("onsubmit, this" , event.target);
 	    let self = this;
@@ -67,9 +68,13 @@ export default class Checkout extends React.Component {
 	  }*/
 render() {
 	let { castle, user } = this.props;
+	
+	
 return (
 	<div className="container">
-
+	{
+		castle ? console.log(castle) : console.log(null)
+	}
 		<CastleInfo castle={ castle } />
 
 		<form action={`/api/bid/${castle.id}`} id="payment-form" onSubmit={ e => this.onSubmit(e) }>

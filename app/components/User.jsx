@@ -1,43 +1,30 @@
 import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router';
+import CheckoutContainer from '../containers/CheckoutContainer'
 
-// <Dropdown>
-//                 <DropdownTrigger>Profile</DropdownTrigger>
-//                 <DropdownContent>
-//                     <img src="avatar.jpg" /> Username
-//                     <ul>
-//                         <li>
-//                             <a href="/profile">Profile</a>
-//                         </li>
-//                         <li>
-//                             <a href="/favorites">Favorites</a>
-//                         </li>
-//                         <li>
-//                             <a href="/logout">Log Out</a>
-//                         </li>
-//                     </ul>
-//                 </DropdownContent>
-//             </Dropdown>
 
 export default class User extends React.Component {
 
   constructor(){
     super();
-    this.state = {bids: []};
+    this.state = {bids: [], declined: true, accepted: true};
+    this.onAccept = this.onAccept.bind(this);
   }
 
   componentDidMount(){
      const {user} = this.props;
       // console.log("USERINCOMPONENTDIDMOUNT", this.props.user)
-    
+  }
+
+  onAccept(castle){
+    this.props.checkout(castle)
   }
 
 
   render() {
       const {user, userBids} = this.props;
-      let bids = [];
-      console.log("USERBIDS", this.props.userBids)
+    
       // if(this.props.user){
       //   axios.get(`/api/bids/user/${user.id}`)
       //     .then(userBids => {
@@ -69,26 +56,48 @@ export default class User extends React.Component {
                       <div className="panel-body"><a href='#'>My Bid History</a></div>
                       <div className="panel-body">
                       {
-                        userBids && userBids.castles.map((castle) => {
+                        user && userBids && userBids.castles && userBids.castles.map((castle) => {
                           return (
                             <div key={castle.id}>{
                                 castle.bids.map((bid, i) => {
                                   return (
-                                    <div key={i}>
-                                    <Link to={`/castles/${castle.id}`}>
+                                  <div key={i}>
+                                    <Link to={`/castles/${castle.id}`}><span>
                                       <div>{castle.name}</div>
+                                      </span>
                                     </Link>
                                       <div>{bid.bidPrice}</div>
-                                    </div>
+
+
+                                      <Link to={'/checkout'}>
+                                    <button onClick={this.onAccept(castle)}className="btn btn-success">
+                                        Accept 
+                                    </button>
+                                  </Link>
+                                  </div>
                                   )
+                      
+                               
+
+                            
                                 })
+
+
+                               
+
                             }</div>
+                            
                           )
+                          
                         })
                       }
                       
+                                
+
+                      
+                      
                       </div>
-                  
+
                     </div>
                     <div className="panel panel-default">
                       <div className="panel-heading">Likes</div>
@@ -116,3 +125,17 @@ export default class User extends React.Component {
     )
   }
 }
+
+
+// {
+//                         userBids ? 
+//                         <div>
+//                           <Link to={'/checkout'}>
+//                                     <button onClick={this.onAccept}className="btn btn-success">
+//                                         Accept
+//                                     </button>
+//                                   </Link>
+//                           </div>
+//                           : 
+//                           <div></div>
+//                       }
