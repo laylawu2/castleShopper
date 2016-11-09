@@ -3,7 +3,7 @@ import axios from 'axios'
 const ASCENDING = 'ASCENDING'
 const DESCENDING = 'DESCENDING'
 
-export const ascendingReducer = (state={}, action) => {
+export const ascendingReducer = (state=[], action) => {
   switch(action.type) {
   case ASCENDING:
     return action.priceAscending
@@ -11,7 +11,7 @@ export const ascendingReducer = (state={}, action) => {
   return state
 }
 
-export const descendingReducer = (state={}, action) => {
+export const descendingReducer = (state=[], action) => {
   switch(action.type) {
   case DESCENDING:
     return action.priceDescending
