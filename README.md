@@ -1,6 +1,6 @@
 # Castle Shopper
 
-Castle Shopper is an e-commerce site that enable users to rate, select and purchase their dream castles. Authenticated users will also be able to create, update and delete castle from their inventory. 
+Castle Shopper is an e-commerce site that enables users to rate, select and bid for their dream castles. Authenticated users will also be able to create, update and delete castle from their inventories. 
 
 ## Technology
 
