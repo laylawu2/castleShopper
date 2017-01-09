@@ -1,7 +1,7 @@
 import axios from 'axios'
 
+//------------- Auth Reducer --------------
 const authReducer = (state=null, action) => {
-  console.log("ACTION.USER", action.user);
   switch(action.type) {
   case AUTHENTICATED:
     return action.user
@@ -11,28 +11,25 @@ const authReducer = (state=null, action) => {
   return state
 }
 
+// --------------- Actions ------------------
 const LOGOUTUSER = 'LOGOUTUSER'
-
 const AUTHENTICATED = 'AUTHENTICATED'
 
+// --------------- Action Creators ------------------
 export const authenticated = user => {
   return ({
-type: AUTHENTICATED, user
+    type: AUTHENTICATED, user
   })}
 
-export const signup = (firstName,lastName,email,username,password) => {
-  return(
-    dispatch => {
-      console.log('inside signup...',firstName,lastName,email,username,password)
-    return axios.post('/api/signup', {
-      firstName,lastName,email,username,password
+export const signup = (firstName,lastName,email,username,password) => 
+    dispatch => 
+      axios.post('/api/signup', {
+        firstName,lastName,email,username,password
+      })
+      .then(() => dispatch(login(email,password)))
+      .catch(err => console.log(err))
     })
-    .then(() => dispatch(login(email,password)))
-    .catch(err => console.log(err))
-
-    })
-}
-
+    
 export const login = (username, password) =>
   dispatch => 
     axios.post('/api/auth/local/login',
