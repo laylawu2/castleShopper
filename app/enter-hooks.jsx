@@ -65,35 +65,4 @@ dispatch => {
 
     })
 
-    
-  // fetch('/api/bids/user/' + params.userId)
-  //   .then(res => res.json())
-  //   .then(result =>  {
-  //     loadUserBids(result);
-  //     console.log("RESULT", result);
-  //     let castleIds = [];
-  //     for(let i = 0; i<result.length; i++){
-  //       if(castleIds.indexOf(result[i]['castle_id']) === -1){
-  //         castleIds.push(result[i]['castle_id'])
-  //       }
-  //     }
-  //     return castleIds;
-  //   })
-
-}
-
-// export const onCategoryEnter = ({params}) => {
-//   fetch('/api/castles/search' + params)
-//   .then(res => res.json())
-//   .then(result => loadCastlesByCategorySync(result))
-// }
-
-
-
-// export const onSearchEnter = (nextRouterState) => {
-//     const categoryName = nextRouterState.params.categoryName
-//     const thunk = searchWord(categoryName)
-//     store.dispatch(thunk)
-// }
-
 
