@@ -11,6 +11,6 @@ import {logout} from 'APP/app/reducers/auth'
 import {connect} from 'react-redux'
 
 export default connect (
-  ({ auth }) => ({ user: auth }),
-  {logout},
+  ({ auth }) => ({ user: auth }), // mapStateToProps
+  {logout},                       // mapDispathToProps
 ) (WhoAmI)
