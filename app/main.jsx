@@ -23,6 +23,8 @@ import {getReviewsForUser} from './enter-hooks'
 import {getBidsForUser} from './enter-hooks'
 import {dispatchOnEnter} from './enter-hooks'
 
+import WhoAmI from './components/WhoAmI'
+
 render (
 	<IntlProvider locale="en">
 	  <Provider store={ store }>
