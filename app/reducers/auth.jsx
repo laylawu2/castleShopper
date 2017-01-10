@@ -28,7 +28,6 @@ export const signup = (firstName,lastName,email,username,password) =>
       })
       .then(() => dispatch(login(email,password)))
       .catch(err => console.log(err))
-    })
     
 export const login = (username, password) =>
   dispatch => 
