@@ -64,5 +64,5 @@ dispatch => {
       dispatch(userBids(result));
 
     })
-
+}
 
