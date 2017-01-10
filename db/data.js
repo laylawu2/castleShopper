@@ -210,7 +210,6 @@ const reviews = [
         "date": "2016-10-31",
         "subject": "Great castle",
         'castle_id': 2,
-        "subject": "Great castle"
     },
     {
         "content": "The castle is great for family bonding, friendsgiving, and many more activities",
