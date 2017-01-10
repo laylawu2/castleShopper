@@ -2,7 +2,6 @@
 
 import React from 'react';
 import axios from 'axios';
-<<<<<<< HEAD
 import { Review } from './Review'
 //if user is not logged in, show: log in to bid!
 //if user is logged in:
@@ -10,30 +9,16 @@ import { Review } from './Review'
     //if there are bids on this castle, show the highest one
     //if the user has already bid on this castle, tell them
         //you've already bid! and show previous highest bid
-=======
 import { FormattedNumber } from 'react-intl';
 import ReviewContainer from '../containers/ReviewContainer'
 
 
-//if user is not logged in, show: log in to bid! 
-//if user is logged in: 
-    //if there are no bids on this castle yet, show no bids! 
-    //if there are bids on this castle, show the highest one 
-    //if the user has already bid on this castle, tell them 
-        //you've already bid! and show previous highest bid 
->>>>>>> master
-
-// export const addCastle = (castleInfo) => dispatch => {
-//   //console.log('dispatchers', castleInfo)
-//   axios.post('/api/castles', castleInfo)
-//     .then(res => {
-//       console.log('inside dispatcher post', res.data)
-//       dispatch(create(res.data))
-//     })
-//     .catch(console.error)
-// }
-
-// axios(`/api/bids/user/${user.id}/castle/${castle.id}`, bidPrice)
+//if user is not logged in, show: log in to bid!
+//if user is logged in:
+    //if there are no bids on this castle yet, show no bids!
+    //if there are bids on this castle, show the highest one
+    //if the user has already bid on this castle, tell them
+        //you've already bid! and show previous highest bid
 
 
 export default class SingleCastle extends React.Component {
@@ -46,17 +31,7 @@ export default class SingleCastle extends React.Component {
     }
 
     componentDidMount() {
-        // this.props.addBid(1000);
-        // this.props.addBid(2000);
-        // console.log("THIS CASTLE", this.props.oneCastle.id)
         this.props.addBid([]);
-        // axios.get(`/api/bids/castle/${this.props.oneCastle.id}`)
-        //     .then(bids => {
-        //         console.log("BIDS FOR THIS", bids)
-        //         this.setState({bidsForThisCastle: bids})
-        //     })
-
-
     }
 
     onBid(event){
@@ -83,27 +58,9 @@ export default class SingleCastle extends React.Component {
         }
     }
 
-    // stickBid(highestBid){
-    //     const {oneCastle} = this.props;
-    //     axios.post(`/api/castles/${oneCastle.id}`, highestBid )
-    //             .catch(console.error);
-    //     <h5>Highest Bid: ${highestBid}</h5> 
-    // }
-
-  
-
-
 render(){
-//     console.log("CASTLE", this.props.oneCastle.id);
-//     console.log("ADDBID", this.props.addBid);
-//     console.log("NEWBID", this.props.highestBid);
-//     console.log("THISPROPS", this.props)
-//     console.log("USER", this.props.user);
 
     const {oneCastle, highestBid, addBid, user, reviews, checkout} = this.props;
-    
-
-
 
     return (
         <div className="container" id="castle-container">
@@ -132,11 +89,8 @@ render(){
 
                                         highestBid.length === 0 ?
                                         <h5>No Bids Yet</h5> :
-<<<<<<< HEAD
-                                        <h5>Highest Bid: ${highestBid}</h5>
-=======
-                                        <h5>Highest Bid: <FormattedNumber value={highestBid} style="currency" currency="EUR" /></h5> 
->>>>>>> master
+
+                                        <h5>Highest Bid: <FormattedNumber value={highestBid} style="currency" currency="EUR" /></h5>
                                     }
 
                                     <form
@@ -159,20 +113,10 @@ render(){
                                             >
                                             Place a Bid
                                         </button>
-
-
                                         :
                                         <span>
                                             Log in to place a bid
                                         </span>
-                                        // <button
-                                        //     type="button"
-                                        //     className="btn btn-success"
-                                        //     data-toggle="tooltip" data-placement="top"
-                                        //     title="Log in to place a bid"
-                                        // >
-                                        // Sign In
-                                        // </button>
 
                                      }
 
@@ -180,7 +124,7 @@ render(){
 
                                 </div>
                             </div>
-<<<<<<< HEAD
+
                             <div className="ratings">
                                 <p className="pull-right">3 reviews</p>
                                 <p>
@@ -201,38 +145,19 @@ render(){
                                     </div>
                                   ))
                                 }
-                            </div>
-                        </div>
+                            </div> {/*end of rating*/}
+                        </div> {/*end of thrumbnail class*/}
 
                         <Review />
 
-=======
-                            
-                        </div>                       
->>>>>>> master
+
+                        </div>
 
                     </div>
 
                 </div>
 
             </div>
-
-            <ReviewContainer />
-
-                <div className="copyright">
-
-                    <hr></hr>
-
-                    <footer>
-                        <div className="row">
-                            <div className="col-lg-12">
-                                <p>Copyright &copy; Your Website 2014</p>
-                            </div>
-                        </div>
-                    </footer>
-
-                </div>
-        </div>
         )
     }
 }
