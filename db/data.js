@@ -211,16 +211,6 @@ const reviews = [
         "subject": "Great castle",
         'castle_id': 2,
         "subject": "Great castle"
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-    }
-]
-
-module.exports = {castles,reviews,users}
-//need to add orders and create orders model
-=======
->>>>>>> master
     },
     {
         "content": "The castle is great for family bonding, friendsgiving, and many more activities",
@@ -264,4 +254,4 @@ module.exports = {castles,reviews,users}
 
 
 module.exports = {castles,reviews,users}
->>>>>>> master
+
