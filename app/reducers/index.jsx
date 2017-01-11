@@ -7,7 +7,7 @@ import bidReducer from './newBid'
 import bidsReducer from './userBids.jsx'
 import castleBidsReducer from './castleBids.jsx'
 import {ascendingReducer, descendingReducer} from './category'
-import {categoryReducer} from './category'
+//import {categoryReducer} from './category'
 import reviewReducer from './review'
 import {bidResolvedReducer} from './bidResolved.jsx'
 import checkoutReducer from './checkout';
@@ -18,13 +18,13 @@ const rootReducer = combineReducers({
     allCastles: homepageReducer,
     oneCastle: singleCastle,
     user: authReducer,
-    category: categoryReducer,
+    // category: categoryReducer,
     reviews: reviewReducer,
     ascending: ascendingReducer,
     descending: descendingReducer,
     highestBid: bidReducer,
-    userBids: bidsReducer, 
-    castleBids: castleBidsReducer, 
+    userBids: bidsReducer,
+    castleBids: castleBidsReducer,
     castle: checkoutReducer
 
 })

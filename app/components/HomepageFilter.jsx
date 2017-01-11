@@ -2,9 +2,9 @@
 
 import React from 'react';
 
-export default (InnerComponent) => 
+export default (InnerComponent) =>
   class SearchFilter extends React.Component {
-  
+
     constructor (props) {
       super(props);
       this.state = { filter: '' };
@@ -21,29 +21,20 @@ export default (InnerComponent) =>
       const filter = categoryName
       this.setState({ filter });
     }
-    // checkFilter(allCastles,filter) {
-    //         return allCastles.map(function(castle) {
-    //           if (castle.name === filter) {
-    //             return allCastles.filter(castle => castle.name.toLowerCase().match(filter))
-    //           } else {
-    //             allCastles.filter(castle => castle.category.toLowerCase().match(filter))
-    //           }
-    //         })
-    // }
 
     render () {
       const { filter } = this.state;
       const { allCastles } = this.props;
       // const { checkFilter } = this.props;
-      
+
       return (
-        <InnerComponent 
+        <InnerComponent
           allCastles={
-            filter ? 
-            allCastles.filter(castle => castle.name.toLowerCase().match(filter)) : 
+            filter ?
+            allCastles.filter(castle => castle.name.toLowerCase().match(filter)) :
             allCastles
           }
-          filter={filter} 
+          filter={filter}
           handleChange={this.handleChange}
           handleChangeCategory={this.handleChangeCategory}
         />

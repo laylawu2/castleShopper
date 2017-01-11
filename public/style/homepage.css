@@ -11,7 +11,7 @@
     width: 50%;
     margin-top: 10px;
     margin-right: auto;
-    margin-left: auto;    
+    margin-left: auto;
 }
 
 #sign-in-comment {
@@ -32,7 +32,9 @@ ul {
 
 #image-div {
     max-height: 550px;
-    overflow: hidden;
+    min-height: 550px;
+    overflow: auto;
+    margin-bottom: 10px;
 }
 
 #image-thumbnail {
